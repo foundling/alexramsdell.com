@@ -1,0 +1,28 @@
+<!doctype>
+<html>
+<head>
+    <style>
+        html, body, body * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: white;
+            text-align: center;
+        }
+        #canvas {
+            display: block;
+            background: aliceblue;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas 
+    id="canvas" 
+    data-player-left-src="{{ url_for('static', filename='img/calvin-left.png') }}"
+    data-player-right-src="{{ url_for('static', filename='img/calvin-right.png') }}">
+    </canvas>
+    <script src="{{ url_for('static', filename='js/404.js') }}"></script>
+</body>
+</html>

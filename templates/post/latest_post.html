@@ -1,0 +1,22 @@
+<section class="recent-posts-list"> 
+
+    <article class="recent-post"> 
+
+        {% include 'post/title.html' %}
+        {% include 'general/byline.html' %}
+
+        <div class="recent-post-stub">
+            <div class="recent-post-text">
+                {{ post['short_text'] | markdown }}
+                <a href="{{ url_for('post', permalink=post['permalink']) }}"><i class="fa fa-send"></i></a>
+            </div>
+        </div>
+
+    </article> 
+
+    <h3 class="more-posts">
+        <a href="archive">More Posts</a>
+    </h3>
+
+    {% include 'post/body_scripts.html' %}
+</section> 

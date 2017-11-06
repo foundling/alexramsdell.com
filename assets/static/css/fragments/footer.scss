@@ -1,0 +1,33 @@
+footer {
+
+    padding: 1% 20%;
+    font-size: 0.7em;
+    background: white;
+    border-top: 1px solid lightgreen;
+
+    a.creator-link:hover {
+        color: rgba(255, 0, 0, 0.62);
+    }
+
+    i.fa-heart {
+        color: rgba(255, 0, 0, 0.62);
+    }
+
+    p {
+        height: 5vh;
+        line-height: 5vh;
+        text-align: center;
+    }
+
+}
+
+
+
+@media (max-width: 750px) {
+    footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1%;
+    }
+}

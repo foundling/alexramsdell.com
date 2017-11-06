@@ -1,0 +1,21 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<section class="about">
+
+    <section class="img-box">
+
+        <img 
+            class="bio-img" 
+            src="{{ '/static/img/alex.jpg'|asseturl }}" />
+        <p class="img-caption">Photo by <a href="https://www.flickr.com/photos/dsquires/">Dan Squires</a>.</p>
+
+    </section>
+
+    <section class="about-copy">
+        {% block body %} 
+        {% endblock %}
+    </section>
+
+</section>
+{% endblock %}

@@ -1,0 +1,92 @@
+div.article-badge,
+div.news-badge,
+div.quick-tip-badge {
+
+    position: absolute;
+    left: -2.5em;
+    top: -1.5em;
+    height: 35px;
+    width: 35px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a { 
+        color: white;
+        font-size: 0.5em;
+        font-weight: 100;
+    }
+
+}
+
+div.article-badge {
+
+    border-radius: 50%;
+    background: lightgreen;
+
+    a {
+        border-radius: 50%;
+    }
+
+    i {
+        border-radius: 50%;
+        font-size: 1.7em;
+        color: white;
+        margin-right: 2px;
+        padding: 10px 10px 10px 10px;
+    }
+
+}
+
+div.quick-tip-badge {
+    a {
+        padding: 10px;
+    }
+
+    i {
+        font-size: 1.8em;
+        color: black; 
+    }
+    border: 1px solid black;
+
+}
+
+div.news-badge {
+
+
+    a {
+        display: inline-block;
+        border-radius: 50%;
+        padding: 10px;
+    }
+    background: rgba(255, 0, 0, 0.62);
+    border-radius: 50%;
+    a {
+        border-radius: 50%;
+    }
+}
+
+@media(max-width:750px) {
+
+    div.article-badge,
+    div.news-badge,
+    div.quick-tip-badge {
+        position: relative;
+        top: initial;
+        left: initial;
+        display: inline-flex;
+        vertical-align: text-bottom;
+        margin-right: 10px;
+    }
+    div.news-badge a {
+        font-size: 0.4em;
+        font-weight: 100;
+    }
+    div.article-badge i {
+        font-size:  1.4em;
+    }
+    div.quick-tip-badge i {
+        font-size: 1.3em;
+    }
+}

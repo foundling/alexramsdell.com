@@ -1,0 +1,6 @@
+<h1 class="recent-post-title">
+    {% include 'post/badges/' + post.content_type + '.html' %} 
+    <a href="{{ post|url }}"> {{ post.title }} </a>
+</h1>
+{% include 'post/social_media.html' %}
+

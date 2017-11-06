@@ -1,0 +1,25 @@
+header.site-header {
+    
+    width: 100%;
+    padding: 8% 20%;
+
+    text-align: left;
+    background: white;
+
+    nav > h1, 
+    nav > ul,
+    nav > ul > li {
+
+        display: inline-block; 
+        vertical-align: baseline;
+        padding-left: 0;
+
+    }
+
+    nav > h1 {
+
+        margin-right: 10px;
+
+    }
+
+}

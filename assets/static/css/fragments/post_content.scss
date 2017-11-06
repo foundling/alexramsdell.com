@@ -1,0 +1,138 @@
+section.single-post {
+
+    div[class*="-badge"] {
+        //visibility: hidden;
+    }
+
+    text-align: left;
+    font-family: "Droid Serif";
+
+    >p {
+        font-family: Georgia;
+    }
+    >p:first-of-type {
+        padding: 4% 0px;
+    }
+    >p {
+        padding: 0% 0% 3% 0%;
+    }
+
+    p > a {
+        font-family: "Droid Serif";
+    }
+
+    h1.recent-post {
+        padding: 4% 0%;
+    }
+    h2, h3, h4 {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    ul {
+        margin-bottom: 5%;
+        margin-left: 5%;
+    }
+    li {
+        font-family: Georgia;
+        list-style-type: initial;
+    }
+    
+}
+
+a[href="#references"] {
+    color: rgba(255, 0, 0, 0.62);
+    font-size: .6em;
+    vertical-align: super;
+}
+
+// end copy
+p.full-post-content,
+div.recent-post-stub {
+    background: rgba(255,255,255,0.0);
+    margin: 5px 0px 5px 0px;
+    padding: 0px 0px 15px 0px;
+    text-align: left;
+}
+
+div.recent-post-text {
+
+    padding-right: 10px;
+
+    p {
+        font-family: Georgia;
+        margin-right: 5px;
+    }
+
+    p:first-of-type {
+        display: inline;
+    } 
+
+    a.full-article-link {
+        background: rgba(255, 0, 0, 0.2);
+        padding: 2px 5px 0px 5px;
+    }
+
+}
+
+section.contribute {
+
+    padding: 5%;
+    background: lightgreen;
+
+    div.contribute-question-container {
+        height: 2em;
+        width: 2em;
+        margin-right: 5px;
+        display: inline-flex;
+        background: white;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    p.contribute-copy {
+        display: inline !important;
+    }
+    a.gh-repo-blog-posts {
+        text-decoration: underline;
+    }
+
+}
+
+@media(max-width: 750px) {
+
+    article.recent-post {
+
+        background: white;
+        padding: 20px;
+
+    }
+
+    section.single-post {
+
+        margin: 5px;
+        padding: 5%;
+
+        >p:first-of-type {
+            padding: 10% 0%;
+        }
+
+        >p {
+            padding: 0% 0% 8% 0%;
+        }
+
+        h1 {
+            //padding: 4% 0%;
+        }
+
+        h2,h3,h4 {
+            margin-bottom: 8%;
+        }
+
+        li {
+            list-style-type: initial;
+        }
+
+    }
+
+}

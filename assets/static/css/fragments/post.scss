@@ -1,0 +1,83 @@
+a[href="#references"] {
+    color: rgba(255, 0, 0, 0.62);
+    font-size: .6em;
+    vertical-align: super;
+}
+
+section.contribute {
+
+    padding: 5%;
+    background: lightgreen;
+
+    div.contribute-question-container {
+        height: 2em;
+        width: 2em;
+        margin-right: 5px;
+        display: inline-flex;
+        background: white;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+    }
+    p.contribute-copy {
+        display: inline !important;
+    }
+    a.gh-repo-blog-posts {
+        text-decoration: underline;
+    }
+
+}
+section.single-post {
+
+    text-align: left;
+
+    font-family: "Droid Serif";
+
+    >p {
+        padding: 20px 0;
+        font-family: Georgia;
+    }
+    >p:first-of-type {
+        padding: 4% 0px;
+    }
+    >p {
+        padding: 0% 0% 3% 0%;
+    }
+
+    h1.recent-post {
+        padding: 4% 0%;
+    }
+    h2, h3, h4 {
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    
+}
+
+@media(max-width: 750px) {
+
+    section.single-post {
+
+        margin: 5px;
+        padding: 5%;
+
+        >p:first-of-type {
+            padding: 10% 0%;
+        }
+
+        >p {
+            padding: 0% 0% 8% 0%;
+        }
+
+        h1 {
+            //padding: 4% 0%;
+        }
+
+        h2,h3,h4 {
+            margin-bottom: 8%;
+        }
+
+    }
+
+}

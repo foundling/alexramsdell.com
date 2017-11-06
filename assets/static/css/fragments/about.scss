@@ -1,0 +1,52 @@
+section.about {
+
+    width: 100%;
+    text-align: center;
+
+    section.img-box {
+
+        width: 100%;
+
+        img.bio-img {
+            width: 100%;
+            margin: 0 auto;
+        }
+        p.img-caption {
+            font-size: 0.8em;
+        }
+
+    }
+
+    section.about-copy {
+
+        margin: 5% 0%;
+        text-align: initial;
+
+        h2 {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        h2:first-of-type {
+            padding-top: 0px;
+        }
+        p {
+            padding-bottom: 20px;
+        }
+
+        ul,li {
+        }
+    }
+
+}
+
+@media(max-width: 750px) {
+    section.about {
+        section.about-copy {
+            margin: 5% 5%;
+        }
+    }
+    section.img-box {
+        padding: 0% 5% 5% 5%;
+    }
+};

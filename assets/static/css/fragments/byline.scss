@@ -1,0 +1,53 @@
+div.byline {
+
+    padding: 0px 2px;
+    font-size: .9em;
+    display: inline-block;
+    width: 100%;
+
+    p.published-info {
+
+        display: inline-block;
+        margin: 5px 0px 5px 0px;
+        padding: 2% 0%;
+
+        span.post-published {
+            margin-right: 5px;
+        }
+
+        span.post-published,
+        span.post-updated,
+        i.pencil-icon {
+            padding: 2px;
+            background: white;
+        }
+
+
+    }
+
+    .pencil-icon {
+        color: rgba(255, 0, 0, 0.62);
+        margin-right: 5px;
+    }
+
+
+    ul.post-keywords {
+
+        display: inline-block;
+
+        li.post-keyword {
+
+            display: inline-block;
+            padding: 0.2em;
+            margin-bottom: 5px;
+            background: rgba(144, 238, 144, 0.9);
+
+            a { 
+                padding: 2px 5px;
+                //text-shadow: -1px 0px 0px rgba(255,255,255,0.7);
+            }
+        }
+    }
+
+
+}

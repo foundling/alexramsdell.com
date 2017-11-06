@@ -1,0 +1,27 @@
+h1.recent-post-title {
+    margin: 4% 2% 0% 0%;
+    position: relative;
+}
+
+h1.recent-post-title {
+
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    margin: 2% 0% 0% 0%;
+
+    a,
+    a > p {
+        display: inline;
+    }
+
+}
+
+
+@media(max-width: 750px) {
+    h1.recent-post-title {
+        a {
+            font-size: 1.6em;
+        }
+    }
+}

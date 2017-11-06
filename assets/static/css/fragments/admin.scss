@@ -1,0 +1,105 @@
+html, body, body * {
+    box-sizing: border-box;
+}
+
+body * { 
+    font-family: sans-serif;
+}
+
+html, body {
+    height: 100%;
+    border: 0;
+    margin: 0;
+}
+
+/* dashboard */
+
+h2,
+.add-post {
+    display: inline-block;
+}
+
+/* create inputs */
+textarea,
+input {
+    border: 1px solid black;
+    background: whitesmoke;
+    outline: none;
+    padding: 20px;
+}
+
+textarea:focus,
+input:focus {
+    background: lightblue;
+}
+
+input.title {
+    width: 100vw;
+    height: 10vh;
+    font-size: 1.5em;
+}
+
+textarea.short-text {
+    width: 100vw;
+    height: 10vh;
+}
+
+input.tags {
+    height: 10vh;
+    width: 75vw;
+}
+
+select.collection {
+    height: 5vh;
+}
+
+textarea.content {
+    width: 100vw;
+    height: 65vh;
+    font-size: 1.5em;
+}
+
+textarea.short-text {
+    font-size: 1em;
+}
+
+select.content-type {
+    width: 100vw;
+    height: 5vh;
+}
+
+section.controls {
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+    width: 25vw;
+}
+
+button.save:hover,
+button.markdown-preview:hover,
+button.delete-post:hover {
+    background: lightgreen;
+}
+
+button.save,
+button.delete-post {
+    position: fixed;
+    bottom: 0px;
+    border: none;
+    height: 8vh;
+    width: calc(25vw / 2);
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+button.save {
+    right: 0px;
+}
+button.delete-post {
+    right: calc(25vw / 2);
+}
+
+form.delete-post {
+    right: 300px;
+    display: inline-block;
+}

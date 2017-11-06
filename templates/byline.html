@@ -1,0 +1,25 @@
+<div class="byline">
+
+    <p class="published-info">
+
+        <i 
+        title="last edited: {{ post.last_edited }}" 
+        class="pencil-icon fa fa-pencil"></i> 
+        <span 
+        data-numeric-date="{{ post.pub_date }}"
+        title="{{ post.pub_date }}" 
+        class="post-published">{{ post.pub_date }}</span>
+
+    </p>
+
+    <ul class="post-keywords">
+
+        {% for tag in ['tag1','tag2','tag3'] %}
+        <li class="post-keyword">
+            <a href="/search/">{{tag}}</a>
+        </li>
+        {% endfor %}
+
+    </ul>
+
+</div>
