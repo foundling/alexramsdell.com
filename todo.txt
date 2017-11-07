@@ -1,0 +1,4 @@
+syntax highlighting
+update about page
+publish more posts
+figure out deployment strategy
