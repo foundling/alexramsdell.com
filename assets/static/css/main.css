@@ -76,10 +76,10 @@ ul.project-links,
 ul.project-links > li {
   display: inline-block; }
 
-section.project {
-  padding: 3% 0%;
-  line-height: 1.5em;
-  text-align: center; }
+section.projects {
+  padding-left: 5%;
+  padding-rigth: 5%;
+  line-height: 1.5em; }
 
 .project-header {
   text-align: left; }
@@ -418,6 +418,8 @@ section.recent-posts-list {
     text-align: center; } }
 section.about {
   width: 100%; }
+  section.about a {
+    text-decoration: underline; }
   section.about section.img-box {
     width: 50%;
     margin: 0 auto; }
