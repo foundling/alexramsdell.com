@@ -55,7 +55,7 @@ p {
 
 /* Components */
 div.main {
-  margin: 5% 20%; }
+  margin: 10% 20%; }
 
 @media (max-width: 750px) {
   header.site-header {
@@ -236,13 +236,16 @@ section.single-post {
   text-align: left;
   font-family: "Droid Serif"; }
   section.single-post > p {
-    font-family: Georgia; }
+    font-family: Baskerville;
+    font-family: Baskerville !important; }
   section.single-post > p:first-of-type {
     padding: 4% 0px; }
   section.single-post > p {
     padding: 0% 0% 3% 0%; }
   section.single-post p > a {
     font-family: "Droid Serif"; }
+  section.single-post h1, section.single-post h2, section.single-post h3, section.single-post h4 {
+    font-family: Helvetica; }
   section.single-post h1.recent-post {
     padding: 4% 0%; }
   section.single-post h2, section.single-post h3, section.single-post h4 {
@@ -252,7 +255,7 @@ section.single-post {
     margin-bottom: 5%;
     margin-left: 5%; }
   section.single-post li {
-    font-family: Georgia;
+    font-family: Baskerville;
     list-style-type: initial; }
 
 a[href="#references"] {
@@ -270,7 +273,7 @@ div.recent-post-stub {
 div.recent-post-text {
   padding-right: 10px; }
   div.recent-post-text p {
-    font-family: Georgia;
+    font-family: Baskerville;
     margin-right: 5px; }
   div.recent-post-text p:first-of-type {
     display: inline; }
@@ -312,7 +315,7 @@ section.contribute {
     section.single-post li {
       list-style-type: initial; } }
 pre {
-  background: rgba(144, 238, 144, 0.8);
+  background: url(/static/img/binding-light.png);
   margin: 0% 0% 3% 0%;
   padding: 20px;
   max-width: 100%;
@@ -414,10 +417,10 @@ section.recent-posts-list {
   .more-posts {
     text-align: center; } }
 section.about {
-  width: 100%;
-  text-align: center; }
+  width: 100%; }
   section.about section.img-box {
-    width: 100%; }
+    width: 50%;
+    margin: 0 auto; }
     section.about section.img-box img.bio-img {
       width: 100%;
       margin: 0 auto; }
@@ -425,6 +428,7 @@ section.about {
       font-size: 0.8em; }
   section.about section.about-copy {
     margin: 5% 0%;
+    padding-left: 5%;
     text-align: initial; }
     section.about section.about-copy h2 {
       padding-top: 20px;

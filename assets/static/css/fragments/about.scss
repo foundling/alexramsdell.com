@@ -1,11 +1,11 @@
 section.about {
 
     width: 100%;
-    text-align: center;
 
     section.img-box {
 
-        width: 100%;
+        width: 50%;
+        margin: 0 auto;
 
         img.bio-img {
             width: 100%;
@@ -20,6 +20,7 @@ section.about {
     section.about-copy {
 
         margin: 5% 0%;
+        padding-left: 5%;
         text-align: initial;
 
         h2 {

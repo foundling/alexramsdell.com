@@ -8,7 +8,8 @@ section.single-post {
     font-family: "Droid Serif";
 
     >p {
-        font-family: Georgia;
+        font-family: Baskerville;
+        font-family: Baskerville !important;
     }
     >p:first-of-type {
         padding: 4% 0px;
@@ -21,6 +22,9 @@ section.single-post {
         font-family: "Droid Serif";
     }
 
+    h1,h2,h3,h4 {
+        font-family: Helvetica;
+    }
     h1.recent-post {
         padding: 4% 0%;
     }
@@ -33,7 +37,7 @@ section.single-post {
         margin-left: 5%;
     }
     li {
-        font-family: Georgia;
+        font-family: Baskerville;
         list-style-type: initial;
     }
     
@@ -59,7 +63,7 @@ div.recent-post-text {
     padding-right: 10px;
 
     p {
-        font-family: Georgia;
+        font-family: Baskerville;
         margin-right: 5px;
     }
 

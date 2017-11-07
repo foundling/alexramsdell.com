@@ -5,14 +5,14 @@ author: alex
 content_type: article
 ---
 tags:
+
 NodeJS
 JavaScript
 Commander
 ---
 pub_date: 2017-03-17
 ---
-short_text:
-Speed up your command line application by deferring module requires.
+short_text: Speed up your command line application by deferring module requires.
 ---
 body:
 
@@ -29,16 +29,16 @@ As I moved toward completion of the project and the sub-command modules grew in 
 ## The Interface
 
 The cli app has a standard sub-command structure: 
-
+````bash
     cmd sub-cmd [ arguments ... ] [ options ... ]
-
+````
 The sub-commands are where the main functionality is. The app exposes four of them:
-
+````bash
     cmd register
     cmd query <name> <date-range>
     cmd stats
     cmd update
-
+````
 ## Choosing a Command Parsing Library
 
 I needed a library to parse the command input and I decided to use [commander.js](https://github.com/tj/commander.js). It's a straightforward and fairly transparent library for building simple to moderately complex command-line interfaces. The library was written by Tj Holowaychuk, the author of Express. 
@@ -48,7 +48,7 @@ I needed a library to parse the command input and I decided to use [commander.js
 Wanting to keep this application modular for testing, I broke the functionality into modules (one per sub-command) which were comprised of many sub-modules. Below is the entry point that is executed when the cli app is run on the command line. There I pull in modules for each sub-command, register them on the `commander` app object as callbacks for their respective sub-commands, and then I call the parser to parse the command-line input and call the appropriate callback.
 
 Here is what my initial `index.js` looked like when it took 8 seconds to load: 
-
+````javascript
     const cli = require('commander');
     const { 
 
@@ -80,14 +80,16 @@ Here is what my initial `index.js` looked like when it took 8 seconds to load:
         .action(update);
 
     cli.parse(process.argv);
-
+````
 ## I'm Loading Everything Every Time
 
 The problem is simply that in `index.js`, I'm pulling in the dependencies for the entire application and loading them all synchronously before parsing the command. And while the OS caches recently loaded modules, bringing subsequent invocations of the utility down to just a few hundred milliseconds, the utility would be used usually once per session and sporadically, negating the benefits of the cache.  So in the average use case the performance was ... *bad*.
 
 ## Loading Just the Libraries You Need
 
-In order to cut the load time down, I decided to restrict the loading of dependencies to just those required by the sub-command being executed. This comes down to shifting the scope and timing of the `require` call so that it is performed as part of the callback associated with a single command rather than on the execution of the top level `index.js` entry-point file for every command. I should note that `commander` supports git-style sub-commands, but I found that that design didn't fit my needs for two reasons:
+In order to cut the load time down, I decided to restrict the loading of dependencies to just those required by the sub-command being executed. This comes down to shifting the scope and timing of the `require` call so that it is performed as part of the callback associated with a single command rather than on the execution of the top level `index.js` entry-point file for every command.  Requiring modules inside of functions is generally considered an anti-pattern in Node, but in this case it's the right thing to do.
+
+I should note that `commander` supports git-style sub-commands, but I found that that design didn't fit my needs for two reasons:
 
 1) The sub-command files need to follow a specific naming and location convention in order for `commander` to execute them. If the command is `cmd subcmd`, then there needs to be an executable file named `cmd-subcmd.js` in the directory where `cmd.js` is located. 
 
@@ -96,7 +98,7 @@ In order to cut the load time down, I decided to restrict the loading of depende
 Neither of these are truly shortcomings, but I felt that it was easy enough to work lazy sub-commands into my project  with a few lines of code.
 
 I ended up writing a utility function like this:
-
+````javascript
     // pass the dependency name in
     function delayedRequire(depName) {
 
@@ -106,22 +108,23 @@ I ended up writing a utility function like this:
         }
 
     }
-
+````
 That solves the lazy-loading issue. Now instead of registering the submodule command directly with commander (which requires all submodules and their dependencies to be imported first), I register the result of the `delayedRequire` function call, which produces a callback that performs the dependency `require`:
-
+````javascript
     // if the user runs 'cmd stats' on the command line, then just the stats module is loaded
     cli
         .command('stats')
         .description('gets stats')
         // calling delayedRequire first, returning a function that requires the stats module
         .command( delayedRequire('stats') );
-
+````
 Again, I've shifted the scope and timing of the `require` call from the top-level `index.js` to the callback specified by the already parsed command-line input.
 
 ## Handling The Arguments 
 
 The final issue to resolve was the arguments that are passed from `commander` app object to the corresponding callback. Since the new function both requires the sub-command module and calls it, we need to pass the arguments to the callback function into the sub-module manually.
 
+````javascript
     // es5 way
     function delayedRequire(depName) {
         
@@ -146,9 +149,10 @@ The final issue to resolve was the arguments that are passed from `commander` ap
 
     // the succinct es2015 way
     const delayedRequire = (depName) => (...args) => require(`./commands/${ depName }`)(..args);
+````
 
 Here's a more complete version of what I came up with. Notice that the syntax for the `commander` callback registration is basically the same as it was in the beginning:
-
+````javascript
     const cli = require('commander');
     const basepath = './commands';
     const makeLoader = function(name) {
@@ -206,3 +210,4 @@ Here's a more complete version of what I came up with. Notice that the syntax fo
         .action(update);
 
     cli.parse(process.argv);
+````

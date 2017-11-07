@@ -8,4 +8,16 @@ _discoverable: yes
 ---
 body: 
 
-I like to do cool things, but not all at once.
+## About Me 
+
+I'm an independent web developer and open source contributor who spends his time building web instruments, learning Haskell, writing command-line interfaces and recording music.  You can find me as **[foundling](https://github.com/foundling)** on github.
+
+## This Site
+
+This site was built with the static, flat-file CMS, [Lektor](https://getlektor.com). See the [projects](/projects) page for information on how they're built.
+
+## Favorite Steven Wright Jokes
+
+One time the police stopped me for speeding. They said, "Oh, you know the speed limit is 55 miles an hour?" I said, "Yeah I know, but I wasn't going to be out that long".
+
+*One time right in the middle of a job interview, I took out a book and started reading.  The guy said, "What the hell are you doing?".  I said, "Let me ask you one question: If you were in a vehicle and you were traveling at the speed of light, and you turned  your lights on ... would they do anything?" He said, "I dont know". I said, "Forget it then, I don't want to work for you".
