@@ -1,16 +1,20 @@
 {% extends "layout.html" %}
+{% from 'macros/title.html' import title %} 
+{% from 'macros/byline.html' import byline %} 
 
 {% block content %}
 
     <section class="single-post">
 
-        {% include 'post/title.html' %}
-        {% include 'post/byline.html' %}
+        {{ title(this) }}
+        {{ byline(this) }}
 
-        {{ this }}
+        {% block body %}
+            {{ this.body }}
+        {% endblock %}
 
-        {% if post.content_type == 'article' %}
-            {% include 'post/contribute.html' %}
+        {% if this.content_type == 'article' %}
+            {% include 'contribute.html' %}
         {% endif %}
 
     </section>

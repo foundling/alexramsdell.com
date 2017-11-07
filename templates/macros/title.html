@@ -1,0 +1,7 @@
+{% from 'macros/badge.html' import badge %} 
+{% macro title(post) -%}
+<h1 class="recent-post-title">
+    {{ badge(post) }}
+    <a href="{{ post |url }}"> {{ post.title }} </a>
+</h1>
+{%- endmacro %}

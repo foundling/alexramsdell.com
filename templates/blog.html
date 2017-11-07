@@ -1,31 +1,27 @@
 {% extends "layout.html" %}
+{% from 'macros/title.html' import title %} 
+{% from 'macros/byline.html' import byline %} 
+{% from 'macros/social_media.html' import social_media %} 
+
 {% block content %}
     <section class="recent-posts-list"> 
-
         {% for post in this.children %}
-
+            {{ title(post) }}
+            {{ byline(post) }}
             <article class="recent-post"> 
-
-                {% include 'post/title.html' %}
-                {% include 'post/byline.html' %}
-
                 <div class="recent-post-stub">
+                    {{ social_media(post) }}
                     <div class="recent-post-text">
                         {{ post.short_text }}
-                        <a 
-                            class="full-article-link"
-                            href="{{ post|url }}">...</a>
+                        <a class="full-article-link" href="{{ post|url }}">...</a>
                     </div>
                 </div>
-
             </article> 
-
         {% endfor %}
 
         <h3 class="more-posts">
             <a href="archive">More Posts</a>
         </h3>
 
-        {% include 'post/body_scripts.html' %}
     </section> 
 {% endblock %}
