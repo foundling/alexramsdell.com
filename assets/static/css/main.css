@@ -102,9 +102,11 @@ img.project-image {
     text-align: center; } }
 header.site-header {
   width: 100%;
-  padding: 8% 20%;
+  padding: 5% 20%;
   text-align: left;
   background: white; }
+  header.site-header nav {
+    margin-left: 5%; }
   header.site-header nav > h1,
   header.site-header nav > ul,
   header.site-header nav > ul > li {
@@ -114,15 +116,16 @@ header.site-header {
   header.site-header nav > h1 {
     margin-right: 10px; }
 
-h1.recent-post-title {
-  margin: 4% 2% 0% 0%;
-  position: relative; }
-
+@media (max-width: 750px) {
+  header.site-header {
+    padding: 8% 0%; } }
 h1.recent-post-title {
   display: inline-block;
   vertical-align: middle;
   margin-right: 5px;
-  margin: 2% 0% 0% 0%; }
+  margin: 2% 0% 0% 0%;
+  position: relative;
+  font-family: 'sans-serif', Helvetica, Arial; }
   h1.recent-post-title a,
   h1.recent-post-title a > p {
     display: inline; }
@@ -198,6 +201,18 @@ div.news-badge {
 
   div.quick-tip-badge i {
     font-size: 1.3em; } }
+ul.post-keywords {
+  display: inline-block; }
+
+li.post-keyword {
+  display: inline-block;
+  padding: 0.2em;
+  margin-bottom: 5px;
+  background: rgba(144, 238, 144, 0.9); }
+  li.post-keyword > a {
+    padding: 2px 5px;
+    font-family: sans-serif; }
+
 ul.social-media-icons {
   display: inline-block;
   vertical-align: middle;
@@ -216,7 +231,7 @@ ul.social-media-icons {
     display: block;
     width: auto; }
     ul.social-media-icons li {
-      background: whitesmoke; } }
+      background: white; } }
 section.single-post {
   text-align: left;
   font-family: "Droid Serif"; }
@@ -316,20 +331,20 @@ code {
   pre {
     margin: 0% 0% 8% 0%; } }
 div.byline {
-  padding: 0px 2px;
+  padding: 0px 5px;
   font-size: .9em;
   display: inline-block;
   width: 100%; }
   div.byline p.published-info {
     display: inline-block;
-    margin: 5px 0px 5px 0px;
-    padding: 2% 0%; }
+    margin: 5px 0px 5px 0px; }
     div.byline p.published-info span.post-published {
-      margin-right: 5px; }
+      margin-right: 5px;
+      font-family: sans-serif; }
     div.byline p.published-info span.post-published,
     div.byline p.published-info span.post-updated,
     div.byline p.published-info i.pencil-icon {
-      padding: 2px;
+      padding: 5px;
       background: white; }
   div.byline .pencil-icon {
     color: rgba(255, 0, 0, 0.62);
@@ -398,93 +413,6 @@ section.recent-posts-list {
 
   .more-posts {
     text-align: center; } }
-html, body, body * {
-  box-sizing: border-box; }
-
-body * {
-  font-family: sans-serif; }
-
-html, body {
-  height: 100%;
-  border: 0;
-  margin: 0; }
-
-/* dashboard */
-h2,
-.add-post {
-  display: inline-block; }
-
-/* create inputs */
-textarea,
-input {
-  border: 1px solid black;
-  background: whitesmoke;
-  outline: none;
-  padding: 20px; }
-
-textarea:focus,
-input:focus {
-  background: lightblue; }
-
-input.title {
-  width: 100vw;
-  height: 10vh;
-  font-size: 1.5em; }
-
-textarea.short-text {
-  width: 100vw;
-  height: 10vh; }
-
-input.tags {
-  height: 10vh;
-  width: 75vw; }
-
-select.collection {
-  height: 5vh; }
-
-textarea.content {
-  width: 100vw;
-  height: 65vh;
-  font-size: 1.5em; }
-
-textarea.short-text {
-  font-size: 1em; }
-
-select.content-type {
-  width: 100vw;
-  height: 5vh; }
-
-section.controls {
-  position: absolute;
-  bottom: 20px;
-  right: 0px;
-  width: 25vw; }
-
-button.save:hover,
-button.markdown-preview:hover,
-button.delete-post:hover {
-  background: lightgreen; }
-
-button.save,
-button.delete-post {
-  position: fixed;
-  bottom: 0px;
-  border: none;
-  height: 8vh;
-  width: calc(25vw / 2);
-  display: inline-block;
-  vertical-align: bottom; }
-
-button.save {
-  right: 0px; }
-
-button.delete-post {
-  right: calc(25vw / 2); }
-
-form.delete-post {
-  right: 300px;
-  display: inline-block; }
-
 section.about {
   width: 100%;
   text-align: center; }

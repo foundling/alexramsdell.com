@@ -1,6 +1,6 @@
 div.byline {
 
-    padding: 0px 2px;
+    padding: 0px 5px;
     font-size: .9em;
     display: inline-block;
     width: 100%;
@@ -9,16 +9,16 @@ div.byline {
 
         display: inline-block;
         margin: 5px 0px 5px 0px;
-        padding: 2% 0%;
 
         span.post-published {
             margin-right: 5px;
+            font-family: sans-serif;
         }
 
         span.post-published,
         span.post-updated,
         i.pencil-icon {
-            padding: 2px;
+            padding: 5px;
             background: white;
         }
 

@@ -1,1 +1,1 @@
-/usr/bin/sass --watch main.scss:main.css
+/usr/local/bin/sass --watch main.scss:main.css

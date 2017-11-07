@@ -1,11 +1,14 @@
 header.site-header {
     
     width: 100%;
-    padding: 8% 20%;
+    padding: 5% 20%;
 
     text-align: left;
     background: white;
 
+    nav {
+        margin-left: 5%;
+    }
     nav > h1, 
     nav > ul,
     nav > ul > li {
@@ -22,4 +25,10 @@ header.site-header {
 
     }
 
+}
+
+@media(max-width: 750px) {
+    header.site-header {
+        padding: 8% 0%;
+    }
 }

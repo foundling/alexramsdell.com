@@ -4,10 +4,8 @@ title: About Me
 ---
 author: alex
 ---
-about:
-
-## About Me
-
-I'm a software developer in Seattle interested in building edible and accessible user interfaces for the web, software-based musical instruments and useful command-line tools. I like constraints, I throw away a lot of code, and I live to refactor. These days I'm diving into Haskell, contracting here and there and getting a CS degree.
----
 _discoverable: yes
+---
+body: 
+
+I like to do cool things, but not all at once.

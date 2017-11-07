@@ -5,16 +5,15 @@ pub_date: 2017-11-06
 content_type: article
 ---
 tags:
+
 MIDI
 javascript
 ---
 body:
 
 To dispel any confusion up front, MIDI is not:
-
- - Those cheesy sounds that you hear on that geocities page that was last updated in August of 1994. That type of 'MIDI' has much more to do with the tension between mass production and the death of quality (well, more specifically, the MIDI extension called General MIDI).
- - Digital Audio.  MIDI doesn't transmit sound itself, just the parameters that can be used to create sound.
-
+ - Cheesy sounds.
+ - sound, in any sense
 
 ## MIDI is About Control
 

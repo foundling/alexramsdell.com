@@ -9,8 +9,9 @@ li.post-keyword {
     margin-bottom: 5px;
     background: rgba(144, 238, 144, 0.9);
 
-    a { 
+    &> a { 
         padding: 2px 5px;
+        font-family: sans-serif;
         //text-shadow: -1px 0px 0px rgba(255,255,255,0.7);
     }
 }
