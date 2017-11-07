@@ -7,10 +7,10 @@
     <section class="recent-posts-list"> 
         {% for post in this.children %}
             {{ title(post) }}
+            {{ social_media(post) }}
             {{ byline(post) }}
             <article class="recent-post"> 
                 <div class="recent-post-stub">
-                    {{ social_media(post) }}
                     <div class="recent-post-text">
                         {{ post.short_text }}
                         <a class="full-article-link" href="{{ post|url }}">...</a>
