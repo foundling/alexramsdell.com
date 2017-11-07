@@ -6,7 +6,7 @@ author: alex
 ---
 _discoverable: yes
 ---
-body: 
+body:
 
 ## About Me 
 
@@ -14,7 +14,7 @@ I'm an independent web developer and open source contributor who spends his time
 
 ## This Site
 
-This site was built with the static, flat-file CMS, [Lektor](https://getlektor.com). See the [projects](/projects) page for information on how they're built.
+This site was built with the static, flat-file CMS, [Lektor](https://getlektor.com). See the [projects](/projects) page for information on how a given project is built.
 
 ## Favorite Steven Wright Jokes
 
