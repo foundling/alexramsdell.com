@@ -4,6 +4,10 @@ pub_date: 2017-11-06
 ---
 content_type: article
 ---
+tags:
+MIDI
+javascript
+---
 body:
 
 To dispel any confusion up front, MIDI is not:
@@ -229,3 +233,5 @@ author: alex
 last_edited: 11/06/2017
 ---
 keywords: MIDI javascript
+---
+short_text: Let's take a look at what MIDI is for, how it came to be, and how we can use the WebMIDI API in the browser.

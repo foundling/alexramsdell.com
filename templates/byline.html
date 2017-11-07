@@ -14,9 +14,9 @@
 
     <ul class="post-keywords">
 
-        {% for tag in ['tag1','tag2','tag3'] %}
+        {% for tag in post.tags %}
         <li class="post-keyword">
-            <a href="/search/">{{tag}}</a>
+            <a href="/search/{{tag}}">{{tag}}</a>
         </li>
         {% endfor %}
 

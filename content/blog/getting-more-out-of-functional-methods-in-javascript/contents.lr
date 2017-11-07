@@ -4,10 +4,14 @@ pub_date: 2017-01-16
 ---
 short_text: In JavaScript, functional array methods like `map`, `filter`, `reduce`, `some` and `every` can bring a lot of clarity and brevity to the parts of your code that transform data.
 ---
-author:
+tags: 
 
-alex
-___
+functional-programming
+javascript 
+
+---
+author: alex
+---
 content_type: article
 ---
 body:
@@ -271,6 +275,6 @@ Whether you love or loathe testing, if you test the right things in isolation, t
 
 
 ---
-content_type: article
----
 last_edited: 01/16/2017
+---
+tags: functional-programming

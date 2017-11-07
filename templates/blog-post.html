@@ -1,4 +1,7 @@
 {% extends "layout.html" %}
 {% block content %}
+    {% for tag in this.tags %}
+    {{tag}}
+    {% endfor %}
     {% include 'post/recent_posts.html' %}
 {% endblock %}
