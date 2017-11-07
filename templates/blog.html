@@ -1,4 +1,31 @@
 {% extends "layout.html" %}
 {% block content %}
-   {% include 'post/recent_posts.html' %}
+    <section class="recent-posts-list"> 
+
+        {% for post in this.children %}
+
+            <article class="recent-post"> 
+
+                {% include 'post/title.html' %}
+                {% include 'post/byline.html' %}
+
+                <div class="recent-post-stub">
+                    <div class="recent-post-text">
+                        {{ post.short_text }}
+                        <a 
+                            class="full-article-link"
+                            href="{{ post|url }}">...</a>
+                    </div>
+                </div>
+
+            </article> 
+
+        {% endfor %}
+
+        <h3 class="more-posts">
+            <a href="archive">More Posts</a>
+        </h3>
+
+        {% include 'post/body_scripts.html' %}
+    </section> 
 {% endblock %}

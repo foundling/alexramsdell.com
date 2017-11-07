@@ -1,7 +1,18 @@
 {% extends "layout.html" %}
+
 {% block content %}
-    {% for tag in this.tags %}
-    {{tag}}
-    {% endfor %}
-    {% include 'post/recent_posts.html' %}
+
+    <section class="single-post">
+
+        {% include 'post/title.html' %}
+        {% include 'post/byline.html' %}
+
+        {{ this }}
+
+        {% if post.content_type == 'article' %}
+            {% include 'post/contribute.html' %}
+        {% endif %}
+
+    </section>
+
 {% endblock %}
