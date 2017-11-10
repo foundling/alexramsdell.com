@@ -1,0 +1,9 @@
+{% macro keywords(tags) -%}
+    <ul class="post-keywords">
+        {% for tag in tags %}
+        <li class="post-keyword">
+            <a href="/tag/{{tag}}">{{tag}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{%- endmacro %}

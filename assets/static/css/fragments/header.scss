@@ -16,13 +16,12 @@ header.site-header {
         display: inline-block; 
         vertical-align: baseline;
         padding-left: 0;
+        border-bottom: 2px solid transparent;
 
     }
 
     nav > h1 {
-
         margin-right: 10px;
-
     }
 
 }
@@ -30,5 +29,12 @@ header.site-header {
 @media(max-width: 750px) {
     header.site-header {
         padding: 8% 0%;
+    }
+}
+
+@media(max-width: 450px) {
+    nav {
+        margin-left: 0%;
+        text-align: center;
     }
 }

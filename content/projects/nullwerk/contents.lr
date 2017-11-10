@@ -1,0 +1,16 @@
+name: Nullwerk
+---
+description: 
+Nullwerk is my first foray into building web instruments (more to come). It's a pretty basic synthesizer that I implemented with Vue2.0 and the Web Audio and Web MIDI APIs. Go ahead, plug your MIDI keyboard into your computer and give it a try!
+---
+tech:
+Vue.js 2.0
+Web Audio API
+Web MIDI API
+---
+tags: 
+
+synthesizers 
+javascript
+---
+source_link: https://github.com/foundling/nullwerk

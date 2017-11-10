@@ -1,0 +1,13 @@
+_model: project
+---
+name: superdir
+---
+description: turn a textual representation of a file tree into a file tree. 
+---
+source_link: https://github.com/foundling/superdir
+---
+tags:
+
+code-management
+cli
+python

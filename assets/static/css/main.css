@@ -55,7 +55,7 @@ p {
 
 /* Components */
 div.main {
-  margin: 10% 20%; }
+  margin: 7% 20%; }
 
 @media (max-width: 750px) {
   header.site-header {
@@ -76,9 +76,13 @@ ul.project-links,
 ul.project-links > li {
   display: inline-block; }
 
+h3 > .github-link {
+  font-weight: lighter;
+  font-size: .5em; }
+
 section.projects {
   padding-left: 5%;
-  padding-rigth: 5%;
+  padding-right: 5%;
   line-height: 1.5em; }
 
 .project-header {
@@ -97,6 +101,10 @@ img.project-image {
   width: 100%;
   max-width: 700px; }
 
+nav.projects-nav {
+  position: absolute;
+  left: 5%; }
+
 @media (max-width: 750px) {
   header.project-header {
     text-align: center; } }
@@ -112,13 +120,18 @@ header.site-header {
   header.site-header nav > ul > li {
     display: inline-block;
     vertical-align: baseline;
-    padding-left: 0; }
+    padding-left: 0;
+    border-bottom: 2px solid transparent; }
   header.site-header nav > h1 {
     margin-right: 10px; }
 
 @media (max-width: 750px) {
   header.site-header {
     padding: 8% 0%; } }
+@media (max-width: 450px) {
+  nav {
+    margin-left: 0%;
+    text-align: center; } }
 h1.recent-post-title {
   display: inline-block;
   vertical-align: middle;

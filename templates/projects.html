@@ -1,6 +1,29 @@
 {% extends "layout.html" %}
+{% from 'macros/keywords.html' import keywords %}  
+
 {% block content %}
+    <nav class="projects-nav">
+        <ul>
+            {% for project in this.children %}
+            <li>
+                <a href="#{{ project.name }}">{{ project.name }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </nav>
     <section class="projects">
-    {{ this.body }}
+        {% for project in this.children %}
+            <h3 id="{{project.name}}">
+                {{ project.name }} 
+                <a href="{{project.source_link | url}}">
+                    <i class="fa fa-github"></i>
+                </a>
+            </h3>
+            {% for img in project.attachments.images %}
+                <img src="{{img|url}}" />
+            {% endfor %}
+            {{ project.description }}
+            {{ keywords(project.tags) }}
+        {% endfor %}
     </section>
 {% endblock %}
