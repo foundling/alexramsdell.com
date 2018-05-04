@@ -1,16 +1,15 @@
 {% extends "layout.html" %}
-{% from 'macros/title.html' import title %} 
-{% from 'macros/byline.html' import byline %} 
-{% from 'macros/keywords.html' import keywords %} 
-{% from 'macros/social_media.html' import social_media %} 
+
+{% from 'macros/post_header.html' import post_header %} 
 
 {% block content %}
+
     <section class="recent-posts-list"> 
+
         {% for post in this.children %}
-            {{ title(post) }}
-            {{ social_media(post) }}
-            {{ byline(post) }}
-            {{ keywords(post.keywords) }}
+
+            {{ post_header(post) }}
+
             <article class="recent-post"> 
                 <div class="recent-post-stub">
                     <div class="recent-post-text">
@@ -19,6 +18,7 @@
                     </div>
                 </div>
             </article> 
+
         {% endfor %}
 
 

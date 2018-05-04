@@ -1,16 +1,11 @@
 {% extends "layout.html" %}
-{% from 'macros/title.html' import title %} 
-{% from 'macros/byline.html' import byline %} 
-{% from 'macros/keywords.html' import keywords %} 
-{% from 'macros/social_media.html' import social_media %}
+{% from 'macros/post_header.html' import post_header %}
 
 {% block content %}
 
     <section class="single-post">
 
-        {{ title(this) }}
-        {{ social_media(this) }}
-        {{ byline(this) }}
+        {{ post_header(this) }}
 
         {% block body %}
             {{ this.body }}

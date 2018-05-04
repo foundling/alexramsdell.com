@@ -1,0 +1,9 @@
+{% from 'macros/title.html' import title %} 
+{% from 'macros/byline.html' import byline %} 
+{% from 'macros/keywords.html' import keywords %} 
+
+{% macro post_header(post) -%}
+    {{ title(post) }}
+    {{ byline(post) }}
+    {# keywords(post.tags) #}
+{%- endmacro %}

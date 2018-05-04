@@ -249,8 +249,7 @@ section.single-post {
   text-align: left;
   font-family: "Droid Serif"; }
   section.single-post > p {
-    font-family: Baskerville;
-    font-family: Baskerville !important; }
+    font-family: 'Lora'; }
   section.single-post > p:first-of-type {
     padding: 4% 0px; }
   section.single-post > p {
@@ -268,7 +267,7 @@ section.single-post {
     margin-bottom: 5%;
     margin-left: 5%; }
   section.single-post li {
-    font-family: Baskerville;
+    font-family: 'Lora';
     list-style-type: initial; }
 
 a[href="#references"] {
@@ -279,20 +278,18 @@ a[href="#references"] {
 p.full-post-content,
 div.recent-post-stub {
   background: rgba(255, 255, 255, 0);
-  margin: 5px 0px 5px 0px;
-  padding: 0px 0px 15px 0px;
+  margin: 5px 0px;
+  padding: 0px;
   text-align: left; }
 
-div.recent-post-text {
-  padding-right: 10px; }
-  div.recent-post-text p {
-    font-family: Baskerville;
-    margin-right: 5px; }
-  div.recent-post-text p:first-of-type {
-    display: inline; }
-  div.recent-post-text a.full-article-link {
-    background: rgba(255, 0, 0, 0.2);
-    padding: 2px 5px 0px 5px; }
+div.recent-post-text p {
+  font-family: 'Lora', serif;
+  margin-right: 5px; }
+div.recent-post-text p:first-of-type {
+  display: inline; }
+div.recent-post-text a.full-article-link {
+  background: rgba(255, 0, 0, 0.2);
+  padding: 2px 5px 0px 5px; }
 
 section.contribute {
   padding: 5%;
@@ -330,7 +327,7 @@ section.contribute {
 pre {
   background: url(/static/img/binding-light.png);
   margin: 0% 0% 3% 0%;
-  padding: 20px;
+  padding: 20px 0px;
   max-width: 100%;
   overflow-x: scroll; }
 
@@ -346,33 +343,36 @@ code {
 @media (max-width: 750px) {
   pre {
     margin: 0% 0% 8% 0%; } }
-div.byline {
-  padding: 0px 5px;
+ul.byline {
+  margin-left: 0px !important;
+  margin-top: 10px;
   font-size: .9em;
   display: inline-block;
   width: 100%; }
-  div.byline p.published-info {
-    display: inline-block;
-    margin: 5px 0px 5px 0px; }
-    div.byline p.published-info span.post-published {
-      margin-right: 5px;
+  ul.byline li {
+    padding: 0;
+    display: inline-block; }
+  ul.byline li.github-icon,
+  ul.byline li.twitter-icon {
+    padding: 5px;
+    background: white; }
+  ul.byline li.publish-date {
+    display: inline-block; }
+    ul.byline li.publish-date span.post-published {
       font-family: sans-serif; }
-    div.byline p.published-info span.post-published,
-    div.byline p.published-info span.post-updated,
-    div.byline p.published-info i.pencil-icon {
+    ul.byline li.publish-date span.post-published,
+    ul.byline li.publish-date span.post-updated,
+    ul.byline li.publish-date i.pencil-icon {
       padding: 5px;
       background: white; }
-  div.byline .pencil-icon {
-    color: rgba(255, 0, 0, 0.62);
-    margin-right: 5px; }
-  div.byline ul.post-keywords {
+    ul.byline li.publish-date i.pencil-icon {
+      color: rgba(255, 0, 0, 0.62); }
+  ul.byline ul.post-keywords {
     display: inline-block; }
-    div.byline ul.post-keywords li.post-keyword {
+    ul.byline ul.post-keywords li.post-keyword {
       display: inline-block;
-      padding: 0.2em;
-      margin-bottom: 5px;
       background: rgba(144, 238, 144, 0.9); }
-      div.byline ul.post-keywords li.post-keyword a {
+      ul.byline ul.post-keywords li.post-keyword a {
         padding: 2px 5px; }
 
 footer {

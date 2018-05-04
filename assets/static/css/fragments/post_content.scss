@@ -8,8 +8,7 @@ section.single-post {
     font-family: "Droid Serif";
 
     >p {
-        font-family: Baskerville;
-        font-family: Baskerville !important;
+        font-family: 'Lora';
     }
     >p:first-of-type {
         padding: 4% 0px;
@@ -37,7 +36,7 @@ section.single-post {
         margin-left: 5%;
     }
     li {
-        font-family: Baskerville;
+        font-family: 'Lora';
         list-style-type: initial;
     }
     
@@ -53,17 +52,15 @@ a[href="#references"] {
 p.full-post-content,
 div.recent-post-stub {
     background: rgba(255,255,255,0.0);
-    margin: 5px 0px 5px 0px;
-    padding: 0px 0px 15px 0px;
+    margin: 5px 0px;
+    padding: 0px;
     text-align: left;
 }
 
 div.recent-post-text {
 
-    padding-right: 10px;
-
     p {
-        font-family: Baskerville;
+        font-family: 'Lora', serif;
         margin-right: 5px;
     }
 

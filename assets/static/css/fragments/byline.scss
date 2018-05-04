@@ -1,17 +1,27 @@
-div.byline {
+ul.byline {
 
-    padding: 0px 5px;
+    margin-left: 0px !important;
+    margin-top: 10px;
     font-size: .9em;
     display: inline-block;
     width: 100%;
 
-    p.published-info {
+    li {
+        padding: 0;
+        display: inline-block;
+    }
+
+    li.github-icon,
+    li.twitter-icon {
+        padding: 5px;
+        background: white;
+    }
+
+    li.publish-date {
 
         display: inline-block;
-        margin: 5px 0px 5px 0px;
 
         span.post-published {
-            margin-right: 5px;
             font-family: sans-serif;
         }
 
@@ -21,13 +31,11 @@ div.byline {
             padding: 5px;
             background: white;
         }
+        i.pencil-icon {
+            color: rgba(255, 0, 0, 0.62);
+        }
 
 
-    }
-
-    .pencil-icon {
-        color: rgba(255, 0, 0, 0.62);
-        margin-right: 5px;
     }
 
 
@@ -38,8 +46,6 @@ div.byline {
         li.post-keyword {
 
             display: inline-block;
-            padding: 0.2em;
-            margin-bottom: 5px;
             background: rgba(144, 238, 144, 0.9);
 
             a { 
