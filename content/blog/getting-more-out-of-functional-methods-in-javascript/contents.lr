@@ -102,23 +102,28 @@ Knowing that the inner function is returned last, let's try this out with our `h
 
 We now need to wrap this in an outer function that returns this function when called:
 
-    function has(list) {
+````javascript
 
         return function(x) {
             return list.includes(x);
         }
 
     }
+````
 
 ### ES6 arrow functions: a gateway drug
 
 I'm fond of using ES6's fat arrow/lambda functions [[1]] (#references) for specifying steps in a computation because they can really pare the syntax down to reveal just the semantics.  Here is the same composition done with arrow functions: 
 
+````javascript
     const has = (list) => (item) => list.includes(item);
+````
 
 These arrows can be nested arbitrarily, so this is just as valid:
 
+````javascript
     const wat = (arg1) => (arg2) => (arg3) => (arg4) => Math.max(arg1, arg2, arg3, arg4);
+````
 
 You can read this as: "`wat` is a function that takes in `arg1` and returns a function that takes in `arg2`, which returns a function that takes in `arg3`, which returns a function that takes in `arg4`, which returns the max of `arg1`, `arg2`, `arg3` and `arg4`".
 
@@ -128,11 +133,14 @@ Anyway, I encourage you to dive down this rabbit hole head first :]
 
 Finally, we can use this new approach like this:
 
+````javascript
+
     dataset
         .filter(has(x))
         .map(transformTo(Y))
         .filter(compact)
         .length();
+````
 
 This is just as readable as the snippet I originally offered, but it's more capable. The trick here is that I'm passing the return value of `has(x)`, which is a function itself, as the argument to the `filter` call.  The anonymous function that `has(x)` returns now contains a reference to `x` and can still accept an argument from `filter` as `filter` iterates through its input array.  In a sense, we are merging or compiling separate scopes into one.
 
@@ -141,6 +149,8 @@ This is just as readable as the snippet I originally offered, but it's more capa
 Let's try this technique with a real example. Let's imagine I have the following:
 
 A list of filenames that have the format `<name>_<datestring>.json`. 
+
+````javascript
 
     const filenames = [
         'alice_2016-12-07.json',
@@ -264,6 +274,7 @@ If the goal were to find all files missing from the date range for each user in 
 
     /* log results */
     console.log(JSON.stringify(data, null, 2));
+````
 
 
 ## Parting Thoughts
