@@ -376,8 +376,11 @@ div.byline {
         padding: 2px 5px; }
 
 footer {
-  padding: 1% 20%;
-  font-size: 0.7em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2%;
   background: white;
   border-top: 1px solid lightgreen; }
   footer a.creator-link:hover {
@@ -385,16 +388,8 @@ footer {
   footer i.fa-heart {
     color: rgba(255, 0, 0, 0.62); }
   footer p {
-    height: 5vh;
-    line-height: 5vh;
-    text-align: center; }
+    font-size: 0.8em; }
 
-@media (max-width: 750px) {
-  footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1%; } }
 section.recent-posts-list {
   text-align: left;
   padding-left: 5%;

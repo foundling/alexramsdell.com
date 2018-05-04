@@ -1,5 +1,4 @@
+archive page
+footer layout breaks on mobile
 syntax highlighting
-update about page
-publish more posts
-figure out deployment strategy
-css: make badge elements a grid with no left padding at all, so they stack properly.
+make badge elements a grid with no left padding at all, so they stack properly.

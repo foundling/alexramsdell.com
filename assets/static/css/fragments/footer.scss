@@ -1,7 +1,12 @@
 footer {
 
-    padding: 1% 20%;
-    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2%;
+
     background: white;
     border-top: 1px solid lightgreen;
 
@@ -14,9 +19,7 @@ footer {
     }
 
     p {
-        height: 5vh;
-        line-height: 5vh;
-        text-align: center;
+        font-size: 0.8em
     }
 
 }
@@ -24,10 +27,4 @@ footer {
 
 
 @media (max-width: 750px) {
-    footer {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 1%;
-    }
 }

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+/usr/local/bin/sass --watch ./assets/static/css/main.scss:./assets/static/css/main.css &
+lektor server
