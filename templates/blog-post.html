@@ -1,5 +1,6 @@
 {% extends "layout.html" %}
 {% from 'macros/post_header.html' import post_header %}
+{% from 'macros/references.html' import references %}
 
 {% block content %}
 
@@ -11,9 +12,12 @@
             {{ this.body }}
         {% endblock %}
 
+        {{ references(this) }} 
+
         {% if this.content_type == 'article' %}
             {% include 'contribute.html' %}
         {% endif %}
+
 
     </section>
 
