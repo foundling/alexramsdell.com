@@ -1,5 +1,9 @@
 section.single-post {
 
+    p {
+        padding: 2% 0;
+    }
+
     article.single-post-body {
         margin-top: 5%;
     }
@@ -37,8 +41,7 @@ section.single-post {
         margin-bottom: 2%;
     }
     ul {
-        margin-bottom: 5%;
-        margin-left: 5%;
+        margin: 5%;
     }
     li {
         font-family: 'Lora';

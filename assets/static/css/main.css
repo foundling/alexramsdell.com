@@ -261,6 +261,8 @@ section.single-post {
   padding-left: 5%;
   text-align: left;
   font-family: "Lora", serif; }
+  section.single-post p {
+    padding: 2% 0; }
   section.single-post article.single-post-body {
     margin-top: 5%; }
   section.single-post > p {
@@ -277,8 +279,7 @@ section.single-post {
     margin-top: 2%;
     margin-bottom: 2%; }
   section.single-post ul {
-    margin-bottom: 5%;
-    margin-left: 5%; }
+    margin: 5%; }
   section.single-post li {
     font-family: 'Lora';
     list-style-type: initial; }
