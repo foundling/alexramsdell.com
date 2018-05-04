@@ -246,12 +246,11 @@ ul.social-media-icons {
     ul.social-media-icons li {
       background: white; } }
 section.single-post {
+  padding-left: 5%;
   text-align: left;
   font-family: "Droid Serif"; }
   section.single-post > p {
     font-family: 'Lora'; }
-  section.single-post > p:first-of-type {
-    padding: 4% 0px; }
   section.single-post > p {
     padding: 0% 0% 3% 0%; }
   section.single-post p > a {
@@ -395,7 +394,7 @@ section.recent-posts-list {
   padding-left: 5%;
   padding-right: 5%; }
   section.recent-posts-list article.recent-post {
-    margin: 0px auto;
+    margin-top: 10px;
     width: 100%;
     padding: 20px;
     margin-bottom: 20px; }

@@ -1,5 +1,6 @@
 section.single-post {
 
+    padding-left: 5%;
     div[class*="-badge"] {
         //visibility: hidden;
     }
@@ -11,7 +12,7 @@ section.single-post {
         font-family: 'Lora';
     }
     >p:first-of-type {
-        padding: 4% 0px;
+        //padding: 4% 0px;
     }
     >p {
         padding: 0% 0% 3% 0%;
