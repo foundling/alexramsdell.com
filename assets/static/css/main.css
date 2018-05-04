@@ -328,8 +328,7 @@ section.contribute {
     padding: 20px; }
 
   section.single-post {
-    margin: 5px;
-    padding: 5%; }
+    padding: 0% 5% 5% 5%; }
     section.single-post > p {
       padding: 0% 0% 8% 0%; }
     section.single-post h2, section.single-post h3, section.single-post h4 {
