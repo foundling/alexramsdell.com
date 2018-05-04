@@ -161,23 +161,29 @@ A list of filenames that have the format `<name>_<datestring>.json`.
         'bob_2016-12-02.json'
         // ....
     ];
+````
  
 And list of users: 
 
+````javascript
     const users = [
         'bob',
         'alice',
         'fred'
     ];
+````
 
 And finally, a date range (inclusive):
 
-    const start = ‘2016-12-01’;
-    const stop = ‘2016-12-15’;
+````javascript
+    const start = '2016-12-01';
+    const stop = '2016-12-15';
+````
 
 
 If the goal were to find all files missing from the date range for each user in `users`, here’s how I could use the technique discussed above:
 
+````javascript
     const moment = require('moment');
     const assert = require('assert');
     const users = [ 'alice', 'bob', 'fred' ];
