@@ -1,4 +1,4 @@
-h1.recent-post-title {
+h1.post-title {
 
     display: inline-block;
     vertical-align: middle;
@@ -15,7 +15,7 @@ h1.recent-post-title {
 }
 
 @media(max-width: 750px) {
-    h1.recent-post-title {
+    h1.post-title {
         a {
             font-size: 1.6em;
         }

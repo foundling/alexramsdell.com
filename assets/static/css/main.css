@@ -132,19 +132,19 @@ header.site-header {
   nav {
     margin-left: 0%;
     text-align: center; } }
-h1.recent-post-title {
+h1.post-title {
   display: inline-block;
   vertical-align: middle;
   margin-right: 5px;
   margin: 2% 0% 0% 0%;
   position: relative;
   font-family: 'sans-serif', Helvetica, Arial; }
-  h1.recent-post-title a,
-  h1.recent-post-title a > p {
+  h1.post-title a,
+  h1.post-title a > p {
     display: inline; }
 
 @media (max-width: 750px) {
-  h1.recent-post-title a {
+  h1.post-title a {
     font-size: 1.6em; } }
 div.article-badge,
 div.news-badge,
