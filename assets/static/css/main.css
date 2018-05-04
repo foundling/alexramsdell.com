@@ -214,17 +214,29 @@ div.news-badge {
 
   div.quick-tip-badge i {
     font-size: 1.3em; } }
-ul.post-keywords {
-  display: inline-block; }
+ul.post-tags {
+  margin-top: 15px;
+  margin-left: 0px !important; }
 
-li.post-keyword {
+.tags-label {
   display: inline-block;
-  padding: 0.2em;
-  margin-bottom: 5px;
-  background: rgba(144, 238, 144, 0.9); }
-  li.post-keyword > a {
-    padding: 2px 5px;
-    font-family: sans-serif; }
+  color: #4a4747; }
+
+li.post-tag {
+  font-size: 0.8em;
+  border: 1px solid #dedede;
+  border-radius: 3px;
+  padding: 2px 5px;
+  margin: 5px 0;
+  display: inline-block;
+  margin-bottom: 5px; }
+  li.post-tag > a {
+    font-family: sans-serif;
+    color: rgba(244, 67, 54, 0.84); }
+
+.tags-label,
+li.post-tag {
+  font-family: 'Lora', serif; }
 
 ul.social-media-icons {
   display: inline-block;
@@ -249,6 +261,8 @@ section.single-post {
   padding-left: 5%;
   text-align: left;
   font-family: "Droid Serif"; }
+  section.single-post article.single-post-body {
+    margin-top: 5%; }
   section.single-post > p {
     font-family: 'Lora'; }
   section.single-post > p {
@@ -257,7 +271,7 @@ section.single-post {
     font-family: "Droid Serif"; }
   section.single-post h1, section.single-post h2, section.single-post h3, section.single-post h4 {
     font-family: Helvetica; }
-  section.single-post h1.recent-post {
+  section.single-post h1.post {
     padding: 4% 0%; }
   section.single-post h2, section.single-post h3, section.single-post h4 {
     margin-top: 2%;
@@ -275,18 +289,18 @@ a[href="#references"] {
   vertical-align: super; }
 
 p.full-post-content,
-div.recent-post-stub {
+div.post-stub {
   background: rgba(255, 255, 255, 0);
   margin: 5px 0px;
   padding: 0px;
   text-align: left; }
 
-div.recent-post-text p {
+div.post-text p {
   font-family: 'Lora', serif;
   margin-right: 5px; }
-div.recent-post-text p:first-of-type {
+div.post-text p:first-of-type {
   display: inline; }
-div.recent-post-text a.full-article-link {
+div.post-text a.full-article-link {
   background: rgba(255, 0, 0, 0.2);
   padding: 2px 5px 0px 5px; }
 
@@ -308,15 +322,13 @@ section.contribute {
     text-decoration: underline; }
 
 @media (max-width: 750px) {
-  article.recent-post {
+  article.post {
     background: white;
     padding: 20px; }
 
   section.single-post {
     margin: 5px;
     padding: 5%; }
-    section.single-post > p:first-of-type {
-      padding: 10% 0%; }
     section.single-post > p {
       padding: 0% 0% 8% 0%; }
     section.single-post h2, section.single-post h3, section.single-post h4 {
@@ -373,6 +385,12 @@ ul.byline {
       background: rgba(144, 238, 144, 0.9); }
       ul.byline ul.post-keywords li.post-keyword a {
         padding: 2px 5px; }
+
+div.blog-post-references {
+  padding: 5%;
+  margin: 5%;
+  background: white;
+  border: 1px dotted gray; }
 
 footer {
   display: flex;

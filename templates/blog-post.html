@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 {% from 'macros/post_header.html' import post_header %}
 {% from 'macros/references.html' import references %}
+{% from 'macros/tags.html' import tags %}
 
 {% block content %}
 
@@ -8,11 +9,15 @@
 
         {{ post_header(this) }}
 
-        {% block body %}
-            {{ this.body }}
-        {% endblock %}
+        <article class="single-post-body"> 
+            {% block body %}
+                {{ this.body }}
+            {% endblock %}
+        </article>
 
         {{ references(this) }} 
+
+        {{ tags(this.tags) }}
 
         {% if this.content_type == 'article' %}
             {% include 'contribute.html' %}

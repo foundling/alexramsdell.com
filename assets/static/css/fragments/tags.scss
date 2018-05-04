@@ -1,0 +1,33 @@
+ul.post-tags {
+    margin-top: 15px;
+    margin-left: 0px !important;
+}
+
+.tags-label {
+    display: inline-block;
+    color: rgb(74, 71, 71);
+}
+
+li.post-tag {
+
+    font-size: 0.8em;
+    border: 1px solid rgb(222, 222, 222);
+    border-radius: 3px;
+    padding: 2px 5px;
+    margin: 5px 0;
+    display: inline-block;
+    margin-bottom: 5px;
+    //background: rgba(144, 238, 144, 0.9);
+
+    &> a { 
+        font-family: sans-serif;
+        color: rgba(244, 67, 54, 0.84);
+
+        //text-shadow: -1px 0px 0px rgba(255,255,255,0.7);
+    }
+}
+
+.tags-label,
+li.post-tag {
+    font-family: 'Lora', serif;
+}

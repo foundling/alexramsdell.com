@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 {% from 'macros/title.html' import title %} 
 {% from 'macros/byline.html' import byline %} 
-{% from 'macros/keywords.html' import keywords %} 
+{% from 'macros/tags.html' import tags %} 
 {% from 'macros/social_media.html' import social_media %} 
 
 {% block content %}
@@ -10,12 +10,11 @@
             {{ title(post) }}
             {{ social_media(post) }}
             {{ byline(post) }}
-            {{ keywords(post.keywords) }}
+            {{ tags(post.tags) }}
             <article class="recent-post"> 
                 <div class="recent-post-stub">
                     <div class="recent-post-text">
                         {{ post.short_text }}
-                        <a class="full-article-link" href="{{ post|url }}">...</a>
                     </div>
                 </div>
             </article> 

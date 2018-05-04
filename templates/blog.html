@@ -1,6 +1,7 @@
 {% extends "layout.html" %}
 
 {% from 'macros/post_header.html' import post_header %} 
+{% from 'macros/tags.html' import tags %} 
 
 {% block content %}
 
@@ -14,7 +15,7 @@
                 <div class="recent-post-stub">
                     <div class="recent-post-text">
                         {{ post.short_text }}
-                        <a class="full-article-link" href="{{ post|url }}">...</a>
+                        {{ tags(post.tags) }}
                     </div>
                 </div>
             </article> 

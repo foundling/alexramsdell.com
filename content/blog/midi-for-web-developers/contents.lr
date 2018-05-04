@@ -4,15 +4,28 @@ pub_date: 2017-11-06
 ---
 content_type: article
 ---
+author: alex
+---
+last_edited: 11/06/2017
+---
+keywords: MIDI javascript
+---
+short_text: Let's take a look at what MIDI is for, how it came to be, and how we can use the WebMIDI API in the browser.
+---
+references:
+- [Data Communication / MIDI slides](http://www.nyu.edu/classes/bello/FMT_files/8_MIDIcomms.pdf)
+- [What is MIDI ?](http://www.harfesoft.de/aixphysik/sound/midi/pages/whatmidi.html)
+- [MIDI Messages](http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_messages.htm)
+- [The Beginnings of Sound and Synthesis](http://digitalsoundandmusic.com/chapters/ch6)
+---
 tags:
-
 MIDI
-javascript
+JavaScript
 ---
 body:
 
 To dispel any confusion up front, MIDI is not:
- - Cheesy sounds.
+ - Cheesy sounds
  - sound, in any sense
 
 ## MIDI is About Control
@@ -196,11 +209,11 @@ A MIDI message, as mentioned previously, is a 10-bit word, where the first and l
 
 Before we dive into deciphering the status and data bytes' content, here is the MIDI data corresponding to a middle C played at full velocity:
 
-
+````
     byte 1: 1001_1111 --> status byte for MIDI channel 16
     byte 2: 0011_1100 --> data byte, key 60
     byte 3: 0111_1111 --> data byte, velocity is 127
-
+````
 
 ## PART II: The Web Midi API
 
@@ -217,20 +230,9 @@ The Web MIDI API provides low-level access to connected MIDI devices.  In a nuts
 
 To access the Web MIDI API, we need to access the `requestMIDIAccess` method on the global `navigator` object. This returns a `Promise`.  Because requesting MIDI access from the browser presents security implications, the user needs to enable web midi via a browser-prompt, although this can vary depending on the host of the browser/user agent.
 
+<!--
+
 ### Detecting MIDI Inputs and Outputs
 ### Getting Information About your Midi Device
 ### Midi 
-
-#### Sources:
-http://www.nyu.edu/classes/bello/FMT_files/8_MIDIcomms.pdf
-http://www.harfesoft.de/aixphysik/sound/midi/pages/whatmidi.html
-http://www.electronics.dit.ie/staff/tscarff/Music_technology/midi/midi_messages.htm
-http://digitalsoundandmusic.com/chapters/ch6/
----
-author: alex
----
-last_edited: 11/06/2017
----
-keywords: MIDI javascript
----
-short_text: Let's take a look at what MIDI is for, how it came to be, and how we can use the WebMIDI API in the browser.
+-->

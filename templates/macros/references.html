@@ -1,6 +1,8 @@
 {% macro references(post) -%}
-    <h3>References</h3>
+    {% if post.references %}
     <div class="blog-post-references">
+        <h3>References</h3>
         {{ post.references }}
-    </ul>
+    </div>
+    {% endif %}
 {%- endmacro %}
