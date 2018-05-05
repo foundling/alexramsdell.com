@@ -307,7 +307,6 @@ div.post-text a.full-article-link {
 
 @media (max-width: 750px) {
   .post {
-    background: white;
     padding: 0% 5% 5% 5%; }
     .post__title a {
       font-size: 1.6em; }
