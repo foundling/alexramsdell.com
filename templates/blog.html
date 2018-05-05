@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
-{% from 'macros/post_header.html' import post_header %} 
-{% from 'macros/tags.html' import tags %} 
+{% from 'blog/post/macros/post_header.html' import post_header %} 
+{% from 'common/macros/tags.html' import tags %} 
 
 {% block content %}
 
@@ -12,16 +12,17 @@
             {{ post_header(post) }}
 
             <article class="recent-post"> 
-                <div class="recent-post-stub">
-                    <div class="recent-post-text">
-                        {{ post.short_text }}
-                        {{ tags(post.tags) }}
-                    </div>
+                <div class="recent-post__text">
+                    {{ post.short_text }}
+                </div>
+                <div class="recent-post__tags">
+                    {{ tags(post.tags) }}
                 </div>
             </article> 
 
         {% endfor %}
 
+    </section> 
 
         <!--
         <h3 class="more-posts">
@@ -29,5 +30,4 @@
         </h3>
         -->
 
-    </section> 
 {% endblock %}

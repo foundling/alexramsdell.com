@@ -1,15 +1,15 @@
 {% extends "layout.html" %}
-{% from 'blog/post/macros/post_header.html' import post_header %}
-{% from 'blog/post/macros/references.html' import references %}
+{% from 'macros/post_header.html' import post_header %}
+{% from 'macros/references.html' import references %}
 {% from 'common/macros/tags.html' import tags %}
 
 {% block content %}
 
-    <section class="post">
+    <section class="single-post">
 
         {{ post_header(this) }}
 
-        <article class="post__body"> 
+        <article class="single-post-body"> 
             {% block body %}
                 {{ this.body }}
             {% endblock %}
@@ -20,7 +20,7 @@
         {{ tags(this.tags) }}
 
         {% if this.content_type == 'article' %}
-            {% include 'blog/post/contribute.html' %}
+            {% include 'contribute.html' %}
         {% endif %}
 
 

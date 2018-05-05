@@ -1,27 +1,28 @@
 {% macro badge(post) -%}
-    {% if content_type == 'article' %}
-    <div class="{{post.content_type}}-badge"
+    
+    {% if post.content_type == 'article' %}
+    <div class="post__article-badge"
          title="{{post.content_type}}">
-        <a href="{% post|url %}">
+        <a href="{{ post|url }}">
             <i class="fa fa-paper-plane"></i>
         </a>
     </div>
     {% endif %}
-
-    {% if content_type == 'news' %}
-    <div class="news-badge" 
+    {% if post.content_type == 'news' %}
+    <div class="post__news-badge" 
          title="news">
         <a href="{{ '/news'|url }}">news</a>
     </div>
     {% endif %}
 
-    {% if content_type == 'quick-tip' %}
+    {% if post.content_type == 'quick-tip' %}
     <div 
-        class="quick-tip-badge"
+        class="post__quick-tip-badge"
         title="quick tip">
         <a href="{{ '/quick_tips'|url }}">
             <i class="fa fa-terminal"></i>
         </a>
     </div>
     {% endif %}
+
 {%- endmacro %}

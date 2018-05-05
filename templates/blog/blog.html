@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% from 'macros/post_header.html' import post_header %} 
+{% from 'common/macros/tags.html' import tags %} 
+
+{% block content %}
+
+    <section class="recent-posts"> 
+
+        {% for post in this.children %}
+
+        <article class="post-summary">
+
+            {{ post_header(post) }}
+
+            <article class="post-summary"> 
+                {{ post.short_text }}
+                {{ tags(post.tags) }}
+            </article> 
+
+        </article>
+
+        {% endfor %}
+
+
+        <!--
+        <h3 class="more-posts">
+            <a href="archive">More Posts</a>
+        </h3>
+        -->
+
+    </section> 
+{% endblock %}

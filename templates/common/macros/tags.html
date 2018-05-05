@@ -1,0 +1,12 @@
+{% macro tags(tags) -%}
+    <ul class="tags">
+
+        <span class="tags__label">tags: </span>
+        {% for tag in tags %}
+        <li class="tags__tag">
+            <a href="/tag/{{tag}}">{{tag}}</a>
+        </li>
+        {% endfor %}
+
+    </ul>
+{%- endmacro %}

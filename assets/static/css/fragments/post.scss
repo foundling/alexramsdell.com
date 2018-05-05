@@ -1,69 +1,147 @@
-a[href="#references"] {
-    color: rgba(255, 0, 0, 0.62);
-    font-size: .6em;
-    vertical-align: super;
-}
+.post {
 
-section.contribute {
-
-    padding: 5%;
-    background: lightgreen;
-
-    div.contribute-question-container {
-        height: 2em;
-        width: 2em;
-        margin-right: 5px;
-        display: inline-flex;
-        background: white;
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-    }
-    p.contribute-copy {
-        display: inline !important;
-    }
-    a.gh-repo-blog-posts {
-        text-decoration: underline;
-    }
-
-}
-section.single-post {
-
+    padding-left: 5%;
     text-align: left;
-
     font-family: "Lora", serif;
 
+    &__title {
+
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 5px;
+        margin: 2% 0% 0% 0%;
+        position: relative;
+        font-family: 'sans-serif', Helvetica, Arial;
+
+        a,
+        a > p {
+            display: inline;
+        }
+
+    }
+    &__body {
+        margin-top: 5%;
+    }
+
+    p {
+        padding: 2% 0;
+    }
     >p {
-        padding: 20px 0;
-        font-family: Georgia;
+        font-family: 'Lora';
     }
     >p:first-of-type {
-        padding: 4% 0px;
+        //padding: 4% 0px;
     }
     >p {
         padding: 0% 0% 3% 0%;
     }
-
-    h1.recent-post {
+    p > a {
+        font-family: "Droid Serif";
+    }
+    h1,h2,h3,h4 {
+        font-family: Helvetica;
+    }
+    h1.post {
         padding: 4% 0%;
     }
     h2, h3, h4 {
         margin-top: 2%;
         margin-bottom: 2%;
     }
-
+    ul {
+        margin: 5%;
+    }
+    li {
+        font-family: 'Lora';
+        list-style-type: initial;
+    }
     
+    &__contribute {
+
+        padding: 5%;
+        background: lightgreen;
+
+        &-question-container {
+            height: 2em;
+            width: 2em;
+            margin-right: 5px;
+            display: inline-flex;
+            background: white;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        &-copy {
+            display: inline !important;
+        }
+        &-repo {
+            text-decoration: underline;
+        }
+
+    }
+
+
 }
 
+a[href="#references"] {
+    color: rgba(255, 0, 0, 0.62);
+    font-size: .6em;
+    vertical-align: super;
+}
+
+p.full-post-content,
+div.post-stub {
+    background: rgba(255,255,255,0.0);
+    margin: 5px 0px;
+    padding: 0px;
+    text-align: left;
+}
+
+div.post-text {
+
+    p {
+        font-family: 'Lora', serif;
+        margin-right: 5px;
+    }
+
+    p:first-of-type {
+        display: inline;
+    } 
+
+    a.full-article-link {
+        background: rgba(255, 0, 0, 0.2);
+        padding: 2px 5px 0px 5px;
+    }
+
+}
+
+
+
+@media(max-width: 750px) {
+    .post {
+        &__title {
+            a {
+                font-size: 1.6em;
+            }
+        }
+    }
+}
 @media(max-width: 750px) {
 
-    section.single-post {
+    .post {
 
-        margin: 5px;
-        padding: 5%;
+        background: white;
+        padding: 20px;
+
+    }
+
+    .post {
+
+        padding: 0% 5% 5% 5%;
 
         >p:first-of-type {
-            padding: 10% 0%;
+           //padding: 10% 0%;
         }
 
         >p {
@@ -76,6 +154,10 @@ section.single-post {
 
         h2,h3,h4 {
             margin-bottom: 8%;
+        }
+
+        li {
+            list-style-type: initial;
         }
 
     }

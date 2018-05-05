@@ -1,0 +1,7 @@
+{% from 'blog/post/macros/title.html' import title %} 
+{% from 'blog/post/macros/byline.html' import byline %} 
+
+{% macro post_header(post) -%}
+    {{ title(post) }}
+    {{ byline(post) }}
+{%- endmacro %}

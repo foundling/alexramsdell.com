@@ -1,6 +1,6 @@
-div.article-badge,
-div.news-badge,
-div.quick-tip-badge {
+.post__article-badge,
+.post__news-badge,
+.post__quick-tip-badge {
 
     position: absolute;
     left: -2.5em;
@@ -20,7 +20,7 @@ div.quick-tip-badge {
 
 }
 
-div.article-badge {
+.post__article-badge {
 
     border-radius: 50%;
     background: lightgreen;
@@ -39,7 +39,7 @@ div.article-badge {
 
 }
 
-div.quick-tip-badge {
+.post__quick-tip-badge {
     a {
         padding: 10px;
     }
@@ -52,7 +52,7 @@ div.quick-tip-badge {
 
 }
 
-div.news-badge {
+.post__news-badge {
 
 
     a {
@@ -69,9 +69,9 @@ div.news-badge {
 
 @media(max-width:750px) {
 
-    div.article-badge,
-    div.news-badge,
-    div.quick-tip-badge {
+    .post__article-badge,
+    .post__news-badge,
+    .post__quick-tip-badge {
         position: relative;
         top: initial;
         left: initial;
@@ -79,14 +79,14 @@ div.news-badge {
         vertical-align: text-bottom;
         margin-right: 10px;
     }
-    div.news-badge a {
+    .post__news-badge a {
         font-size: 0.4em;
         font-weight: 100;
     }
-    div.article-badge i {
-        font-size:  1.4em;
+    .post__article-badge i {
+        font-size:  .7em;
     }
-    div.quick-tip-badge i {
+    .post__quick-tip-badge i {
         font-size: 1.3em;
     }
 }
