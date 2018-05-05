@@ -104,6 +104,7 @@ We now need to wrap this in an outer function that returns this function when ca
 
 ````javascript
 
+    function has(list) {
         return function(x) {
             return list.includes(x);
         }
