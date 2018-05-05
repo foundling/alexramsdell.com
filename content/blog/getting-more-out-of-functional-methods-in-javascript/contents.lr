@@ -1,4 +1,4 @@
-title: Getting More out of Functional Methods in JavaScript
+title: Composing JavaScript Functions
 ---
 author: alex
 ---
@@ -8,7 +8,7 @@ last_edited: 04/4/2017
 ---
 pub_date: 2017-01-16
 ---
-short_text: In JavaScript, functional array methods like `map`, `filter`, `reduce`, `some` and `every` can bring a lot of clarity and brevity to the parts of your code that transform data.
+short_text: In JavaScript, array methods like `map`, `filter`, `reduce`, `some` and `every` can bring a lot of clarity and brevity to the parts of your code that transform data.
 ---
 tags: 
 functional programming
@@ -19,7 +19,7 @@ references:
 ---
 body:
 
-In JavaScript, functional array methods like `map`, `filter`, `reduce`, `some` and `every` can bring a lot of clarity and brevity to the parts of your code that transform data.
+In JavaScript, array methods like `map`, `filter`, `reduce`, `some` and `every` can bring a lot of clarity and brevity to the parts of your code that transform data.
 
 This is what I mean:
 
@@ -38,9 +38,9 @@ See how clear that is? I've filtered a dataset to just the items that have X, tu
 
 There are two important things to note here:
 
-On an idiomatic level, I'm taking advantage of the orthogonality in the functional array methods that JavaScript offers (note that `sort`, although useful, mutates its input and is not one of these). Each array method works with an array and each method callback accepts a single item from that array. After the array method is invoked on each array item in its input, the current method returns the new array, on which another method can be called.
++ On an idiomatic level, I'm taking advantage of the orthogonality in the functional array methods that JavaScript offers (note that `sort`, although useful, mutates its input and is not one of these). Each array method works with an array and each method callback accepts a single item from that array. After the array method is invoked on each array item in its input, the current method returns the new array, on which another method can be called.
 
-On an aesthetic level, I'm giving each callback a name that expresses the computational nature of the work that it does. The `filter` callback name, `hasX`, resembles a proposition and fittingly returns `true` or `false`. `map`'s callback name, `toY`, indicates what that item will be turned into. The goal here is to not only transform data in a pipeline, but to communicate any nuances in that overall transformation with great clarity.
++ On an aesthetic level, I'm giving each callback a name that expresses the computational nature of the work that it does. The `filter` callback name, `hasX`, resembles a proposition and fittingly returns `true` or `false`. `map`'s callback name, `toY`, indicates what that item will be turned into. The goal here is to not only transform data in a pipeline, but to communicate any nuances in that overall transformation with great clarity.
 
 ## I want more!
 
