@@ -5,29 +5,30 @@
 
 {% block content %}
 
-    <section class="recent-posts-list"> 
+    <section class="blog__recent-posts"> 
 
         {% for post in this.children %}
 
-            {{ post_header(post) }}
+        <article class="post-summary">
 
-            <article class="recent-post"> 
-                <div class="recent-post__text">
-                    {{ post.short_text }}
-                </div>
-                <div class="recent-post__tags">
-                    {{ tags(post.tags) }}
-                </div>
-            </article> 
+            <section class="post-summary__header">
+                {{ post_header(post) }}
+            </section>
+
+            <section class="post-summary__short-text">
+                {{ post.short_text }}
+            </section>
+            <section class="post-summary__tags">
+                {{ tags(post.tags) }}
+            </section>
+
+        </article>
 
         {% endfor %}
 
-    </section> 
+        {% include 'blog/more-posts.html' %}
 
-        <!--
-        <h3 class="more-posts">
-            <a href="archive">More Posts</a>
-        </h3>
-        -->
+
+    </section> 
 
 {% endblock %}
