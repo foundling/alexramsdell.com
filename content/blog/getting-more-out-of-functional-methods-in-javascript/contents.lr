@@ -103,12 +103,10 @@ Knowing that the inner function is returned last, let's try this out with our `h
 We now need to wrap this in an outer function that returns this function when called:
 
 ````javascript
-
     function has(list) {
         return function(x) {
             return list.includes(x);
         }
-
     }
 ````
 
