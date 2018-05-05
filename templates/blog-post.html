@@ -1,4 +1,5 @@
 {% extends "layout.html" %}
+
 {% from 'blog/post/macros/post_header.html' import post_header %}
 {% from 'blog/post/macros/references.html' import references %}
 {% from 'common/macros/tags.html' import tags %}
@@ -10,9 +11,7 @@
         {{ post_header(this) }}
 
         <article class="post__body"> 
-            {% block body %}
-                {{ this.body }}
-            {% endblock %}
+            {% block body %}{{ this.body }}{% endblock %}
         </article>
 
         {{ references(this) }} 

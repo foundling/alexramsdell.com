@@ -9,20 +9,13 @@
 
         {% for post in this.children %}
 
-        <article class="post-summary">
+            <article class="post-summary">
 
-            <section class="post-summary__header">
-                {{ post_header(post) }}
-            </section>
+                <section class="post-summary__header">{{ post_header(post) }}</section>
+                <section class="post-summary__short-text">{{ post.short_text }}</section>
+                <section class="post-summary__tags">{{ tags(post.tags) }}</section>
 
-            <section class="post-summary__short-text">
-                {{ post.short_text }}
-            </section>
-            <section class="post-summary__tags">
-                {{ tags(post.tags) }}
-            </section>
-
-        </article>
+            </article>
 
         {% endfor %}
 
