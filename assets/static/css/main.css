@@ -390,9 +390,8 @@ footer {
   padding-left: 5%;
   padding-right: 5%; }
   .blog__recent-posts .post-summary {
-    margin-top: 10px;
-    width: 100%;
-    margin-bottom: 20px; }
+    margin: 10% 0;
+    width: 100%; }
     .blog__recent-posts .post-summary__short-text {
       margin: 2% 0;
       font-family: 'Lora', serif; }

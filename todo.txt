@@ -1,4 +1,5 @@
-archive page
+archive page - filter on post name and post type (arrow icon should link to all posts of that type)
+
 footer layout breaks on mobile
 syntax highlighting
 make badge elements a grid with no left padding at all, so they stack properly.
