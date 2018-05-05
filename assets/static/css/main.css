@@ -319,7 +319,7 @@ div.post-text a.full-article-link {
 pre {
   background: url(/static/img/binding-light.png);
   margin: 0% 0% 3% 0%;
-  padding: 20px 0px;
+  padding: 3% 3% 3% 0%;
   max-width: 100%;
   overflow-x: scroll; }
 
@@ -332,9 +332,6 @@ li > code {
 code {
   text-shadow: 0px 1px 0px white; }
 
-@media (max-width: 750px) {
-  pre {
-    margin: 0% 3%; } }
 ul.byline {
   margin-left: 0px !important;
   margin-top: 10px !important;
