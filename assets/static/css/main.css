@@ -76,6 +76,25 @@ section.projects {
   padding-right: 5%;
   line-height: 1.5em; }
 
+.project {
+  margin: 0% 0% 5% 0%;
+  padding: 2% 5%;
+  background: white; }
+  .project .project-title {
+    padding: 2% 0%; }
+
+.demo-link {
+  display: inline-block;
+  background: rgba(244, 67, 54, 0.84);
+  color: white;
+  padding: 0px 4px;
+  border-radius: 2px;
+  border: 1px solid transparent; }
+  .demo-link:hover {
+    color: rgba(244, 67, 54, 0.84);
+    background: white;
+    border: 1px solid #282828; }
+
 .project-header {
   text-align: left; }
 

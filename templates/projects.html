@@ -13,17 +13,25 @@
     </nav>
     <section class="projects">
         {% for project in this.children %}
-            <h3 id="{{project.name}}">
+
+            <div class="project">
+
+                <h3 class="project-title" id="{{project.name}}">
                 {{ project.name }} 
                 <a href="{{project.source_link}}">
                     <i class="fa fa-github"></i>
                 </a>
-            </h3>
-            {% for img in project.attachments.images %}
-                <img src="{{img|url}}" />
-            {% endfor %}
-            {{ project.description }}
-            {{ tags(project.tags) }}
+                {% if project.has_demo %}
+                <a class="demo-link" href="{{project.path}}">demo</a>
+                {% endif %}
+                </h3>
+                {% for img in project.attachments.images %}
+                    <img src="{{img|url}}" />
+                {% endfor %}
+                {{ project.description }}
+                {{ tags(project.tags) }}
+            </div>
+
         {% endfor %}
     </section>
 {% endblock %}

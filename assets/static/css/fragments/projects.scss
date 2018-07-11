@@ -4,6 +4,7 @@ ul.project-links > li {
     display: inline-block;
 }
 
+
 h3 > .github-link {
     font-weight: lighter;
     font-size: .5em;
@@ -12,6 +13,31 @@ section.projects {
     padding-left: 5%;
     padding-right: 5%;
     line-height: 1.5em;
+}
+
+.project {
+    margin: 0% 0% 5% 0%;
+    padding: 2% 5%;
+    background: white;
+
+    .project-title {
+        padding: 2% 0%;
+    } 
+}
+
+.demo-link {
+    &:hover {
+        color: rgba(244, 67, 54, 0.84);
+        background: white;
+        border: 1px solid rgb(40,40,40);
+    }
+
+    display: inline-block;
+    background: rgba(244, 67, 54, 0.84);
+    color: white;
+    padding: 0px 4px;
+    border-radius: 2px;
+    border: 1px solid transparent;
 }
 
 .project-header {
