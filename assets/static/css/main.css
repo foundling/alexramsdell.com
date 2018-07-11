@@ -81,6 +81,7 @@ section.projects {
   padding: 2% 5%;
   background: white; }
   .project .project-title {
+    position: relative;
     padding: 2% 0%; }
 
 .demo-link {
@@ -102,7 +103,9 @@ section.projects {
   padding-right: 5px; }
 
 .to-top {
-  color: lightgreen; }
+  color: lightgreen;
+  position: absolute;
+  right: 0; }
 
 article.project-description {
   padding: 5% 0% 10% 0%;
