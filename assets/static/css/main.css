@@ -101,6 +101,9 @@ section.projects {
 .project-name {
   padding-right: 5px; }
 
+.to-top {
+  color: lightgreen; }
+
 article.project-description {
   padding: 5% 0% 10% 0%;
   text-align: left; }
@@ -113,8 +116,16 @@ img.project-image {
 
 nav.projects-nav {
   position: absolute;
-  left: 5%; }
+  left: 5%;
+  padding: 0% 0% 2% 0%; }
+  nav.projects-nav > ul > li {
+    padding: 0.2em; }
 
+@media (max-width: 900px) {
+  nav.projects-nav {
+    position: relative;
+    text-align: left;
+    padding: 2% 0% 8% 0%; } }
 @media (max-width: 750px) {
   header.project-header {
     text-align: center; } }

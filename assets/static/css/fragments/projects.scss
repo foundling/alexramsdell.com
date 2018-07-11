@@ -47,6 +47,10 @@ section.projects {
     padding-right: 5px;
 }
 
+.to-top {
+    color: lightgreen;
+}
+
 article.project-description {
     padding: 5% 0% 10% 0%;
     text-align: left;
@@ -62,8 +66,19 @@ img.project-image {
 nav.projects-nav {
     position: absolute;
     left: 5%;
+    & > ul > li {
+        padding: 0.2em;
+    }
+    padding: 0% 0% 2% 0%;
 }
 
+@media(max-width: 900px) {
+    nav.projects-nav {
+        position: relative;
+        text-align: left;
+        padding: 2% 0% 8% 0%;
+    }
+}
 @media(max-width: 750px) {
     header.project-header {
         text-align: center;
