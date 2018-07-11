@@ -23,8 +23,8 @@
                     <i class="fa fa-github"></i>
                 </a>
 
-                {% if project.has_demo %}
-                <a class="demo-link" href="{{project.path}}">demo</a>
+                {% if project.demo_link %}
+                <a class="demo-link" href="{{project.demo_link}}">demo</a>
                 {% endif %}
 
                 <a class="top-link" href="#top"><i class="to-top fa fa-arrow-up" title="go to top"></i></a>
