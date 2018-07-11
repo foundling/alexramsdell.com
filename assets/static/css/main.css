@@ -107,8 +107,8 @@ section.projects {
   position: absolute;
   right: 0; }
 
-article.project-description {
-  padding: 5% 0% 10% 0%;
+div.project-description {
+  padding: 2% 0% 5% 0%;
   text-align: left; }
 
 img.project-image {
@@ -119,10 +119,12 @@ img.project-image {
 
 nav.projects-nav {
   position: absolute;
-  left: 5%;
-  padding: 0% 0% 2% 0%; }
-  nav.projects-nav > ul > li {
-    padding: 0.2em; }
+  left: 5%; }
+  nav.projects-nav > h3 {
+    text-decoration: underline;
+    text-decoration-color: rgba(244, 67, 54, 0.84); }
+  nav.projects-nav li {
+    padding: 0.2em 0em; }
 
 @media (max-width: 900px) {
   nav.projects-nav {

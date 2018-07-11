@@ -54,8 +54,8 @@ section.projects {
     right: 0;
 }
 
-article.project-description {
-    padding: 5% 0% 10% 0%;
+div.project-description {
+    padding: 2% 0% 5% 0%;
     text-align: left;
 }
 
@@ -69,10 +69,15 @@ img.project-image {
 nav.projects-nav {
     position: absolute;
     left: 5%;
-    & > ul > li {
-        padding: 0.2em;
+
+    & > h3 {
+        text-decoration: underline;
+        text-decoration-color: rgba(244, 67, 54, 0.84);
     }
-    padding: 0% 0% 2% 0%;
+
+    li {
+        padding: 0.2em 0em;
+    }
 }
 
 @media(max-width: 900px) {

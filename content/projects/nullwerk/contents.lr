@@ -1,4 +1,8 @@
-name: Nullwerk
+model: _nullwerk
+---
+name: nullwerk
+---
+has_demo: true
 ---
 description: 
 Nullwerk is my first foray into building web instruments (more to come). It's a pretty basic synthesizer that I implemented with Vue2.0 and the Web Audio and Web MIDI APIs. Go ahead, plug your MIDI keyboard into your computer and give it a try!

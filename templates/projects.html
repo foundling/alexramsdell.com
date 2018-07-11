@@ -3,6 +3,7 @@
 
 {% block content %}
     <nav class="projects-nav">
+        <h3>Projects</h3>
         <ul>
             {% for project in this.children %}
             <li>
@@ -21,16 +22,22 @@
                 <a href="{{project.source_link}}">
                     <i class="fa fa-github"></i>
                 </a>
+
                 {% if project.has_demo %}
                 <a class="demo-link" href="{{project.path}}">demo</a>
                 {% endif %}
+
                 <a class="top-link" href="#top"><i class="to-top fa fa-arrow-up" title="go to top"></i></a>
                 </h3>
+
                 {% for img in project.attachments.images %}
                     <img src="{{img|url}}" />
                 {% endfor %}
+
+                <div class="project-description">
                 {{ project.description }}
                 {{ tags(project.tags) }}
+                </div>
             </div>
 
         {% endfor %}
