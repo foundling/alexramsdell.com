@@ -1,7 +1,7 @@
 name: terminal-weather
 ---
 description: 
-A minimal command-line tool for displaying the current weather in your location, optimized for your terminal prompt.
+`terminal-weather` is a minimal command-line tool for displaying the current weather in your location, and it doesn't slow down your terminal prompt :]
 ---
 tech:
 

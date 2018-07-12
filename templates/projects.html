@@ -30,14 +30,17 @@
                 <a class="top-link" href="#top"><i class="to-top fa fa-arrow-up" title="go to top"></i></a>
                 </h3>
 
+                <div class="project-description">
+                {{ project.description }}
+                </div>
+
                 {% for img in project.attachments.images %}
                     <img src="{{img|url}}" />
                 {% endfor %}
 
-                <div class="project-description">
-                {{ project.description }}
                 {{ tags(project.tags) }}
-                </div>
+
+
             </div>
 
         {% endfor %}

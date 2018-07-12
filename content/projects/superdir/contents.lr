@@ -2,7 +2,10 @@ _model: project
 ---
 name: superdir
 ---
-description: turn a textual representation of a file tree into a file tree. 
+description: 
+
+`superdir` is a project scaffolding tool with a simple objective: turn a textual representation of a file tree into a real file tree. It accepts a configuration file to provide additional control, e.g. you can copy matching pre-existing src files into the target location.  
+
 ---
 source_link: https://github.com/foundling/superdir
 ---

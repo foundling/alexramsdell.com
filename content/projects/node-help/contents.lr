@@ -1,7 +1,11 @@
 name: node-help 
 ---
 description: 
-Offline documentation for your Node REPL.
+
+`node-help` is an iPython-inspired documentation module for your Node.js REPL that works offline.  It uses the Node.js API to provide short-and-long form documentation in a readable format.  Useful when you're on an airplane and want to get some work done.
+
+It supports major Node releases 8-10.
+
 ---
 tech:
 

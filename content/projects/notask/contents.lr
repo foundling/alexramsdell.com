@@ -1,0 +1,19 @@
+model: _nullwerk
+---
+name: NoTask
+---
+description: 
+
+**NoTask** is a themable notes application that works offline. It uses local storage and you can sync your data with Google Drive. I started work on this once I realized I didn't like looking at many of the notes apps out there.
+
+---
+tech:
+Vue.js 2.0
+---
+tags: 
+productivity
+mobile-first
+---
+source_link: https://github.com/edibleinterfaces/notask
+---
+demo_link: https://notask.edibleinterfaces.com
