@@ -23,6 +23,10 @@ section.projects {
     .project-title {
         position: relative;
         padding: 2% 0%;
+        & a > i.source-link {
+            background: lightgreen;
+            padding: 6px;
+        } 
     } 
 }
 

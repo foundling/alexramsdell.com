@@ -83,6 +83,9 @@ section.projects {
   .project .project-title {
     position: relative;
     padding: 2% 0%; }
+    .project .project-title a > i.source-link {
+      background: lightgreen;
+      padding: 6px; }
 
 .demo-link {
   display: inline-block;
