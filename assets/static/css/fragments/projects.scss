@@ -77,15 +77,10 @@ nav.projects-nav {
     padding-right: 5%;
     padding-bottom: 5%;
 
-    & > h3 {
-        text-decoration: underline;
-        text-decoration-color: rgba(244, 67, 54, 0.84);
-    }
-
     ul {
       margin-top: 0.4em;
       li {
-        padding: 0.2em 0.4em;
+        padding: 0.2em 0.8em;
       }
     }
 }

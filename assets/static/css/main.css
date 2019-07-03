@@ -123,13 +123,10 @@ nav.projects-nav {
   padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 5%; }
-  nav.projects-nav > h3 {
-    text-decoration: underline;
-    text-decoration-color: rgba(244, 67, 54, 0.84); }
   nav.projects-nav ul {
     margin-top: 0.4em; }
     nav.projects-nav ul li {
-      padding: 0.2em 0.4em; }
+      padding: 0.2em 0.8em; }
 
 @media (max-width: 750px) {
   nav.projects-nav {
@@ -157,7 +154,7 @@ header.site-header {
   header.site-header nav > h1 {
     margin-right: 10px; }
   header.site-header .nav-active {
-    border-bottom: 2px solid red; }
+    border-bottom: 2px solid rgba(255, 0, 0, 0.62); }
 
 @media (max-width: 750px) {
   header.site-header {
@@ -308,7 +305,12 @@ ul.social-media-icons {
   .post p > a {
     font-family: "Droid Serif"; }
   .post h1 {
-    font-size: 3em; }
+    font-size: 2em;
+    display: inline-block;
+    padding: 1%;
+    background: white;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.62);
+    margin-bottom: 5%; }
   .post ul {
     margin: 0% 5%; }
   .post li {

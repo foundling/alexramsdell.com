@@ -54,7 +54,12 @@
         font-family: "Droid Serif";
     }
     h1 {
-      font-size: 3em;
+      font-size: 2em;
+      display: inline-block;
+      padding: 1%;
+      background: white;
+      border-bottom: 1px solid rgba(255, 0, 0, 0.62);
+      margin-bottom: 5%;
     }
     h2, h3, h4 {
     }
