@@ -16,6 +16,14 @@ body * {
   margin: 0;
   padding: 0; }
 
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column; }
+
+main {
+  flex: 1; }
+
 li {
   list-style-type: none;
   padding: 0.5em; }
@@ -392,7 +400,7 @@ ul.byline {
     ul.byline li.github-icon a,
     ul.byline li.pencil-icon a,
     ul.byline li.twitter-icon a {
-      color: #c1c1c1; }
+      color: #b3b3b3; }
     ul.byline li.github-icon a:hover,
     ul.byline li.pencil-icon a:hover,
     ul.byline li.twitter-icon a:hover {
@@ -400,7 +408,7 @@ ul.byline {
   ul.byline i.pencil-icon {
     color: rgba(255, 0, 0, 0.62); }
   ul.byline li.publish-date {
-    color: #c1c1c1;
+    color: #b3b3b3;
     display: inline-block; }
     ul.byline li.publish-date span.post-published {
       font-family: sans-serif; }
@@ -436,8 +444,11 @@ footer {
   footer i.fa-heart {
     color: rgba(255, 0, 0, 0.62); }
   footer p {
-    font-size: 0.8em; }
+    font-size: 1em; }
 
+@media (max-width: 750px) {
+  footer p {
+    font-size: 0.8em; } }
 .blog__recent-posts {
   text-align: left;
   padding-left: 5%;
