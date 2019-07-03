@@ -2,14 +2,16 @@
 
     <ul class="byline">
         <!-- Published -->
-        <li class="publish-date">
+        <li class="pencil-icon">
             <i 
                 title="last edited: {{ post.last_edited }}" 
                 class="pencil-icon fa fa-pencil"></i> 
+        </li>
+        <li class="publish-date">
             <span 
                 data-numeric-date="{{ post.pub_date }}"
                 title="{{ post.pub_date }}" 
-                class="post-published">{{ post.pub_date }}</span>
+                class="post-published">{{ post.pub_date.strftime("%B %-d, %Y") }}</span>
         </li>
 
         <!-- Twitter -->
@@ -18,6 +20,7 @@
                 title="share this post on twitter" 
                 href="https://twitter.com/share?url=http%3A%2F%2Falexramsdell.com%2Fblog%2F{{post|url}}&via=drlolzrofl">
             <i class="fa fa-twitter"></i>
+            </a>
         </li>
         <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 

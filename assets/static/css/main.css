@@ -42,7 +42,7 @@ img {
   max-width: 100%; }
 
 p {
-  line-height: 1.6em; }
+  line-height: 1.4em; }
 
 /* Components */
 div.main {
@@ -53,15 +53,7 @@ div.main {
     padding: 8% 10%; }
 
   div.main {
-    margin: 8% 0%; }
-
-  footer {
-    padding: 1% 8%;
-    line-height: 10vh;
-    height: 12vh; }
-
-  footer > p {
-    text-align: left; } }
+    margin: 0% 0% 8% 0%; } }
 .project-name,
 ul.project-links,
 ul.project-links > li {
@@ -84,20 +76,17 @@ section.projects {
     position: relative;
     padding: 2% 0%; }
     .project .project-title a > i.source-link {
-      background: lightgreen;
       padding: 6px; }
 
 .demo-link {
   display: inline-block;
+  color: whitesmoke;
   background: rgba(244, 67, 54, 0.84);
-  color: white;
   padding: 0px 4px;
-  border-radius: 2px;
-  border: 1px solid transparent; }
+  border-radius: 2px; }
   .demo-link:hover {
-    color: rgba(244, 67, 54, 0.84);
-    background: white;
-    border: 1px solid #282828; }
+    background: whitesmoke;
+    color: rgba(244, 67, 54, 0.84); }
 
 .project-header {
   text-align: left; }
@@ -152,9 +141,13 @@ header.site-header {
     display: inline-block;
     vertical-align: baseline;
     padding-left: 0;
+    padding-right: 0;
+    margin-right: 0.5em;
     border-bottom: 2px solid transparent; }
   header.site-header nav > h1 {
     margin-right: 10px; }
+  header.site-header .nav-active {
+    border-bottom: 2px solid red; }
 
 @media (max-width: 750px) {
   header.site-header {
@@ -290,10 +283,12 @@ ul.social-media-icons {
     .post__title a > p {
       display: inline; }
   .post h2 {
-    font-size: 2.5em; }
+    font-size: 2em; }
   .post h1,
   .post h2,
-  .post h3 {
+  .post h3,
+  .post h4 {
+    font-family: Helvetica;
     padding-top: 2%;
     padding-bottom: 2%; }
   .post > p {
@@ -302,8 +297,8 @@ ul.social-media-icons {
     padding: 0% 0% 3% 0%; }
   .post p > a {
     font-family: "Droid Serif"; }
-  .post h1, .post h2, .post h3, .post h4 {
-    font-family: Helvetica; }
+  .post h1 {
+    font-size: 3em; }
   .post ul {
     margin: 0% 5%; }
   .post li {
@@ -349,11 +344,13 @@ div.post-text a.full-article-link {
 
 @media (max-width: 750px) {
   .post {
-    padding: 0% 5% 5% 5%; }
+    padding: 5%; }
     .post__title a {
       font-size: 1.6em; }
     .post > p {
       padding: 0% 0%; }
+    .post h1 {
+      font-size: 3em; }
     .post h2 {
       font-size: 1.5em; }
     .post h3 {
@@ -388,10 +385,22 @@ ul.byline {
     padding: 0;
     display: inline-block; }
   ul.byline li.github-icon,
+  ul.byline li.pencil-icon,
   ul.byline li.twitter-icon {
-    padding: 5px;
+    padding: 4px;
     background: white; }
+    ul.byline li.github-icon a,
+    ul.byline li.pencil-icon a,
+    ul.byline li.twitter-icon a {
+      color: #c1c1c1; }
+    ul.byline li.github-icon a:hover,
+    ul.byline li.pencil-icon a:hover,
+    ul.byline li.twitter-icon a:hover {
+      color: rgba(255, 0, 0, 0.62); }
+  ul.byline i.pencil-icon {
+    color: rgba(255, 0, 0, 0.62); }
   ul.byline li.publish-date {
+    color: #c1c1c1;
     display: inline-block; }
     ul.byline li.publish-date span.post-published {
       font-family: sans-serif; }
@@ -400,8 +409,6 @@ ul.byline {
     ul.byline li.publish-date i.pencil-icon {
       padding: 5px;
       background: white; }
-    ul.byline li.publish-date i.pencil-icon {
-      color: rgba(255, 0, 0, 0.62); }
   ul.byline ul.post-keywords {
     display: inline-block; }
     ul.byline ul.post-keywords li.post-keyword {
@@ -417,11 +424,11 @@ div.blog-post-references {
   border: 1px dotted gray; }
 
 footer {
+  padding: 1%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 2%;
   background: white;
   border-top: 1px solid lightgreen; }
   footer a.creator-link:hover {
@@ -436,10 +443,10 @@ footer {
   padding-left: 5%;
   padding-right: 5%; }
   .blog__recent-posts .post-summary {
-    margin: 12% 0%;
+    margin: 6% 0% 0% 0%;
     width: 100%; }
     .blog__recent-posts .post-summary__short-text {
-      margin: 2% 0;
+      margin: 2% 0% 0% 0%;
       font-family: 'Lora', serif; }
 
 .blog__more-posts {
@@ -461,7 +468,7 @@ footer {
 
 @media (min-width: 751px) {
   .post__title > a {
-    font-size: 3em; } }
+    font-size: 1em; } }
 @media (max-width: 750px) {
   .post-summary {
     background: white;

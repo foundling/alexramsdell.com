@@ -53,7 +53,7 @@ a {
 }
 
 img { max-width: 100%; }
-p { line-height: 1.6em; }
+p { line-height: 1.4em; }
 
 /* Components */
 
@@ -68,17 +68,7 @@ div.main {
         padding: 8% 10%;
     }
     div.main {
-        margin: 8% 0%;
-    }
-
-    footer {
-        padding: 1% 8%;
-        line-height: 10vh;
-        height: 12vh;
-    }
-
-    footer > p {
-        text-align: left;
+        margin: 0% 0% 8% 0%;
     }
 
 }

@@ -24,25 +24,22 @@ section.projects {
         position: relative;
         padding: 2% 0%;
         & a > i.source-link {
-            background: lightgreen;
             padding: 6px;
         } 
     } 
 }
 
 .demo-link {
-    &:hover {
-        color: rgba(244, 67, 54, 0.84);
-        background: white;
-        border: 1px solid rgb(40,40,40);
-    }
 
+    &:hover {
+      background: whitesmoke;
+      color: rgba(244, 67, 54, 0.84);
+    }
     display: inline-block;
+    color: whitesmoke;
     background: rgba(244, 67, 54, 0.84);
-    color: white;
     padding: 0px 4px;
     border-radius: 2px;
-    border: 1px solid transparent;
 }
 
 .project-header {

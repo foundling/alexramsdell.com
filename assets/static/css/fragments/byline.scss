@@ -12,17 +12,31 @@ ul.byline {
     }
 
     li.github-icon,
+    li.pencil-icon,
     li.twitter-icon {
-        padding: 5px;
+        padding: 4px;
         background: white;
+
+        a {
+          color: rgba(193,193,193,1);
+        }
+        a:hover {
+          color: rgba(255, 0, 0, 0.62);
+        }
+    }
+
+
+    i.pencil-icon {
+        color: rgba(255, 0, 0, 0.62);
     }
 
     li.publish-date {
 
+        color: rgba(193,193,193,1);
         display: inline-block;
 
         span.post-published {
-            font-family: sans-serif;
+          font-family: sans-serif;
         }
 
         span.post-published,
@@ -30,9 +44,6 @@ ul.byline {
         i.pencil-icon {
             padding: 5px;
             background: white;
-        }
-        i.pencil-icon {
-            color: rgba(255, 0, 0, 0.62);
         }
 
 

@@ -16,12 +16,18 @@ header.site-header {
         display: inline-block; 
         vertical-align: baseline;
         padding-left: 0;
+        padding-right: 0;
+        margin-right: 0.5em;
         border-bottom: 2px solid transparent;
 
     }
 
     nav > h1 {
         margin-right: 10px;
+    }
+
+    .nav-active {
+      border-bottom: 2px solid red;
     }
 
 }

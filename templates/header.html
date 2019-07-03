@@ -2,15 +2,37 @@
     <nav class="blog-nav">
         <h1><a href="/">Alex Ramsdell</a></h1>
         <ul class="nav-links">
-            <li class="blog">
-                <a href="{{ '/blog'|url}}">blog</a>
+
+          {% if this.url_path.startswith('/blog/') %}
+            <li class="blog nav-active">
+                <a href="{{ '/blog'|url }}">blog</a>
             </li>
+          {% else %}
+            <li class="blog">
+                <a href="{{ '/blog'|url }}">blog</a>
+            </li>
+          {% endif %}
+
+          {% if this.url_path.startswith('/projects/') %}
+            <li class="projects nav-active">
+                <a href="{{ '/projects'|url}}">projects</a>
+            </li>
+          {% else %}
             <li class="projects">
                 <a href="{{ '/projects'|url}}">projects</a>
             </li>
+          {% endif %}
+
+          {% if this.url_path.startswith('/about/') %}
+            <li class="about nav-active">
+                <a href="{{ '/about'|url }}">about me</a>
+            </li>
+          {% else %}
             <li class="about">
                 <a href="{{ '/about'|url }}">about me</a>
             </li>
+          {% endif %}
+
         </ul>
     </nav>
 </header>

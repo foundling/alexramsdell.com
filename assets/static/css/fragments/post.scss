@@ -29,12 +29,14 @@
     }
 
     h2 {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 
     h1,
     h2,
-    h3 {
+    h3,
+    h4 {
+        font-family: Helvetica;
         padding-top: 2%;
         padding-bottom: 2%;
     }
@@ -51,10 +53,8 @@
     p > a {
         font-family: "Droid Serif";
     }
-    h1,h2,h3,h4 {
-        font-family: Helvetica;
-    }
-    h1.post {
+    h1 {
+      font-size: 3em;
     }
     h2, h3, h4 {
     }
@@ -131,7 +131,7 @@ div.post-text {
 
     .post {
 
-        padding: 0% 5% 5% 5%;
+        padding: 5%;
         
         &__title {
             a {
@@ -145,6 +145,9 @@ div.post-text {
 
         >p {
             padding: 0% 0%;
+        }
+        h1 {
+          font-size: 3em;
         }
 
         h2 {

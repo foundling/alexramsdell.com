@@ -1,28 +1,29 @@
 {% extends "layout.html" %}
 
-{% from 'blog/post/macros/post_header.html' import post_header %}
 {% from 'blog/post/macros/references.html' import references %}
 {% from 'common/macros/tags.html' import tags %}
+{% from 'blog/post/macros/byline.html' import byline %}
 
 {% block content %}
 
-    <section class="post">
+  <section class="post">
 
-        {{ post_header(this) }}
+    <h1>{{ this.title }}</h1>                                                                                                                 
+    <section>{{ byline(this) }}</section>
 
-        <article class="post__body"> 
-            {% block body %}{{ this.body }}{% endblock %}
-        </article>
+    <article class="post__body"> 
+        {% block body %}{{ this.body }}{% endblock %}
+    </article>
 
-        {{ references(this) }} 
+    {{ references(this) }} 
 
-        {{ tags(this.tags) }}
+    {{ tags(this.tags) }}
 
-        {% if this.content_type == 'article' %}
-            {% include 'blog/post/contribute.html' %}
-        {% endif %}
+    {% if this.content_type == 'article' %}
+        {% include 'blog/post/contribute.html' %}
+    {% endif %}
 
 
-    </section>
+  </section>
 
 {% endblock %}

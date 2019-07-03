@@ -1,30 +1,26 @@
 footer {
 
+    padding: 1%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    padding: 2%;
-
     background: white;
     border-top: 1px solid lightgreen;
 
     a.creator-link:hover {
-        color: rgba(255, 0, 0, 0.62);
+      color: rgba(255, 0, 0, 0.62);
     }
 
     i.fa-heart {
-        color: rgba(255, 0, 0, 0.62);
+      color: rgba(255, 0, 0, 0.62);
     }
 
     p {
-        font-size: 0.8em
+      font-size: 0.8em
     }
 
 }
-
-
 
 @media (max-width: 750px) {
 }
