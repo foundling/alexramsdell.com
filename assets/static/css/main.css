@@ -450,8 +450,10 @@ footer {
     font-size: 1em; }
 
 @media (max-width: 750px) {
-  footer p {
-    font-size: 0.8em; } }
+  footer {
+    padding: 2%; }
+    footer p {
+      font-size: 0.8em; } }
 .blog__recent-posts {
   text-align: left;
   padding-left: 5%;
