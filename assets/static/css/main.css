@@ -53,14 +53,14 @@ p {
   line-height: 1.4em; }
 
 /* Components */
-div.main {
+main {
   margin: 7% 20%; }
 
 @media (max-width: 750px) {
   header.site-header {
     padding: 8% 10%; }
 
-  div.main {
+  main {
     margin: 0% 0% 8% 0%; } }
 .project-name,
 ul.project-links,
@@ -120,20 +120,23 @@ img.project-image {
   max-width: 700px; }
 
 nav.projects-nav {
-  position: absolute;
-  left: 5%; }
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 5%; }
   nav.projects-nav > h3 {
     text-decoration: underline;
     text-decoration-color: rgba(244, 67, 54, 0.84); }
-  nav.projects-nav li {
-    padding: 0.2em 0em; }
+  nav.projects-nav ul {
+    margin-top: 0.4em; }
+    nav.projects-nav ul li {
+      padding: 0.2em 0.4em; }
 
-@media (max-width: 900px) {
+@media (max-width: 750px) {
   nav.projects-nav {
     position: relative;
     text-align: left;
-    padding: 18% 0%; } }
-@media (max-width: 750px) {
+    padding: 8% 5%; }
+
   header.project-header {
     text-align: center; } }
 header.site-header {
@@ -501,7 +504,6 @@ section.about {
       font-size: 0.8em; }
   section.about section.about-copy {
     margin: 5% 0%;
-    padding-left: 5%;
     text-align: initial; }
     section.about section.about-copy h2 {
       padding-top: 20px;
@@ -513,7 +515,7 @@ section.about {
 
 @media (max-width: 750px) {
   section.about section.about-copy {
-    margin: 5% 5%; }
+    margin: 8% 5%; }
 
   section.img-box {
     padding: 0% 5% 5% 5%; } }

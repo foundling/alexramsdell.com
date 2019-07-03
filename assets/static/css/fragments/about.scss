@@ -24,7 +24,7 @@ section.about {
     section.about-copy {
 
         margin: 5% 0%;
-        padding-left: 5%;
+        //padding-left: 5%;
         text-align: initial;
 
         h2 {
@@ -48,7 +48,7 @@ section.about {
 @media(max-width: 750px) {
     section.about {
         section.about-copy {
-            margin: 5% 5%;
+            margin: 8% 5%;
         }
     }
     section.img-box {
