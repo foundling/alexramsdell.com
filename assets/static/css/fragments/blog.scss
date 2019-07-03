@@ -5,14 +5,15 @@
     padding-right: 5%;
 
     .post-summary {
-
         margin: 6% 0% 0% 0%;
         width: 100%;
         &__short-text {
             margin: 2% 0% 0% 0%;
             font-family: 'Lora', serif;
         }
-
+    }
+    .post-summary:nth-child(1) {
+        margin-top: 0%;
     }
 
 }

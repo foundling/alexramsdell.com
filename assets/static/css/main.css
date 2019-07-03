@@ -54,14 +54,14 @@ p {
 
 /* Components */
 main {
-  margin: 7% 20%; }
+  margin: 4% 20%; }
 
 @media (max-width: 750px) {
   header.site-header {
     padding: 8% 10%; }
 
   main {
-    margin: 0% 0% 8% 0%; } }
+    margin: 8% 0%; } }
 .project-name,
 ul.project-links,
 ul.project-links > li {
@@ -134,8 +134,7 @@ nav.projects-nav {
 @media (max-width: 750px) {
   nav.projects-nav {
     position: relative;
-    text-align: left;
-    padding: 8% 5%; }
+    text-align: left; }
 
   header.project-header {
     text-align: center; } }
@@ -464,6 +463,8 @@ footer {
     .blog__recent-posts .post-summary__short-text {
       margin: 2% 0% 0% 0%;
       font-family: 'Lora', serif; }
+  .blog__recent-posts .post-summary:nth-child(1) {
+    margin-top: 0%; }
 
 .blog__more-posts {
   text-align: center;
@@ -493,7 +494,16 @@ footer {
   .blog__more-posts {
     text-align: center; } }
 section.about {
-  width: 100%; }
+  text-align: initial;
+  margin-left: 5%;
+  margin-right: 5%; }
+  section.about h2 {
+    padding-top: 20px;
+    padding-bottom: 20px; }
+  section.about h2:first-of-type {
+    padding-top: 0px; }
+  section.about p {
+    padding-bottom: 20px; }
   section.about a {
     text-decoration: underline; }
   section.about section.img-box {
@@ -504,19 +514,9 @@ section.about {
       margin: 0 auto; }
     section.about section.img-box p.img-caption {
       font-size: 0.8em; }
-  section.about section.about-copy {
-    margin: 5% 0%;
-    text-align: initial; }
-    section.about section.about-copy h2 {
-      padding-top: 20px;
-      padding-bottom: 20px; }
-    section.about section.about-copy h2:first-of-type {
-      padding-top: 0px; }
-    section.about section.about-copy p {
-      padding-bottom: 20px; }
 
 @media (max-width: 750px) {
-  section.about section.about-copy {
+  section.about section.about {
     margin: 8% 5%; }
 
   section.img-box {

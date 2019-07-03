@@ -69,21 +69,14 @@ p { line-height: 1.4em; }
 
 main {
     //    margin: 0% 0% 8% 0%;
-    margin: 7% 20%;
+    margin: 4% 20%;
 }
 
 @media(max-width: 750px) {
-
-
     header.site-header {
         padding: 8% 10%;
     }
     main {
-        margin: 0% 0% 8% 0%;
+        margin: 8% 0%;
     }
-
-}
-
-
-@media(max-width: 450px) {
 }
