@@ -124,7 +124,7 @@ nav.projects-nav {
   nav.projects-nav {
     position: relative;
     text-align: left;
-    padding: 2% 5% 8% 5%; } }
+    padding: 18% 0%; } }
 @media (max-width: 750px) {
   header.project-header {
     text-align: center; } }
@@ -225,7 +225,7 @@ header.site-header {
   .post__quick-tip-badge i {
     font-size: 1.3em; } }
 .tags {
-  margin-top: 15px;
+  margin-top: 1%;
   margin-left: 0px !important; }
   .tags__label {
     display: inline-block;
@@ -377,7 +377,7 @@ code {
 
 ul.byline {
   margin-left: 0px !important;
-  margin-top: 10px !important;
+  margin-top: 2.5% !important;
   font-size: .9em;
   display: inline-block;
   width: 100%; }
