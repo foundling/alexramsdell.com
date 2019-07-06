@@ -8,20 +8,20 @@ _discoverable: yes
 ---
 body:
 
-## About Me 
+## About Me
 
-I'm a software developer, open source contributor and musician who spends his time exploring the Web Audio API, messing around with Haskell, Go and Forth, writing command-line applications and recording music.  You can find me as [foundling](https://github.com/foundling) on GitHub and [Stack Overflow](https://stackoverflow.com/users/2446351/foundling).   
+I'm a software dev who likes Drexciya, synthesizers and other things.
 
-Previously, I was a senior dev at Doctor Evidence and a member of the HackBox Team @ Microsoft. Check out my [LinkedIn](https://linkedin.com/in/alexramsdell) for details on my work history.
-
-I also like Detroit Techno, mathematical logic, dogs and Japanese history.
+Github is [here](https://github.com/foundling). StackOverflow is [here](https://stackoverflow.com/users/2446351/foundling). Projects are [here](/projects). 
+<!--Music is [here](/music). -->
 
 ## This Site
 
-This site was built with the flat-file CMS, [Lektor](https://getlektor.com). See the [projects](/projects) page for information on how a given project is built.
+This site was built with [Lektor](https://getlektor.com) because I love Flask.
+
 
 ## My Favorite Steven Wright Jokes
 
-One time the police stopped me for speeding. They said, "Oh, you know the speed limit is 55 miles an hour?" I said, "Yeah, I know. But I wasn't going to be out that long".
+I lost a buttonhole today.
 
-I lost a button hole today.
+One time the police stopped me for speeding. They said, "Oh, you know the speed limit is 55 miles an hour?" I said, "Yeah, I know. But I wasn't going to be out that long".
