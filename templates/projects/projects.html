@@ -3,10 +3,10 @@
 
 {% block content %}
     <nav class="projects-nav">
-        <h2>Projects</h2>
         <ul>
             {% for project in this.children %}
             <li>
+                <i class="fa.fa-archive"></i>
                 <a href="#{{ project.name }}">{{ project.name }}</a>
             </li>
             {% endfor %}

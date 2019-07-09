@@ -141,7 +141,9 @@ header.site-header {
   text-align: left;
   background: white; }
   header.site-header nav {
-    margin-left: 5%; }
+    margin-left: 5%;
+    display: inline-flex;
+    align-items: baseline; }
   header.site-header nav > h1,
   header.site-header nav > ul,
   header.site-header nav > ul > li {
@@ -149,20 +151,29 @@ header.site-header {
     vertical-align: baseline;
     padding-left: 0;
     padding-right: 0;
-    margin-right: 0.5em;
-    border-bottom: 2px solid transparent; }
+    margin-right: 0.5em; }
+  header.site-header nav > .logo-trees {
+    display: inline-block;
+    margin: 0 2em; }
   header.site-header nav > h1 {
     margin-right: 10px; }
   header.site-header .nav-active {
     border-bottom: 2px solid rgba(255, 0, 0, 0.62); }
 
 @media (max-width: 750px) {
-  header.site-header {
-    padding: 8% 0%; } }
-@media (max-width: 450px) {
-  nav {
-    margin-left: 0%;
-    text-align: center; } }
+  header.site-header nav {
+    width: 100%;
+    margin-left: 0;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; }
+    header.site-header nav > h1,
+    header.site-header nav .logo-trees,
+    header.site-header nav .nav-links {
+      display: block !important;
+      align-items: center; }
+    header.site-header nav .logo-trees {
+      margin: 0; } }
 .post__article-badge,
 .post__news-badge,
 .post__quick-tip-badge {

@@ -8,6 +8,8 @@ header.site-header {
 
     nav {
         margin-left: 5%;
+        display: inline-flex;
+        align-items: baseline;
     }
     nav > h1, 
     nav > ul,
@@ -18,8 +20,13 @@ header.site-header {
         padding-left: 0;
         padding-right: 0;
         margin-right: 0.5em;
-        border-bottom: 2px solid transparent;
+        //border-bottom: 2px solid transparent;
 
+    }
+
+    nav > .logo-trees {
+      display: inline-block;
+      margin: 0 2em;
     }
 
     nav > h1 {
@@ -34,13 +41,23 @@ header.site-header {
 
 @media(max-width: 750px) {
     header.site-header {
-        padding: 8% 0%;
-    }
-}
+      nav {
+        width: 100%;
+        margin-left: 0;
+        justify-content: center;
+        align-items: center;
 
-@media(max-width: 450px) {
-    nav {
-        margin-left: 0%;
-        text-align: center;
+        & > h1,
+        .logo-trees,
+        .nav-links {
+          display: block !important;
+          //align-items: flex-start;
+          align-items: center;
+        }
+        .logo-trees {
+          margin: 0;
+        }
+        flex-direction: column;
+      }
     }
 }
