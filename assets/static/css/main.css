@@ -50,7 +50,7 @@ img {
   max-width: 100%; }
 
 p {
-  line-height: 1.4em; }
+  line-height: 1.6em; }
 
 /* Components */
 main {
@@ -290,7 +290,7 @@ ul.social-media-icons {
   .post p,
   .post ul {
     padding-top: 1%;
-    padding-bottom: 4%; }
+    padding-bottom: 2%; }
   .post__title {
     display: inline-block;
     vertical-align: middle;

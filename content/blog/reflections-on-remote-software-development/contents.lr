@@ -1,4 +1,4 @@
-title: Reflections on Remote Software Development 
+title: Reflections on Working Remotely
 ---
 author: alex
 ---
@@ -8,32 +8,41 @@ last_edited: 07/10/2019
 ---
 pub_date: 2019-07-10
 ---
-short_text: No Short Text Yet for this Post!
+short_text: The ups and downs of decentralized typing.
 ---
 tags: 
-software development
 remote work
 ---
 body:
 
-It's been a little more than a year and a half since I last commuted to an office on a daily basis and I'll just say it up front: The benefits of remote work have vastly outweighed the benefits of in-office work. When I mention that I work remotely with friends or colleagues that commute to an office on a daily basis, they will readily concede that a remote commute sounds nice, but the agreement usually ends there. 
+It's been a little more than a year and a half since I last commuted to an office on a regular basis and I'm feeling reflective. Remote work has been beneficial to my software career, but it changed me.
 
-  How do I deal with the isolation?
-  How do I maintain relationships with my team, my manager?
-  How do you get help?
-  How do they know you're not doing something other than my job all day?
- 
-These are important questions that anyone considering remote work should think about.
+How to talk about this? I can at least promise to answer the very reasonable questions my friends and colleagues usually ask when I talk about work.
 
-## Isolation
+- How do I deal with the isolation?
+- How do I maintain relationships with my team and my boss?
+- What do I do if I need help?
 
-If you're looking to work remotely merely because of the commute or some other factor that doesn't have to do with the actual work ... I'm not sure the apparent convenience is sustaining enough, especially if you tend to thrive via communication with others.  You'd be ditching the commute, yes, but also entering an uncanny social silence, which is an abrupt transition to go through while also finding your bearings in a new technical and social environment.
+But first, some qualifications on my remote experience, as I've worked in a remote capacity in varying degrees.  My first experience was working at home a couple days out of each week.  The second was as a mostly remote solo developer with occasional in-person meetings.  My most recent role was entirely remote, with a fully-distributed development team spread out across the United States and Europe. Each case taught me something about collaborating with people when you can't walk right up to them and ask a question.
 
-There is no water cooler conversation chat.  This is both a good and a bad thing. You can more easily avoid unwanted conversation, but makes it more difficult to tune into company knowledge.
+## Control
 
-There is no decompression period after work to create a boundary between work and non-work.
+The enduring reason I continue to work remotely is that I enjoy the increase in control I have over my own productivity. I have been at places where getting caught up in discussions not directly related to work was frequent enough that it simply must have hindered my output.  I began to wonder: what kind of developer *could I be* if I dedicated more of my day to my work? 
 
-The key here is: you need to be more intentional about your actions. Since remote work often lacks the incidental socialization inherent in colocation, you might find yourself having to make more intentional decisions about socialization. 
+These days, I replace that commuting time with self-education.  This was my initial issue with commuting anyway: I was spending the brightest part of my day making sure I didn't die in a car accident crossing the 520 bridge to Redmond, Washington.  What a waste! Now, I explore a topic I want to learn in depth each morning. And each morning I pick up where I left the day before.
+
+Working remotely encourages more sustained focus more of the time. It's not that the offices I've been in have been any worse than average, but they are just not optimized for deep work.  You're more likely to be positioned in a place that detracts from 'getting shit done', like right next to that salesperson with the booming voice, near an exit, or simply without enough personal space to tune out the unrelated conversations of your neighbors.
+
+Remote work is not really a perk, but people seem to treat it as such. It's a *mode* of work. 
+
+
+## Isolation and Intentionality
+
+It's important to think about your reasons for going remote. You'll be ditching that commute, yes, but you'll feel weird about the loss of  face-to-face interactions, finding the conversion to archived text and voice streams not exactly a faithful transmission of who you are. There is no water cooler conversation or lunch-time congress to air your opinions.  Those things could only happen over text, which is much less forgiving in terms of intention and can be easily misconstrued if one doesn't exercise discipline. It isn't necessarily worse, but it's one hell of a transmutation, and it will feel uncomfortable for a while as you realize that who you are is what you type.
+
+I do miss eating lunch with other developers, indulging in physical comedy from time to time.  I went through a phase where I felt some sort of loss of my former self, to be honest.  But it forced me to confront more fundamental things in my life: I was stressed out by a lot of external things and not finding a way to take care of myself, I wasn't getting enough exercise, I wasn't making as many lasting and quality friendships as I *felt* I had in the past.  Consistent, casual conversation with colleagues at work can be just enough to prevent a person from really taking risks socially. For me it did.
+
+But in the last few years, I found that I grew more interested in the quality of my friendships, as well as meeting people through other means like meetups or through mutual friends.  Not more friends, just better friendships. More intentional social decisions.
 
 - It is a different calibration. a sacrifice, it is a major gain
 - You are on your own in terms of socializing
