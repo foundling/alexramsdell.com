@@ -1,4 +1,4 @@
-title: Reflections on Remote Work
+title: Not a Perk, a Mode of Work: Reflections on Remote Software Development  
 ---
 author: alex
 ---
@@ -8,7 +8,7 @@ last_edited: 07/10/2019
 ---
 pub_date: 2019-07-10
 ---
-short_text: The ups and downs of decentralized typing.
+short_text: The ups and downs of working remotely.
 ---
 tags: 
 remote work
@@ -17,21 +17,15 @@ body:
 
 It's been a little more than a year and a half since I last commuted to work on a regular basis and I think it's time I reflected on the significance of this. Remote work has been beneficial to my software career, but it has changed me.
 
-How to talk about this? I can at least promise to answer a few reasonable questions that my friends and colleagues tend to ask when we talk about work.
+A quick outline of my remote experience, as I've worked in a remote capacity in varying degrees:  I went from working at home a few days a week, to taking a solo contract gig that only required a few in-person meetings, to working on a fully distributed team with colleagues spread out across the United States and Europe.
 
-- How do I deal with the isolation?
-- How do I maintain relationships with my team and my boss?
-- What do I do if I need help?
+## A More Natural Balance Between Work and Rest
 
-A quick outline of my remote experience, as I've worked in a remote capacity in varying degrees:  I went from working at home a few days a week, to taking a solo contract gig that only required a few in-person meetings, to working on a fully distributed team where remote was the only option.
+I work remotely because it gives me greater control over my own productivity. I have been at places where getting caught up in interesting technical tangents was *too* common. There is a place for this type of discussion, but I found it was becoming a roadblock to stable deep work.  And it can happen when just one of your colleagues happens bring up the hackernews thread they were reading. The worst part is that it reinforces a pattern of staying longer at work just to finish the things you had ample time to do. At some point, I began to wonder: what kind of developer *could I be* if I could work with more focus?
 
-## Control is the Main Motivation
+Working remotely encourages more sustained focus more of the time. Offices are poorly optimized for software developers. Even if you're not part of a Self-Distracting Bikeshed Clan, you're more likely to be positioned in a place that detracts from 'getting shit done', like right next to that salesperson with the booming voice, adjacent to an exit, or simply without enough personal space to tune out the unrelated conversations of your neighbors and *their* distractors. Finally, natural light and distances to look across in order to rest the eye are also integral to a computer user's health. 
 
-I work remotely because it gives me greater control over my own productivity. I have been at places where getting caught up in interesting technical tangents was *too* common. There is a place for this type of discussion, but I found it was becoming a roadblock to stable deep work.  And it can happen when just one of your colleagues happens bring up the hacker news thread they were reading. The worst part is that it reinforces a pattern of staying longer at work just to finish the things you had ample time to do. At some point, I began to wonder: what kind of developer *could I be* if I could work with more focus? 
-
-Working remotely encourages more sustained focus more of the time. Offices are more often than not poorly optimized for developer productivity. Even if you're not part of a Bikeshed Clan, you're more likely to be positioned in a place that detracts from 'getting shit done', like right next to that salesperson with the booming voice, near an exit, or simply without enough personal space to tune out the unrelated conversations of your neighbors and *their* distractors.
-
-The common wisdom in the age of the open office is to simply 'wear noise cancelling headphones'. If you're a recording musician for whom there really is no such thing as 'background' music, this doesn't work. Even *musak* is likely to get me thinking 'why exactly is this supposed to be bad, and is there nothing that can be learned from it'? I'll save my elaboration for another day, but suffice it to say that I view this functional attitude toward music as an insult to musicians and listeners alike.  It is also a great way to gratuitously fatigue your ears, and if you're wearing earbuds, cause permanent damage.
+The common wisdom in the age of the open office is to wear noise cancelling headphones. If you're a recording musician for whom there really is no such thing as 'background' music, this doesn't work. Even *musak* is likely to get me thinking 'why exactly is this supposed to be bad, and is there nothing that can be learned from it'? I'll save my elaboration for another day, but suffice it to say that I view this functional attitude toward music as an insult to musicians and listeners alike.  It is also a great way to gratuitously fatigue your ears, and if you're wearing earbuds, cause permanent damage.
 
 The flip side of controlling when and how you work is that you can take more effective breaks.  There isn't a conventional start or end of the day, or a time when everyone is expected to be, or not be, at lunch.  Returning control over the work / break balance to the developer makes the entire process of building good software quickly more natural. You can go for a run, meditate, call a friend or run an errand whenever it feels appropirate, as opposed to relegating these activities to the boundaries of your day.
 
@@ -39,18 +33,21 @@ Just to be clear, I don't think that a corporate office is necessarily a net neg
 
 ## Isolation and Intentionality
 
-If you're feeling like remote work might be for you, know that more and more companies (ahem ... not Big N) are not only open to this, but are actively structuring themselves around remote work. But make sure to do some introspection first, as you are in for a change. You'll be trading the commute and in-person interaction for immersion in Slack.  And it's important to ask the right questions about team dynamics when you're looking for a remote position.  Do they seem to foster a trusting environment, or will you be forced to account for your time to a degree that is counter-productive? Are they explicit about their expectations, social and code-related? The distributed team I joined had a blog post explicitly about their remote dynamics, and that really sold me on working there. Not all companies are the same, and they won't default to healthy or productive behavior. It ended up being a very positive working culture.  AND YET ... I would still describe my initial feelings, once working with a distributed team started to sink in, as blunt loneliness. I saw memes and emojis taking the place of verbal nuance. I missed eating lunch with other developers. For a while, I felt some sort of loss of my former self, to be honest. I felt reduced.  
+If you're feeling like remote work might be for you, it's a good time to be a developer. More and more companies (well, excluding the gentrificational bohemoth's known as the 'Big N') are not only open to this, but are actively structuring themselves around remote work. But make sure to do some introspection first -- and then some serious research into possible companies -- because you are in for a change in the way you socialize. It's important to ask the right questions about team dynamics when you're looking for a remote position.  Do they seem to foster a supportive and collaborative environment? Are they explicit about their social and technical expectations? Can you bet on gender equity based on their communication style? These things were important to me, but you may have other priorities. It's important to figure those out in advance. 
 
-But it forced me to confront some fundamental things in my life.  I was stressed out, not sleeping or exercising enough, drinking too much coffee, and generally not taking very good care of myself.  Apart from my wife, I wasn't building or maintaining lasting friendships like I had been before I became a developer. It might just be me, but consistent, casual interaction with colleagues at work can provide just enough inertia to prevent a person from really taking social risks. For me it did.
+The distributed team I joined had a blog post that examined what worked and what needed improving with their remote dynamics. That level of open introspection really sold me on working there. A healthy and collaborative culture is certainly not the default, it needs to be deliberately achieved through hiring beyond just skillset, and managing beyond just hitting milestones. I'm glad to say that while there were things that frustrated me, it ended up being a very positive and comfortable working culture. Voicing a concern about process or jumping on a call with other developers was frequent and something to look forward to.  
 
-These days, I replace that commuting time with self-education.  This was my initial issue with commuting anyway: I was spending the brightest part of my day making sure I didn't die in a car accident crossing the 520 bridge to Redmond, Washington.  What a waste! Now, I explore a topic I want to learn in depth each morning. And each morning I pick up where I left the day before.
+And yet ... I would still describe my initial feelings, after the first few weeks passed, as gnawing loneliness. I missed eating lunch and laughing with other developers about certain absurdities of the tech world. I felt reduced to text, and too old for emojis. For a while, I felt some sort of loss of my former self, to be honest. This shouldn't be ignored.
 
-Remote work is not really a perk, but people seem to treat it as such. It's a *mode* of work. 
+But it was a very positive thing in my life. I started to confront some fundamental things in my life that up to that point I didn't really feel the need to change.   I was stressed out, not sleeping or exercising enough, drinking too much coffee, and generally not taking very good care of myself.  Apart from my relationship with my wife, I wasn't actively building or maintaining lasting friendships like I had been before I became a developer. It might just be me, but consistent, casual conversations with colleagues at work about topics that your other friends might find boring can provide just enough inertia to prevent you from really taking social risks. For me it did.
+
+I felt alone, but I did something about it. I started to figure out how I wanted to communicate on Slack and leaned in. I began to invest more in relationships with friends that I had let decay.  I started to look around locally for events related to things I was interested in.  Fortunately, I found a makerspace attached to my local library that has a strong musician/programmer/electronics community, and began to just show up. Previously, the programming meetups always seemed too cold and asocial to sustain my interest.  In some ways, they still are unapproachable to me, but I feel now that I can go there and get what I can out of them, and if I can't get anything out of them, it's not *me*.
+
+And what did I do with that extra hour I had previously spent commuting? At first, I used it for sleep.  And then I started to devote it to learning the things I never had the energy for at night, once I'd gotten home, eaten dinner and talked with my wife. This was my initial issue with commuting anyway: I was spending the brightest part of my day not applying my mind to something interesting but to making sure I didn't die in a car accident crossing the 520 bridge to Redmond, Washington, the land of unused turn signals.  What a waste! Now, I spend every morning playing the career long-game, digging into a technical topic that gives me purpose, picking up where I left off the previous day.
 
 
-But in the last few years, I found that I grew more interested in the quality of my friendships, as well as meeting people through other means like meetups or through mutual friends.  Not more friends, just better friendships. More intentional social decisions.
+## Freedom is Scary
 
-- It is a different calibration. a sacrifice, it is a major gain
-- You are on your own in terms of socializing
-- Replace your commute time with something else
-- Direct messages are intrusive 
+The main psychological hurdle of transitioning to a remote work environment is the immediate disappearance of familiar structure. While you have more freedom, you also have full responsibility for turning each and every day into something not only productive, but bearable.  Learning how to do this can make you more capable and confident.
+
+People who haven't worked remotely tend to speak about it as if it were a form of luxury. "You don't have to put on pants!", they might quip. But I think beneath the joke, there is a certain fear that we all have when confronted with the task of imposing structure where there isn't any: 'The horror, the horror!'
