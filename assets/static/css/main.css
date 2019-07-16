@@ -62,7 +62,7 @@ main {
     padding: 8% 10%; }
 
   main {
-    margin: 8% 0%; }
+    margin: 15% 0%; }
 
   h1 {
     font-size: 1.5em; } }
@@ -71,36 +71,42 @@ ul.project-links,
 ul.project-links > li {
   display: inline-block; }
 
-h3 > .github-link {
-  font-weight: lighter;
-  font-size: .5em; }
-
 section.projects {
   padding-left: 5%;
   padding-right: 5%;
   line-height: 1.5em; }
 
 .project {
+  position: relative;
   margin: 0% 0% 5% 0%;
   padding: 2% 5%;
   background: white; }
-  .project .project-title {
-    display: inline-block;
-    position: relative;
-    padding: 2% 0%; }
-    .project .project-title a > i.source-link {
-      padding: 6px; }
-  .project .demo-link {
-    display: inline-block;
-    color: whitesmoke;
-    background: rgba(244, 67, 54, 0.84);
-    padding: 0px 4px;
-    border-radius: 2px; }
-    .project .demo-link:hover {
-      background: whitesmoke;
-      color: rgba(244, 67, 54, 0.84); }
-  .project .top-link .to-top {
-    color: lightgreen; }
+  .project .project-header {
+    display: flex;
+    flex-direction: column; }
+    .project .project-header .header-container {
+      justify-content: space-between;
+      display: inline-flex; }
+      .project .project-header .header-container .project-title,
+      .project .project-header .header-container .top-link {
+        padding: 2% 0%; }
+      .project .project-header .header-container .top-link .to-top {
+        color: lightgreen;
+        font-size: 1.5em; }
+    .project .project-header .links-container a {
+      border-radius: 2px; }
+      .project .project-header .links-container a .source-link {
+        padding: 3px 4px;
+        border-radius: 2px;
+        background: whitesmoke; }
+    .project .project-header .links-container .demo-link {
+      color: whitesmoke;
+      background: rgba(244, 67, 54, 0.84);
+      padding: 2px 6px;
+      border-radius: 2px; }
+      .project .project-header .links-container .demo-link:hover {
+        background: whitesmoke;
+        color: rgba(244, 67, 54, 0.84); }
   .project .project-description {
     padding: 2% 0% 5% 0%;
     text-align: left; }
@@ -114,7 +120,7 @@ img.project-image {
   max-width: 700px; }
 
 nav.projects-nav {
-  padding-left: 5%;
+  padding-left: 9%;
   padding-right: 5%;
   padding-bottom: 5%; }
   nav.projects-nav ul {
@@ -125,10 +131,8 @@ nav.projects-nav {
 @media (max-width: 750px) {
   nav.projects-nav {
     position: relative;
-    text-align: left; }
-
-  header.project-header {
-    text-align: center; } }
+    text-align: left;
+    padding-bottom: 15%; } }
 header.site-header {
   width: 100%;
   padding: 5% 20%;

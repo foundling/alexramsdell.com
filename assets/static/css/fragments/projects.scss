@@ -5,10 +5,6 @@ ul.project-links > li {
 }
 
 
-h3 > .github-link {
-  font-weight: lighter;
-  font-size: .5em;
-} 
 section.projects {
   padding-left: 5%;
   padding-right: 5%;
@@ -17,39 +13,62 @@ section.projects {
 
 .project {
 
+  position: relative;
   margin: 0% 0% 5% 0%;
   padding: 2% 5%;
   background: white;
 
-  .project-title {
-    display: inline-block;
-    position: relative;
-    padding: 2% 0%;
-    & a > i.source-link {
-      padding: 6px;
-    } 
-  } 
+  .project-header {
+    display: flex;
+    flex-direction: column;
 
-  .demo-link {
+    .header-container {
 
-    display: inline-block;
-    color: whitesmoke;
-    background: rgba(244, 67, 54, 0.84);
-    padding: 0px 4px;
-    border-radius: 2px;
+      justify-content: space-between;
+      display: inline-flex;
 
-    &:hover {
-      background: whitesmoke;
-      color: rgba(244, 67, 54, 0.84);
+      .project-title,
+      .top-link {
+        padding: 2% 0%;
+      }
+
+      .top-link {
+        .to-top {
+          color: lightgreen;
+          font-size: 1.5em;
+        }
+      }
     }
 
-  }
+    .links-container {
 
-  .top-link {
-    .to-top {
-      color: lightgreen;
+      a {  
+        border-radius: 2px;
+        .source-link {
+          padding: 3px 4px;
+          border-radius: 2px;
+          background: whitesmoke;
+        }
+      } 
+
+      .demo-link {
+
+        color: whitesmoke;
+        background: rgba(244, 67, 54, 0.84);
+        padding: 2px 6px;
+        border-radius: 2px;
+
+        &:hover {
+          background: whitesmoke;
+          color: rgba(244, 67, 54, 0.84);
+        }
+
+      }
+
     }
   }
+
+  
 
   .project-description {
     padding: 2% 0% 5% 0%;
@@ -72,7 +91,7 @@ img.project-image {
 
 nav.projects-nav {
 
-  padding-left: 5%;
+  padding-left: 9%;
   padding-right: 5%;
   padding-bottom: 5%;
 
@@ -92,8 +111,6 @@ nav.projects-nav {
   nav.projects-nav {
     position: relative;
     text-align: left;
-  }
-  header.project-header {
-    text-align: center;
+    padding-bottom: 15%;
   }
 }
