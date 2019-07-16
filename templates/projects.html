@@ -2,47 +2,45 @@
 {% from 'common/macros/tags.html' import tags %}  
 
 {% block content %}
-    <nav class="projects-nav">
-        <h3>Projects</h3>
-        <ul>
-            {% for project in this.children %}
-            <li>
-                <a href="#{{ project.name }}">{{ project.name }}</a>
-            </li>
-            {% endfor %}
-        </ul>
-    </nav>
-    <section class="projects">
-        {% for project in this.children %}
+  <nav class="projects-nav">
+    <h1>Projects</h1>
+    <ul>
+      {% for project in this.children %}
+      <li>
+        <i class="fa fa-lightbulb-o"></i>
+        <a class="project-name" href="#{{ project.name }}"> {{ project.name }}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <section class="projects">
+    {% for project in this.children %}
 
-            <div class="project">
+      <div class="project">
 
-                <h3 class="project-title" id="{{project.name}}">
-                {{ project.name }} 
-                <a href="{{project.source_link}}">
-                    <i class="source-link fa fa-github"></i>
-                </a>
+        <h2 class="project-title" id="{{project.name}}">{{ project.name }}</h2>
+        <a href="{{project.source_link}}">
+          <i class="source-link fa fa-github"></i>
+        </a>
 
-                {% if project.demo_link %}
-                <a class="demo-link" href="{{project.demo_link}}">try it out</a>
-                {% endif %}
+        {% if project.demo_link %}
+          <a class="demo-link" href="{{project.demo_link}}">try it out</a>
+        {% endif %}
 
-                <a class="top-link" href="#top"><i class="to-top fa fa-arrow-up" title="go to top"></i></a>
-                </h3>
+        <a class="top-link" href="#top"><i class="to-top fa fa-arrow-up" title="go to top"></i></a>
 
-                <div class="project-description">
-                {{ project.description }}
-                </div>
+        <div class="project-description">
+        {{ project.description }}
+        </div>
 
-                {% for img in project.attachments.images %}
-                    <img src="{{img|url}}" />
-                {% endfor %}
-
-                {{ tags(project.tags) }}
-
-
-            </div>
-
+        {% for img in project.attachments.images %}
+            <img src="{{img|url}}" />
         {% endfor %}
-    </section>
+
+        {{ tags(project.tags) }}
+
+      </div>
+
+    {% endfor %}
+  </section>
 {% endblock %}

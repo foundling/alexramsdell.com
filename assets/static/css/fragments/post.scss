@@ -1,175 +1,113 @@
 .post {
 
-    padding-left: 5%;
-    text-align: left;
-    font-family: "Lora", serif;
+  padding-left: 5%;
+  text-align: left;
+  font-family: "Lora", serif;
 
-    /* global spacing between sections */
-    p,
-    ul {
-        padding-top: 1%;
-        padding-bottom: 2%;
-    }
+  p,
+  ul {
+    padding-top: 1%;
+    padding-bottom: 2%;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: Helvetica;
+    padding-top: 2%;
+    padding-bottom: 2%;
+  }
 
-    &__title {
+  > p {
+    font-family: 'Lora';
+  }
+  > p {
+    padding: 0% 0% 3% 0%;
+  }
+  p > a {
+    font-family: "Droid Serif";
+  }
+  h1 {
+    display: inline-block;
+    padding: 1%;
+    background: white;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.62);
+    margin-bottom: 1%;
+  }
+  ul {
 
-        display: inline-block;
-        vertical-align: middle;
-        margin-right: 5px;
-        position: relative;
-        font-family: 'sans-serif', Helvetica, Arial;
+    margin: 0% 5%;
 
-        a,
-        a > p {
-            display: inline;
-        }
-
-    }
-    &__body {
-    }
-
-    h2 {
-        font-size: 2em;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-        font-family: Helvetica;
-        padding-top: 2%;
-        padding-bottom: 2%;
-    }
-
-    >p {
-        font-family: 'Lora';
-    }
-    >p:first-of-type {
-        //padding: 4% 0px;
-    }
-    >p {
-        padding: 0% 0% 3% 0%;
-    }
-    p > a {
-        font-family: "Droid Serif";
-    }
-    h1 {
-      font-size: 2em;
-      display: inline-block;
-      padding: 1%;
-      background: white;
-      border-bottom: 1px solid rgba(255, 0, 0, 0.62);
-      margin-bottom: 5%;
-    }
-    h2, h3, h4 {
-    }
-    ul {
-        margin: 0% 5%;
-    }
     li {
-        font-family: 'Lora';
-        list-style-type: initial;
-    }
-    
-    &__contribute {
-
-        padding: 3% 5%;
-        background: lightgreen;
-
-        &-question-container {
-            height: 2em;
-            width: 2em;
-            margin-right: 5px;
-            display: inline-flex;
-            background: white;
-            border-radius: 50%;
-            align-items: center;
-            justify-content: center;
-        }
-
-        &-copy {
-            display: inline !important;
-        }
-        &-repo {
-            text-decoration: underline;
-        }
-
+      font-family: 'Lora';
+      list-style-type: initial;
     }
 
+  }
 
-}
+  &__title {
 
-a[href="#references"] {
-    color: rgba(255, 0, 0, 0.62);
-    font-size: .6em;
-    vertical-align: super;
-}
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+    position: relative;
+    font-family: 'sans-serif', Helvetica, Arial;
 
-p.full-post-content,
-div.post-stub {
-    background: rgba(255,255,255,0.0);
-    margin: 0px 0px;
-    padding: 0px;
-    text-align: left;
-}
-
-div.post-text {
-
-    p {
-        font-family: 'Lora', serif;
-        margin-right: 5px;
+    a,
+    a > p {
+      display: inline;
     }
 
-    p:first-of-type {
-        display: inline;
-    } 
+  }
 
-    a.full-article-link {
-        background: rgba(255, 0, 0, 0.2);
-        padding: 0px 5px 0px 5px;
+ 
+  &__contribute {
+
+    padding: 3% 5%;
+    background: lightgreen;
+
+    &-question-container {
+      height: 2em;
+      width: 2em;
+      margin-right: 5px;
+      display: inline-flex;
+      background: white;
+      border-radius: 50%;
+      align-items: center;
+      justify-content: center;
     }
 
-}
+    &-copy {
+      display: inline !important;
+    }
+    &-repo {
+      text-decoration: underline;
+    }
 
+  }
+
+}
 
 @media(max-width: 750px) {
 
-    .post {
+  .post {
 
-        padding: 5%;
-        
-        &__title {
-            a {
-                font-size: 1.6em;
-            }
-        }
+    padding: 5%;
 
-        >p:first-of-type {
-           //padding: 10% 0%;
-        }
-
-        >p {
-            padding: 0% 0%;
-        }
-        h1 {
-          font-size: 3em;
-        }
-
-        h2 {
-            font-size: 1.5em;
-        }
-        h3 {
-            font-size: 1em;
-        }
-
-        h2,h3,h4 {
-            margin-bottom: 0%;
-        }
-
-        li {
-            list-style-type: initial;
-        }
-
+    > p {
+      padding: 0% 0%;
     }
+
+    h2,
+    h3,
+    h4 {
+      margin-bottom: 0%;
+    }
+
+    li {
+      list-style-type: initial;
+    }
+
+  }
 
 }
