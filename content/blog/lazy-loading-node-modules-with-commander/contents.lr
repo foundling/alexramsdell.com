@@ -5,6 +5,7 @@ author: alex
 content_type: article
 ---
 tags:
+cli
 NodeJS
 JavaScript
 Commander

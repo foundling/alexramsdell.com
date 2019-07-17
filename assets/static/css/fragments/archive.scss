@@ -1,0 +1,38 @@
+.blog__archive {
+
+  padding-left: 5%;
+  padding-right: 5%;
+
+  ul {
+
+    margin-top: 0.8em;
+
+    li {
+
+      display: block;
+      padding-left: 0;
+      line-height: 1.6em;
+
+      &.post-link {
+
+        .post-title {
+          color: lightgray;
+        }
+        .post-title:hover {
+          color: initial;
+        }
+
+      }
+      &.query-match {
+        .post-title {
+          color: initial;
+        }
+      }
+
+      .post-pub-date {
+        color: rgba(255, 0, 0, 0.62);
+      }
+    }
+  }
+
+}
