@@ -6,31 +6,37 @@
 
 {% block content %}
 
-  <aside title="table of contents" class="post-toc closed">
-
-    <button class="fa fa-close close-icon"></button>
-    <button class="fa fa-list toc-icon"></button>
-
-    <h4>Table of Contents</h4>
-    <nav class="toc-list-container">
-      <ul class="toc-parent">
-        {% for item in this.body.toc recursive %}
-          <li>
-            <a href="#{{ item.anchor }}">{{ item.title }}</a>
-            {% if item.children %}
-              <ul>{{ loop(item.children) }}</ul>
-            {% endif %}
-          </li>
-        {% endfor %}
-      </ul>
-    </nav>
-
-  </aside>
 
   <section class="post">
 
     <h1>{{ this.title }}</h1>                                                                                                                 
+
     <section>{{ byline(this) }}</section>
+
+    <aside title="expand the table of contents" class="post-toc closed">
+
+      <button class="fa fa-list toc-icon"></button>
+
+      <nav class="toc-list-container">
+        <div class="post-toc-header">
+          <h4>Table of Contents</h4>
+          <button class="fa fa-close close-icon"></button>
+        </div>
+
+        <ul class="toc-parent">
+          {% for item in this.body.toc recursive %}
+            <li>
+              <a href="#{{ item.anchor }}">{{ item.title }}</a>
+              {% if item.children %}
+                <ul>{{ loop(item.children) }}</ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+    </aside>
+
 
     <article class="post__body"> 
         {% block body %}{{ this.body }}{% endblock %}
