@@ -8,13 +8,11 @@
 
   <aside title="table of contents" class="post-toc closed">
 
-    <i class="fa fa-close close-icon"></i>
-    <header class="post-toc-header">
-      <h4>Table of Contents</h4>
-    </header>
+    <button class="fa fa-close close-icon"></button>
+    <button class="fa fa-list toc-icon"></button>
 
+    <h4>Table of Contents</h4>
     <nav class="toc-list-container">
-      <i class="fa fa-list toc-icon"></i>
       <ul class="toc-parent">
         {% for item in this.body.toc recursive %}
           <li>

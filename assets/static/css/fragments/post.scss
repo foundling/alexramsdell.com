@@ -9,8 +9,16 @@
   margin-left: calc(-20% - 1px);
   border: 1px solid rgba(255, 0, 0, 0.62);
 
+  .toc-icon {
+    padding: 1%;
+    border: none;
+    background: none;
+    display: none;
+  }
   .close-icon {
     position: absolute;
+    background: none;
+    border: none;
     top: 0;
     right: 0;
     padding: 4%;
@@ -19,14 +27,9 @@
       color: lightgray;
     }
   }
-  .post-toc-header {
-    width: 100%;
-    display: inline-flex;
-    align-items: baseline;
-    justify-content: space-between;
-    h4 {
-      border-bottom: 1px solid rgba(255, 0, 0, 0.62);
-    }
+  h4 {
+    display: inline-block;
+    border-bottom: 1px solid rgba(255, 0, 0, 0.62);
   }
 
   .toc-list-container {
@@ -34,9 +37,6 @@
     max-height: 400px;
     overflow-y: scroll;
 
-    .toc-icon {
-      display: none;
-    }
 
     .toc-parent {
       margin-top: 2%;
@@ -56,9 +56,6 @@
       }
     }
     .close-icon {
-      display: none;
-    }
-    .post-toc-header {
       display: none;
     }
   }
