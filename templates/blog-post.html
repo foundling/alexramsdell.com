@@ -6,6 +6,29 @@
 
 {% block content %}
 
+  <aside title="table of contents" class="post-toc closed">
+
+    <i class="fa fa-close close-icon"></i>
+    <header class="post-toc-header">
+      <h4>Table of Contents</h4>
+    </header>
+
+    <nav class="toc-list-container">
+      <i class="fa fa-list toc-icon"></i>
+      <ul class="toc-parent">
+        {% for item in this.body.toc recursive %}
+          <li>
+            <a href="#{{ item.anchor }}">{{ item.title }}</a>
+            {% if item.children %}
+              <ul>{{ loop(item.children) }}</ul>
+            {% endif %}
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+  </aside>
+
   <section class="post">
 
     <h1>{{ this.title }}</h1>                                                                                                                 
@@ -25,5 +48,21 @@
 
 
   </section>
+  <script>
+
+    const toc = document.querySelector('.post-toc') 
+    const tocIcon = document.querySelector('.toc-icon')
+    const closeIcon = document.querySelector('.close-icon')
+
+    tocIcon.addEventListener('click', e => {
+      toc.classList.remove('closed')
+    })
+
+    closeIcon.addEventListener('click', e => {
+      toc.classList.add('closed')
+    })
+
+
+  </script>
 
 {% endblock %}
