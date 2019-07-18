@@ -54,9 +54,11 @@
   </section>
   <script>
 
+    // handle clicks on table of contents icons
     const toc = document.querySelector('.post-toc') 
     const tocIcon = document.querySelector('.toc-icon')
     const closeIcon = document.querySelector('.close-icon')
+    const tocListParent = document.querySelector('.toc-parent')
 
     tocIcon.addEventListener('click', e => {
       toc.classList.remove('closed')
@@ -65,6 +67,17 @@
     closeIcon.addEventListener('click', e => {
       toc.classList.add('closed')
     })
+
+    tocListParent.addEventListener('click', e => {
+      if (e.target.nodeName === 'A') {
+        setTimeout(() => {
+          window.scrollBy(0, -40)
+          toc.classList.add('closed')
+        }, 0) 
+      }
+    })
+
+    
 
 
   </script>

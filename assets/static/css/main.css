@@ -243,6 +243,10 @@ ul.social-media-icons {
   font-family: "Lora", serif; }
   .post .post-toc {
     position: sticky;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
     top: 2%;
     overflow-x: scroll;
     background: white;
@@ -256,12 +260,15 @@ ul.social-media-icons {
     .post .post-toc.closed .post-toc-header {
       display: none; }
     .post .post-toc .post-toc-header {
-      margin: 2% 3%;
+      margin: 2% 3% 1% 3%;
       display: inline-flex;
       justify-content: space-between;
       align-items: baseline;
       width: fill-available;
-      width: -webkit-fill-available; }
+      width: -webkit-fill-available;
+      width: -moz-fill-available;
+      width: -o-fill-available;
+      width: -ms-fill-available; }
       .post .post-toc .post-toc-header h4 {
         padding: 0;
         display: inline-block;
@@ -272,6 +279,8 @@ ul.social-media-icons {
     .post .post-toc .toc-list-container {
       max-height: 400px;
       overflow-y: scroll; }
+      .post .post-toc .toc-list-container ul {
+        margin: 0% 4%; }
     .post .post-toc.closed {
       width: fit-content;
       padding: 1%;
