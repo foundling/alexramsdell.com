@@ -6,8 +6,8 @@ ul.project-links > li {
 
 
 section.projects {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 0%;
+  padding-right: 0%;
   line-height: 1.5em;
 }
 
@@ -18,6 +18,9 @@ section.projects {
   padding: 2% 5%;
   background: white;
 
+  &:last-child {
+    margin-bottom: 0%;
+  }
   .project-header {
     display: flex;
     flex-direction: column;
@@ -91,7 +94,7 @@ img.project-image {
 
 nav.projects-nav {
 
-  padding-left: 10%;
+  padding-left: 5%;
   padding-right: 5%;
   padding-bottom: 5%;
 
@@ -109,10 +112,18 @@ nav.projects-nav {
 
 @media(max-width: 750px) {
 
+  nav.projects-nav {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
   section.projects {
     padding: 0;
   }
   .project {
+    &:last-child {
+      margin-bottom: 0%;
+    }
     padding: 5% 10%;
   }
   nav.projects-nav {

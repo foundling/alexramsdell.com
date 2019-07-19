@@ -13,16 +13,16 @@
 
     <section>{{ byline(this) }}</section>
 
-    <aside title="expand the table of contents" class="post-toc closed">
+    <aside title="expand the table of contents" class="post-toc closed visible">
 
       <button class="fa fa-list toc-icon"></button>
 
-      <nav class="toc-list-container">
-        <div class="post-toc-header">
-          <h4>Table of Contents</h4>
-          <button class="fa fa-close close-icon"></button>
-        </div>
+      <div class="post-toc-header">
+        <h4>Table of Contents</h4>
+        <button class="fa fa-close close-icon"></button>
+      </div>
 
+      <nav class="toc-list-container">
         <ul class="toc-parent">
           {% for item in this.body.toc recursive %}
             <li>
@@ -43,7 +43,6 @@
     </article>
 
     {{ references(this) }} 
-
     {{ tags(this.tags) }}
 
     {% if this.content_type == 'article' %}
@@ -70,14 +69,21 @@
 
     tocListParent.addEventListener('click', e => {
       if (e.target.nodeName === 'A') {
+        toc.classList.add('closed')
+
+        // hide when not scrolling after link is clicked
+        // a scroll will re-show it
         setTimeout(() => {
-          window.scrollBy(0, -40)
-          toc.classList.add('closed')
-        }, 0) 
+          toc.classList.add('invisible')
+        }, 300)
       }
     })
 
-    
+  document.addEventListener('scroll', e => {
+    if (toc.classList.contains('invisible')) {
+      toc.classList.remove('invisible')
+    }
+  })
 
 
   </script>
