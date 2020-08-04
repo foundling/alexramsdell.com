@@ -6,10 +6,10 @@ description:
 
 `tl` is a minimal command-line task list application written in Go.
 
+<script src="https://asciinema.org/a/229292.js" id="asciicast-229292" async></script>
+
 ---
 source_link: https://github.com/foundling/tl
----
-demo_link: https://asciinema.org/a/229292?autoplay=1
 ---
 tags:
 
