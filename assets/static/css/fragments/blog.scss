@@ -1,12 +1,15 @@
 .blog__recent-posts {
 
     text-align: left;
-    padding-left: 5%;
-    padding-right: 5%;
 
     .post-summary {
         margin: 6% 0% 0% 0%;
         width: 100%;
+
+        .post-summary__header {
+          //font-family: Helvetica;
+        }
+
         &__short-text {
             margin: 2% 0% 0% 0%;
             font-family: 'Lora', serif;

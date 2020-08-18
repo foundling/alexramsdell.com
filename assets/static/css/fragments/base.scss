@@ -1,7 +1,7 @@
 /* General Styles */
 
 html {
-    background: whitesmoke;
+    background: white;
 }
 
 html, 
@@ -10,7 +10,7 @@ body {
   width: 100%;
   height: 100%;
 
-  font-family: "Helvetica Neue";
+  font-family: "Times New Roman";
   color: rgb(70,70,70);
 
 }
@@ -86,7 +86,10 @@ p {
 }
 
 main {
-  margin: 4% 20%;
+  margin: 2% 20% 2% 0%;
+  & > section {
+    margin-left: 1.5%;
+  }
 }
 
 .visible {

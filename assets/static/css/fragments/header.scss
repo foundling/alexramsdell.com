@@ -1,14 +1,12 @@
 header.site-header {
     
   width: 100%;
-  padding: 5% 20%;
 
   text-align: left;
-  background: white;
 
   nav {
 
-    margin-left: 5%;
+    margin-left: 1%;
     display: inline-flex;
     align-items: baseline;
 
@@ -54,7 +52,6 @@ header.site-header {
       .logo-trees {
         margin: 0;
       }
-      flex-direction: column;
     }
   }
 }

@@ -1,0 +1,18 @@
+{% macro byline(post) -%}
+
+    <ul class="byline">
+        <!-- Published -->
+        <li class="pencil-icon">
+            <i 
+                title="last edited: {{ post.last_edited }}" 
+                class="pencil-icon fa fa-pencil"></i> 
+        </li>
+        <li class="publish-date">
+            <span 
+                data-numeric-date="{{ post.pub_date }}"
+                title="{{ post.pub_date }}" 
+                class="post-published">posted by alex on {{ post.pub_date.strftime("%B %-d, %Y") }}</span>
+        </li>
+    </ul>
+
+{%- endmacro %}

@@ -1,45 +1,9 @@
-<header id="top" class="site-header">
-    <nav class="blog-nav">
-
-        <span class="site-logo">
-          <a href="/blog">Alex Ramsdell</a>
-        </span>
-
-        <ul class="nav-links">
-
-
-          <!-- UNDERLINE THE TOP LEVEL SECTION WE'RE IN -->
-          {% if this.url_path.startswith('/blog/') %}
-            <li class="blog active-link">
-                <a href="{{ '/blog'|url }}">blog</a>
-            </li>
-          {% else %}
-            <li class="blog">
-                <a href="{{ '/blog'|url }}">blog</a>
-            </li>
-          {% endif %}
-
-          {% if this.url_path.startswith('/projects/') %}
-            <li class="projects active-link">
-                <a href="{{ '/projects'|url}}">projects</a>
-            </li>
-          {% else %}
-            <li class="projects">
-                <a href="{{ '/projects'|url}}">projects</a>
-            </li>
-          {% endif %}
-
-          {% if this.url_path.startswith('/about/') %}
-            <li class="about active-link">
-                <a href="{{ '/about'|url }}">about me</a>
-            </li>
-          {% else %}
-            <li class="about">
-                <a href="{{ '/about'|url }}">about me</a>
-            </li>
-          {% endif %}
-
-        </ul>
-
-    </nav>
+<header class="site-header">
+  <nav>
+    <li><a href="/">AR</a></li>
+    <li>|</li>
+    <li><a href="/music">music</a></li>
+    <li><a href="/writing">writing</a></li>
+    <li><a href="/code">code</a></li>
+  </nav>
 </header>

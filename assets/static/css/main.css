@@ -1,12 +1,12 @@
 /* General Styles */
 html {
-  background: whitesmoke; }
+  background: white; }
 
 html,
 body {
   width: 100%;
   height: 100%;
-  font-family: "Helvetica Neue";
+  font-family: "Times New Roman";
   color: #464646; }
 
 html,
@@ -56,7 +56,9 @@ p {
   line-height: 1.6em; }
 
 main {
-  margin: 4% 20%; }
+  margin: 2% 20% 2% 0%; }
+  main > section {
+    margin-left: 1.5%; }
 
 .visible {
   opacity: 1;
@@ -159,11 +161,9 @@ nav.projects-nav {
     padding-bottom: 15%; } }
 header.site-header {
   width: 100%;
-  padding: 5% 20%;
-  text-align: left;
-  background: white; }
+  text-align: left; }
   header.site-header nav {
-    margin-left: 5%;
+    margin-left: 1%;
     display: inline-flex;
     align-items: baseline; }
     header.site-header nav .site-logo,
@@ -186,8 +186,7 @@ header.site-header {
     width: 100%;
     margin-left: 0;
     justify-content: center;
-    align-items: center;
-    flex-direction: column; }
+    align-items: center; }
     header.site-header nav .site-logo,
     header.site-header nav .nav-links {
       display: block !important;
@@ -199,11 +198,12 @@ header.site-header {
   margin-left: 0px !important; }
   .tags__label {
     display: inline-block;
-    color: #4a4747; }
+    color: #616161; }
   .tags__tag {
     font-size: 0.8em;
     background: white;
     border: 1px solid #dedede;
+    background: whitesmoke;
     border-radius: 3px;
     padding: 2px 5px;
     margin: 5px 0;
@@ -423,7 +423,7 @@ ul.byline {
   ul.byline i.pencil-icon {
     color: rgba(255, 0, 0, 0.62); }
   ul.byline li.publish-date {
-    color: #b3b3b3;
+    color: #616161;
     display: inline-block; }
     ul.byline li.publish-date span.post-published {
       font-family: sans-serif; }
@@ -447,19 +447,10 @@ div.blog-post-references {
   border: 1px dotted gray; }
 
 footer {
-  padding: 1%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: white;
-  border-top: 1px solid lightgreen; }
-  footer a.creator-link:hover {
-    color: rgba(255, 0, 0, 0.62); }
-  footer i.fa-heart {
-    color: rgba(255, 0, 0, 0.62); }
-  footer p {
-    font-size: 1em; }
+  justify-content: center; }
 
 @media (max-width: 750px) {
   footer {
@@ -467,9 +458,7 @@ footer {
     footer p {
       font-size: 0.8em; } }
 .blog__recent-posts {
-  text-align: left;
-  padding-left: 5%;
-  padding-right: 5%; }
+  text-align: left; }
   .blog__recent-posts .post-summary {
     margin: 6% 0% 0% 0%;
     width: 100%; }
@@ -508,7 +497,7 @@ footer {
     text-align: center; } }
 section.about {
   text-align: initial;
-  margin-left: 5%;
+  margin-left: 1.5%;
   margin-right: 5%; }
   section.about h2 {
     padding-top: 20px;

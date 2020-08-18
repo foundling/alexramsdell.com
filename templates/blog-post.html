@@ -1,8 +1,8 @@
 {% extends "layout.html" %}
 
-{% from 'blog/post/macros/references.html' import references %}
+{% from 'writing/post/macros/references.html' import references %}
 {% from 'common/macros/tags.html' import tags %}
-{% from 'blog/post/macros/byline.html' import byline %}
+{% from 'writing/post/macros/byline.html' import byline %}
 
 {% block content %}
 
@@ -46,7 +46,7 @@
     {{ tags(this.tags) }}
 
     {% if this.content_type == 'article' %}
-        {% include 'blog/post/contribute.html' %}
+        {% include 'writing/post/contribute.html' %}
     {% endif %}
 
 
@@ -85,6 +85,10 @@
     }
   })
 
+	// Setup isScrolling variable
+	var isScrolling;
+
+  
 
   </script>
 
