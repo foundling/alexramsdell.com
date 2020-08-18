@@ -1,9 +1,11 @@
-{% extends 'layout.html' %}
+{% extends "layout.html" %}
 
 {% block content %}
-<section class="about">
-  {% block body %} 
-  {{ this.body }}
-  {% endblock %}
-</section>
+
+  <section class="about">
+    {% block body %} 
+    {{ this.body }}
+    {% endblock %}
+  </section>
+
 {% endblock %}

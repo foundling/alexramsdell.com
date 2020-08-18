@@ -1,7 +1,11 @@
 _model: music
 ---
+_discoverable: yes
+---
+author: alex
+---
+title: Music
+---
 body:
 
-hi
 <iframe style="border: 0; width: 350px; height: 555px;" src="https://bandcamp.com/EmbeddedPlayer/album=1937893923/size=large/bgcol=ffffff/linkcol=de270f/transparent=true/" seamless><a href="http://alexramsdell.bandcamp.com/album/explore">Explore by Alex Ramsdell</a></iframe>
-
