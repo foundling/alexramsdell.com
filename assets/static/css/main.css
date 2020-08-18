@@ -164,6 +164,7 @@ header.site-header {
   text-align: left; }
   header.site-header nav {
     margin-left: 1%;
+    margin-top: 1%;
     display: inline-flex;
     align-items: baseline; }
     header.site-header nav .site-logo,
@@ -506,6 +507,8 @@ section.about {
     padding-top: 0px; }
   section.about p {
     padding-bottom: 20px; }
+  section.about ul, section.about li {
+    padding-left: 0; }
   section.about a {
     text-decoration: underline; }
   section.about section.img-box {

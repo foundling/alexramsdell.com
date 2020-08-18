@@ -2,8 +2,11 @@
 
 {% block content %}
 
-  <section class=""> 
+  <section> 
     <h2>Music</h2>
+    {% block body %}
+      {{ this.body }}
+    {% endblock %}
   </section> 
 
 {% endblock %}
