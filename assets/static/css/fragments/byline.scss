@@ -1,7 +1,5 @@
 ul.byline {
 
-    margin-left: 0px !important;
-    margin-top: 2.5% !important;
     font-size: .9em;
     display: inline-block;
     width: 100%;
@@ -12,9 +10,8 @@ ul.byline {
     }
 
     li.github-icon,
-    li.pencil-icon,
-    li.twitter-icon {
-        padding: 4px;
+    li.pencil-icon {
+        padding: 4px 0px 4px 4px;
         background: white;
 
         a {
@@ -32,7 +29,8 @@ ul.byline {
 
     li.publish-date {
 
-        color: rgba(97,97,97,1);
+        font-weight: lighter;
+        color: #d8d8d8;
         display: inline-block;
 
         span.post-published {

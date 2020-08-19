@@ -7,18 +7,19 @@
 {% block content %}
 
   <section class="blog__recent-posts"> 
-    <h2>Writing</h2>
 
     {% for post in this.children %}
 
       <article class="post-summary">
 
         <section class="post-summary__header">
-          <h3><a href="{{ post | url }}">{{ post.title }}</a></h3>
+          <h2>
+            <a href="{{ post | url }}">{{ post.title }}</a>
+          </h2>
         </section>
-        <section>{{ byline(post) }}</section>
         <section class="post-summary__short-text">{{ post.short_text }}</section>
-        <section class="post-summary__tags">{{ tags(post.tags) }}</section>
+        <section class="post-summary__byline">{{ byline(post) }}</section>
+        <!-- <section class="post-summary__tags">{{ tags(post.tags) }}</section> -->
 
       </article>
 

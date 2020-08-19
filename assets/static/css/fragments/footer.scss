@@ -1,17 +1,26 @@
 footer {
 
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    a {
+      color: rgba(255, 0, 0, 0.62);
+    }
 
 }
 
 @media (max-width: 750px) {
   footer {
-    padding: 3%;
     p {
-      font-size: 0.8em
+      font-size: 0.8em;
+      a {
+        color: rgba(255, 0, 0, 0.62);
+        &:hover {
+          text-decoration: underline;
+        }
+      }
     }
   }
 }

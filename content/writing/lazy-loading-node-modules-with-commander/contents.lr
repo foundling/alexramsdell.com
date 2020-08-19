@@ -6,9 +6,9 @@ content_type: article
 ---
 tags:
 cli
-NodeJS
-JavaScript
-Commander
+nodejs
+javascript
+commander
 ---
 pub_date: 2017-03-17
 ---

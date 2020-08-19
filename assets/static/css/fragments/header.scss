@@ -6,12 +6,9 @@ header.site-header {
 
   nav {
 
-    margin-left: 1%;
-    margin-top: 1%;
     display: inline-flex;
     align-items: baseline;
 
-    .site-logo, 
     ul,
     ul > li {
       display: inline-block; 
@@ -20,11 +17,6 @@ header.site-header {
       padding-right: 0;
       margin-right: 0.5em;
 
-    }
-    .site-logo {
-      font-weight: bold;
-      font-size: 1.5em;
-      margin-right: 10px;
     }
   }
   
@@ -41,17 +33,13 @@ header.site-header {
     nav {
 
       width: 100%;
-      margin-left: 0;
+      //margin-left: 0;
       justify-content: center;
       align-items: center;
 
-      .site-logo,
       .nav-links {
         display: block !important;
         align-items: center;
-      }
-      .logo-trees {
-        margin: 0;
       }
     }
   }

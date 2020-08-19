@@ -11,9 +11,9 @@
 
     <h1>{{ this.title }}</h1>                                                                                                                 
 
-    <section>{{ byline(this) }}</section>
+    {{ byline(this) }}
 
-    <aside title="expand the table of contents" class="post-toc closed visible">
+    <aside title="expand the table of contents" class="post-toc visible">
 
       <button class="fa fa-list toc-icon"></button>
 
@@ -43,21 +43,28 @@
     </article>
 
     {{ references(this) }} 
-    {{ tags(this.tags) }}
-
-    {% if this.content_type == 'article' %}
-        {% include 'writing/post/contribute.html' %}
-    {% endif %}
-
+    <!-- {{ tags(this.tags) }} -->
 
   </section>
   <script>
+
+    // toc starts off expanded and part of the page flow.
+    // once the viewport passes the distance from the page top to the bottom of the expanded toc, switch toc to closed and pos: sticky.
 
     // handle clicks on table of contents icons
     const toc = document.querySelector('.post-toc') 
     const tocIcon = document.querySelector('.toc-icon')
     const closeIcon = document.querySelector('.close-icon')
     const tocListParent = document.querySelector('.toc-parent')
+
+    let belowFold = {
+      prev: toc.getBoundingClientRect().bottom < 0,
+      current: toc.getBoundingClientRect().bottom < 0 
+    }
+    let tocOpen = {
+      prev: true,
+      current: true
+    }
 
     tocIcon.addEventListener('click', e => {
       toc.classList.remove('closed')
@@ -79,16 +86,18 @@
       }
     })
 
-  document.addEventListener('scroll', e => {
-    if (toc.classList.contains('invisible')) {
-      toc.classList.remove('invisible')
-    }
-  })
+    document.addEventListener('scroll', e => {
 
-	// Setup isScrolling variable
-	var isScrolling;
+      const { bottom, top } = toc.getBoundingClientRect() 
 
-  
+      if (toc.classList.contains('invisible')) {
+        toc.classList.remove('invisible')
+      }
+
+    })
+
+    // Setup isScrolling variable
+    var isScrolling;
 
   </script>
 

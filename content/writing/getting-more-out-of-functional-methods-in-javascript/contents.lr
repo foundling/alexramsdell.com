@@ -12,7 +12,7 @@ short_text: In JavaScript, array methods like `map`, `filter`, `reduce`, `some` 
 ---
 tags: 
 functional-programming
-JavaScript
+javascript
 ---
 references: 
 - [JavaScript Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) 

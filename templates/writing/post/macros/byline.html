@@ -11,7 +11,7 @@
             <span 
                 data-numeric-date="{{ post.pub_date }}"
                 title="{{ post.pub_date }}" 
-                class="post-published">posted by alex on {{ post.pub_date.strftime("%B %-d, %Y") }}</span>
+                class="post-published">{{ post.pub_date.strftime("%b %-d, %Y") }}</span>
         </li>
     </ul>
 
