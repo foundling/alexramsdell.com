@@ -1,4 +1,4 @@
-header.site-header {
+header {
     
   width: 100%;
 
@@ -28,19 +28,14 @@ header.site-header {
 
 @media(max-width: 750px) {
 
-  header.site-header {
+  header {
 
     nav {
-
       width: 100%;
-      //margin-left: 0;
       justify-content: center;
       align-items: center;
 
-      .nav-links {
-        display: block !important;
-        align-items: center;
-      }
     }
+
   }
 }

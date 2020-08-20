@@ -111,9 +111,10 @@
   }
   h1 {
     display: inline-block;
-    padding: 0px 0px 20px 0px;
+    padding: 0px;
     background: white;
-    border-bottom: 1px solid rgba(255, 0, 0, 0.62);
+  }
+  ul.byline {
     margin-bottom: 1%;
   }
   ul {

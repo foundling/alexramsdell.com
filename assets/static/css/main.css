@@ -101,18 +101,26 @@ ul.project-links > li {
 section.projects {
   padding-left: 0%;
   padding-right: 0%;
-  line-height: 1.5em; }
+  line-height: 1.5em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-grow: 2; }
 
 .project {
+  border: 5px solid white;
+  background: whitesmoke;
+  height: fit-content;
+  padding: 1%;
   position: relative;
-  margin: 0% 0% 10% 0%;
-  padding: 2% 5%;
-  background: white; }
+  flex-basis: 25%;
+  min-height: 300px; }
   .project:last-child {
     margin-bottom: 0%; }
   .project .project-header {
     display: flex;
-    flex-direction: column; }
+    flex-direction: row;
+    align-items: center; }
     .project .project-header .header-container {
       justify-content: space-between;
       display: inline-flex; }
@@ -127,8 +135,11 @@ section.projects {
       .project .project-header .links-container a .source-link {
         padding: 3px 4px;
         border-radius: 2px;
-        background: whitesmoke; }
+        background: whitesmoke;
+        margin-left: 15px;
+        margin-right: 15px; }
     .project .project-header .links-container .demo-link {
+      font-family: Helvetica;
       color: whitesmoke;
       background: rgba(244, 67, 54, 0.84);
       padding: 2px 6px;
@@ -144,9 +155,7 @@ section.projects {
 
 img.project-image {
   padding: 0% 0% 2% 0%;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 700px; }
+  margin: 0 auto; }
 
 nav.projects-nav {
   padding-left: 5%;
@@ -166,7 +175,7 @@ nav.projects-nav {
     padding: 0; }
 
   .project {
-    padding: 5% 10%; }
+    flex-basis: 50%; }
     .project:last-child {
       margin-bottom: 0%; }
 
@@ -174,30 +183,27 @@ nav.projects-nav {
     position: relative;
     text-align: left;
     padding-bottom: 15%; } }
-header.site-header {
+header {
   width: 100%;
   text-align: left; }
-  header.site-header nav {
+  header nav {
     display: inline-flex;
     align-items: baseline; }
-    header.site-header nav ul,
-    header.site-header nav ul > li {
+    header nav ul,
+    header nav ul > li {
       display: inline-block;
       vertical-align: baseline;
       padding-left: 0;
       padding-right: 0;
       margin-right: 0.5em; }
-  header.site-header .active-link {
+  header .active-link {
     border-bottom: 2px solid rgba(255, 0, 0, 0.62); }
 
 @media (max-width: 750px) {
-  header.site-header nav {
+  header nav {
     width: 100%;
     justify-content: center;
-    align-items: center; }
-    header.site-header nav .nav-links {
-      display: block !important;
-      align-items: center; } }
+    align-items: center; } }
 .tags {
   margin-top: 1%;
   margin-left: 0px !important; }
@@ -312,9 +318,9 @@ header.site-header {
     font-family: "Droid Serif"; }
   .post h1 {
     display: inline-block;
-    padding: 0px 0px 20px 0px;
-    background: white;
-    border-bottom: 1px solid rgba(255, 0, 0, 0.62);
+    padding: 0px;
+    background: white; }
+  .post ul.byline {
     margin-bottom: 1%; }
   .post ul {
     margin: 0%; }

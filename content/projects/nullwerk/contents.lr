@@ -3,7 +3,7 @@ model: _nullwerk
 name: nullwerk
 ---
 description: 
-**Nullwerk** is my first foray into building web instruments. It's a monophonic synthesizer built with Vue2.0 and the Web Audio and Web MIDI APIs. If you have Chrome 43 or above, or Opera 33+, go a head, plug your MIDI controller into your computer and [give it a try](https://foundling.github.io/nullwerk).
+**Nullwerk** is my first foray into building web instruments. It's a monophonic synthesizer built with Vue2.0 and the Web Audio and Web MIDI APIs. If you have Chrome 43 or above, or Opera 33+, go ahead, plug your MIDI controller into your computer and [give it a try](https://foundling.github.io/nullwerk).
 
 ---
 tech:

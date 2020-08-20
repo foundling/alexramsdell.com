@@ -2,17 +2,6 @@
 {% from 'common/macros/tags.html' import tags %}  
 
 {% block content %}
-  <nav class="projects-nav">
-    <h1>Projects</h1>
-    <ul>
-      {% for project in this.children %}
-      <li>
-        <i class="fa fa-lightbulb-o"></i>
-        <a class="project-name" href="#{{ project.name }}"> {{ project.name }}</a>
-      </li>
-      {% endfor %}
-    </ul>
-  </nav>
   <section class="projects">
     {% for project in this.children %}
 
@@ -22,7 +11,6 @@
 
           <div class="header-container">
             <h2 class="project-title" id="{{project.name}}">{{ project.name }}</h2>
-            <a class="top-link" href="#top"><i class="to-top fa fa-arrow-up" title="go to top"></i></a>
           </div>
 
           <div class="links-container">
@@ -37,8 +25,11 @@
 
         <div class="project-description">{{ project.description }}</div>
 
+
         {% for img in project.attachments.images %}
-            <img src="{{img|url}}" />
+          <a href="{{ img.path }}">
+            <img class="project-image" src="{{ img|url }}" />
+          </a>
         {% endfor %}
 
       </div>
