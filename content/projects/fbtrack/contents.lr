@@ -1,0 +1,15 @@
+name: fbtrack
+---
+description: 
+
+A Fitbit API querying tool to facilitate batch querying and rate-limiting. Offers a basic participant management platform. Exports to JSON and CSV.
+
+---
+tech:
+NodeJS
+---
+tags: 
+cli
+fitbit
+---
+source_link: https://github.com/foundling/fbtrack

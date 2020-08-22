@@ -2,8 +2,11 @@
 {% from 'common/macros/tags.html' import tags %}  
 
 {% block content %}
+   
   <section class="projects">
+
     {% for project in this.children %}
+
 
       <div class="project">
 
@@ -25,12 +28,11 @@
 
         <div class="project-description">{{ project.description }}</div>
 
-
-        {% for img in project.attachments.images %}
-          <a href="{{ img.path }}">
-            <img class="project-image" src="{{ img|url }}" />
-          </a>
-        {% endfor %}
+        <div class="project-images">
+          {% for img in project.attachments.images %}
+          <a class="project-image-link" href="{{ img.path }}" style="background-image: url({{ img.path }})" ></a>
+          {% endfor %}
+        </div>
 
       </div>
 

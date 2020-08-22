@@ -2,7 +2,7 @@ name: node-help
 ---
 description: 
 
-`node-help` is an iPython-inspired Node.js REPL designed for offline use.  It uses the experimental Node.js JSON API to provide documentation on Node runtime objects in various levels of detail. It's useful when you're on an airplane. Supports Node major releases 8, 9 and 10.
+`node-help` is inspired by iPython. Since you get the docs for your version of node upon installation, it's useful for experimenting with the node environment when you're offline. Supports Node major release 8+.
 
 ---
 tech:

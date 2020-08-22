@@ -10,6 +10,9 @@
           //margin-left: 0;
         }
         .post-summary__header {
+          h2 {
+            padding-bottom: 7px;
+          }
         }
         .post-summary__header,
         .post-summary__byline {
@@ -19,6 +22,7 @@
         &__short-text {
             //margin: 1% 0% 0% 0%;
             font-family: 'Lora', serif;
+            padding-bottom: 5px;
         }
     }
     .post-summary:nth-child(1) {
