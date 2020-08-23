@@ -195,12 +195,9 @@ nav.projects-nav {
     padding-left: 10%;
     padding-right: 10%; }
 
-  .projects {
-    margin-left: 0;
-    padding: 0; }
-    .projects .project {
-      width: 100%;
-      margin-left: 0; }
+  .projects .project {
+    width: 108%;
+    margin-left: -4%; }
 
   nav.projects-nav {
     position: relative;
