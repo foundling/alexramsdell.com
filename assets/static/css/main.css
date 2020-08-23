@@ -20,7 +20,7 @@ body {
 main {
   flex: 1 0 auto;
   position: relative;
-  margin-top: 2%; }
+  margin-top: 12vh; }
 
 footer {
   padding: 10px;
@@ -31,8 +31,7 @@ footer {
     color: rgba(255, 0, 0, 0.62); }
 
 li {
-  list-style-type: none;
-  padding: 0.5em 0.5em 0.5em 0; }
+  list-style-type: none; }
 
 li.logo {
   font-size: 2em; }
@@ -95,9 +94,6 @@ p {
   body {
     padding: 2%; }
 
-  main {
-    margin-top: 8%; }
-
   h1 {
     font-size: 1.5em; }
 
@@ -117,21 +113,20 @@ section.projects {
   max-width: 1000px; }
 
 .project {
-  margin-bottom: 20px;
-  padding: 0% 0% 1% 0%;
+  margin-bottom: 50px;
+  background: whitesmoke;
+  margin-left: -20px;
+  margin-top: -20px;
+  padding: 20px;
   width: fit-content;
   border-radius: 2px; }
   .project .project-header {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    margin-bottom: 7px; }
+    align-items: center; }
     .project .project-header .header-container {
       justify-content: space-between;
       display: inline-flex; }
-      .project .project-header .header-container .project-title,
-      .project .project-header .header-container .top-link {
-        padding: 2% 0%; }
       .project .project-header .header-container .top-link .to-top {
         color: lightgreen;
         font-size: 1.5em; }
@@ -189,9 +184,11 @@ nav.projects-nav {
     padding-left: 10%;
     padding-right: 10%; }
 
-  section.projects {
+  .projects {
     margin-left: 0;
     padding: 0; }
+    .projects .project {
+      width: 100%; }
 
   nav.projects-nav {
     position: relative;
@@ -457,8 +454,6 @@ footer {
   .blog__recent-posts .post-summary {
     width: 100%;
     margin-bottom: 2%; }
-    .blog__recent-posts .post-summary .post-summary__header h2 {
-      margin-bottom: 7px; }
     .blog__recent-posts .post-summary__short-text {
       font-family: 'Lora', serif;
       padding-bottom: 5px; }
@@ -478,7 +473,7 @@ section.about {
   text-align: initial; }
   section.about h2 {
     padding-top: 20px;
-    padding-bottom: 20px; }
+    padding-bottom: 7px; }
   section.about h2:first-of-type {
     padding-top: 0px; }
   section.about p {

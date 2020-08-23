@@ -16,17 +16,16 @@
             <h2 class="project-title" id="{{project.name}}">{{ project.name }}</h2>
           </div>
 
-          <div class="links-container">
-            <a href="{{project.source_link}}">
-              <i class="source-link fa fa-github"></i>
-            </a>
-            {% if project.demo_link %}
-              <a class="demo-link" href="{{project.demo_link}}">demo</a>
-            {% endif %}
-          </div>
+
         </header>
 
         <div class="project-description">{{ project.description }}</div>
+        <ul class="links-container">
+          <li><a href="{{project.source_link}}">src</a></li>
+          {% if project.demo_link %}
+            <li><a class="demo-link" href="{{project.demo_link}}">demo</a></li>
+          {% endif %}
+        </ul>
 
         <div class="project-images">
           {% for img in project.attachments.images %}

@@ -11,10 +11,12 @@ section.projects {
 
 .project {
 
-  margin-bottom: 20px;
-  padding: 0% 0% 1% 0%;
+  margin-bottom: 50px;
+  background: whitesmoke;
+  margin-left: -20px;
+  margin-top: -20px;
+  padding: 20px;
   &:hover {
-    //background: whitesmoke;
   }
 
   //margin: 2% 2% 0% 0%;
@@ -27,7 +29,6 @@ section.projects {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 7px;
 
     .header-container {
 
@@ -36,7 +37,6 @@ section.projects {
 
       .project-title,
       .top-link {
-        padding: 2% 0%;
       }
 
       .top-link {
@@ -137,9 +137,12 @@ nav.projects-nav {
     padding-right: 10%;
   }
 
-  section.projects {
+  .projects {
     margin-left: 0;
     padding: 0;
+    .project {
+      width: 100%;
+    }
   }
 
   nav.projects-nav {
