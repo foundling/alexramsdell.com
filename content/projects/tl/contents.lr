@@ -4,7 +4,7 @@ name: tl
 ---
 description: 
 
-`tl` is a minimal command-line task list application written in Go.
+A command-line task list application written in Go.
 
 ---
 source_link: https://github.com/foundling/tl

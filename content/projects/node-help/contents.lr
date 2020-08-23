@@ -2,7 +2,7 @@ name: node-help
 ---
 description: 
 
-`node-help` is inspired by iPython. Since you get the docs for your version of node upon installation, it's useful for experimenting with the node environment when you're offline. Supports Node major release 8+.
+Inspired by iPython, `node-help` extends the NodeJS shell to provide documentation querying for Node runtime objects. Supports Node major release 8+.
 
 ---
 tech:

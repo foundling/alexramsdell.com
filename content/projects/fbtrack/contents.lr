@@ -2,7 +2,7 @@ name: fbtrack
 ---
 description: 
 
-A Fitbit API querying tool to facilitate batch querying and rate-limiting. Offers a basic participant management platform. Exports to JSON and CSV.
+A tool to facilitate querying Fitbit's web API. Provides batch querying and rate-limiting as well as a minimal participant management platform. Exports to JSON and CSV.
 
 ---
 tech:

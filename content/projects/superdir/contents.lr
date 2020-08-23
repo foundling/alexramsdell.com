@@ -4,7 +4,7 @@ name: superdir
 ---
 description: 
 
-`superdir` is a project scaffolding tool with a simple objective: turn a textual representation of a file tree into a real file tree. It accepts a configuration file to provide additional control, allowing you to specify pre-existing source files to copy into a target destination.  
+A project scaffolding tool that turns a textual representation of a file tree into a real file tree, accepting a configuration file to provide additional control and allowing you to specify pre-existing source files to copy into a target destination.  
 
 ---
 source_link: https://github.com/foundling/superdir
