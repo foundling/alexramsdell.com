@@ -2,4 +2,4 @@
 
 # see this for starting/stopping sass process: https://superuser.com/questions/330520/kill-background-processes-started-by-bash-script
 /usr/local/bin/sass --watch ./assets/static/css/main.scss:./assets/static/css/main.css &
-lektor server
+lektor server -h 0.0.0.0

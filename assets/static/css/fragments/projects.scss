@@ -7,9 +7,6 @@ ul.project-links > li {
 section.projects {
   width: 100%;
   max-width: 1000px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   margin-top: -2%;
   margin-left: -20px;
 }
@@ -20,7 +17,7 @@ section.projects {
     background: whitesmoke;
   }
 
-  margin: 0% 2% 0% 0%;
+  margin: 2% 2% 0% 0%;
   width: fit-content;
   border-radius: 2px;
   padding: 20px 20px;
@@ -144,9 +141,6 @@ nav.projects-nav {
     padding-left: -20px;
     margin-left: 0;
     padding: 0;
-    .project {
-      margin: 1%;
-    }
   }
 
   nav.projects-nav {

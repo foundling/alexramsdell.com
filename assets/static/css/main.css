@@ -16,16 +16,22 @@ body * {
   padding: 0; }
 
 body {
+  padding: 2% 2% 0 2%;
   display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  padding: 2% 2% 0 2%; }
+  flex-direction: column; }
 
 main {
-  display: flex;
-  flex: 1;
+  flex: 1 0 auto;
   position: relative;
   margin-top: 2%; }
+
+footer {
+  padding: 10px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center; }
+  footer a {
+    color: rgba(255, 0, 0, 0.62); }
 
 li {
   list-style-type: none;
@@ -93,7 +99,14 @@ p {
     margin-top: 8%; }
 
   h1 {
-    font-size: 1.5em; } }
+    font-size: 1.5em; }
+
+  footer p {
+    font-size: 0.8em; }
+    footer p a {
+      color: rgba(255, 0, 0, 0.62); }
+      footer p a:hover {
+        text-decoration: underline; } }
 .project-name,
 ul.project-links,
 ul.project-links > li {
@@ -102,14 +115,11 @@ ul.project-links > li {
 section.projects {
   width: 100%;
   max-width: 1000px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
   margin-top: -2%;
   margin-left: -20px; }
 
 .project {
-  margin: 0% 2% 0% 0%;
+  margin: 2% 2% 0% 0%;
   width: fit-content;
   border-radius: 2px;
   padding: 20px 20px; }
@@ -187,8 +197,6 @@ nav.projects-nav {
     padding-left: -20px;
     margin-left: 0;
     padding: 0; }
-    section.projects .project {
-      margin: 1%; }
 
   nav.projects-nav {
     position: relative;
@@ -436,6 +444,7 @@ footer {
   padding: 10px;
   display: flex;
   flex-direction: column;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center; }
   footer a {
