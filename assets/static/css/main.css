@@ -17,6 +17,9 @@ body {
   display: flex;
   flex-direction: column; }
 
+header {
+  padding: 20px 0px; }
+
 main {
   flex: 1 0 auto;
   position: relative;
