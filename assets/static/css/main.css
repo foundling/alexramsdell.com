@@ -23,7 +23,7 @@ header {
 main {
   flex: 1 0 auto;
   position: relative;
-  margin-top: 12vh; }
+  margin-top: 8vh; }
 
 footer {
   padding: 10px;
@@ -119,9 +119,9 @@ section.projects {
 .project {
   margin-bottom: 50px;
   background: rgba(245, 245, 245, 0.7);
-  margin-left: -20px;
   margin-top: -40px;
-  padding: 20px 20px 40px 20px;
+  margin-left: -20px;
+  padding: 20px 40px 40px 20px;
   width: fit-content;
   border-radius: 2px; }
   .project:hover {
@@ -219,6 +219,12 @@ header {
       padding-left: 0;
       padding-right: 0;
       margin-right: 0.5em; }
+      header nav ul a,
+      header nav ul > li a {
+        padding-bottom: 5px; }
+        header nav ul a.active,
+        header nav ul > li a.active {
+          border-bottom: 1px solid red; }
   header .active-link {
     border-bottom: 2px solid rgba(255, 0, 0, 0.62); }
 

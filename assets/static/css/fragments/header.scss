@@ -17,6 +17,13 @@ header {
       padding-right: 0;
       margin-right: 0.5em;
 
+      a {
+        padding-bottom: 5px;
+        &.active {
+          border-bottom: 1px solid red;
+        }
+      }
+
     }
   }
   
