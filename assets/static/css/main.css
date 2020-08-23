@@ -1,12 +1,9 @@
-html {
-  background: white; }
-
 html,
 body {
+  background: white;
   width: 100%;
   height: 100%;
-  font-family: "Times New Roman";
-  color: #464646; }
+  font-family: "Times New Roman"; }
 
 html,
 body,
@@ -69,6 +66,9 @@ h1, h2, h3, h4, h5 {
 h1 {
   font-size: 40px; }
 
+h2 {
+  padding-bottom: 7px; }
+
 a {
   -webkit-tap-highlight-color: rgba(255, 0, 0, 0.62);
   text-decoration: none;
@@ -114,22 +114,18 @@ ul.project-links > li {
 
 section.projects {
   width: 100%;
-  max-width: 1000px;
-  margin-top: -2%;
-  margin-left: -20px; }
+  max-width: 1000px; }
 
 .project {
-  margin: 2% 2% 0% 0%;
+  margin-bottom: 20px;
+  padding: 0% 0% 1% 0%;
   width: fit-content;
-  border-radius: 2px;
-  padding: 20px 20px; }
-  .project:hover {
-    background: whitesmoke; }
+  border-radius: 2px; }
   .project .project-header {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 20px; }
+    margin-bottom: 7px; }
     .project .project-header .header-container {
       justify-content: space-between;
       display: inline-flex; }
@@ -194,7 +190,6 @@ nav.projects-nav {
     padding-right: 10%; }
 
   section.projects {
-    padding-left: -20px;
     margin-left: 0;
     padding: 0; }
 
@@ -463,7 +458,7 @@ footer {
     width: 100%;
     margin-bottom: 2%; }
     .blog__recent-posts .post-summary .post-summary__header h2 {
-      padding-bottom: 7px; }
+      margin-bottom: 7px; }
     .blog__recent-posts .post-summary__short-text {
       font-family: 'Lora', serif;
       padding-bottom: 5px; }
