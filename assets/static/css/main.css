@@ -96,7 +96,7 @@ p {
 
 @media (max-width: 750px) {
   body {
-    padding: 2%; }
+    padding: 4%; }
 
   h1 {
     font-size: 1.5em; }
@@ -120,7 +120,7 @@ section.projects {
   margin-bottom: 50px;
   background: rgba(245, 245, 245, 0.7);
   margin-left: -20px;
-  margin-top: -20px;
+  margin-top: -40px;
   padding: 20px 20px 40px 20px;
   width: fit-content;
   border-radius: 2px; }
@@ -199,7 +199,8 @@ nav.projects-nav {
     margin-left: 0;
     padding: 0; }
     .projects .project {
-      width: 100%; }
+      width: 100%;
+      margin-left: 0; }
 
   nav.projects-nav {
     position: relative;
