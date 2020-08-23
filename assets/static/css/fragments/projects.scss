@@ -12,18 +12,17 @@ section.projects {
 .project {
 
   margin-bottom: 50px;
-  background: whitesmoke;
+  background: rgba(245,245,245,0.7);
   margin-left: -20px;
   margin-top: -20px;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
+
   &:hover {
+    background: rgba(245,245,245,1);
   }
 
-  //margin: 2% 2% 0% 0%;
   width: fit-content;
   border-radius: 2px;
-  //padding: 20px 20px;
-
 
   .project-header {
     display: flex;
@@ -38,13 +37,21 @@ section.projects {
     }
   }
 
-  .links-container {
+  .project__links-container,
+  .project-description {
+    margin-bottom: 20px;
+  }
 
-    li { line-height: 1.5em; }
+  .project__links-container {
+    width: fit-content;
+    padding: 5px;
 
-    margin-bottom: 7px;
+    li {
+      line-height: 1.5em; 
+    }
 
     a {  
+      border-bottom: dotted 2px black; 
       border-radius: 2px;
       .source-link {
         padding: 3px 4px;
@@ -74,7 +81,6 @@ section.projects {
   }
 
   .project-description {
-    margin-bottom: 7px;
     text-align: left;
 
     a {

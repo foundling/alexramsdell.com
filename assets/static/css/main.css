@@ -69,7 +69,7 @@ h1 {
   font-size: 40px; }
 
 h2 {
-  padding-bottom: 7px; }
+  padding-bottom: 20px; }
 
 a {
   -webkit-tap-highlight-color: rgba(255, 0, 0, 0.62);
@@ -82,7 +82,8 @@ img {
   max-width: 100%; }
 
 p {
-  line-height: 1.6em; }
+  line-height: 1.6em;
+  max-width: 1000px; }
 
 .visible {
   opacity: 1;
@@ -117,12 +118,14 @@ section.projects {
 
 .project {
   margin-bottom: 50px;
-  background: whitesmoke;
+  background: rgba(245, 245, 245, 0.7);
   margin-left: -20px;
   margin-top: -20px;
-  padding: 20px;
+  padding: 20px 20px 40px 20px;
   width: fit-content;
   border-radius: 2px; }
+  .project:hover {
+    background: whitesmoke; }
   .project .project-header {
     display: flex;
     flex-direction: row;
@@ -130,30 +133,34 @@ section.projects {
     .project .project-header .header-container {
       justify-content: space-between;
       display: inline-flex; }
-  .project .links-container {
-    margin-bottom: 7px; }
-    .project .links-container li {
+  .project .project__links-container,
+  .project .project-description {
+    margin-bottom: 20px; }
+  .project .project__links-container {
+    width: fit-content;
+    padding: 5px; }
+    .project .project__links-container li {
       line-height: 1.5em; }
-    .project .links-container a {
+    .project .project__links-container a {
+      border-bottom: dotted 2px black;
       border-radius: 2px; }
-      .project .links-container a .source-link {
+      .project .project__links-container a .source-link {
         padding: 3px 4px;
         border-radius: 2px;
         background: whitesmoke;
         margin-left: 15px;
         margin-right: 15px; }
-    .project .links-container .demo-link {
+    .project .project__links-container .demo-link {
       font-family: Helvetica;
       font-size: 0.8em;
       color: whitesmoke;
       background: rgba(244, 67, 54, 0.84);
       padding: 2px 6px;
       border-radius: 2px; }
-      .project .links-container .demo-link:hover {
+      .project .project__links-container .demo-link:hover {
         background: whitesmoke;
         color: rgba(244, 67, 54, 0.84); }
   .project .project-description {
-    margin-bottom: 7px;
     text-align: left; }
     .project .project-description a {
       color: rgba(244, 67, 54, 0.84); }
@@ -437,7 +444,6 @@ div.blog-post-references {
   border: 1px dotted gray; }
 
 footer {
-  padding: 10px;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -482,9 +488,11 @@ section.about {
     padding-top: 0px; }
   section.about p {
     padding-bottom: 20px; }
-  section.about ul, section.about li {
-    padding-left: 0; }
+  section.about ul li {
+    line-height: 1.6em; }
   section.about a {
-    text-decoration: underline; }
+    border-bottom: 1px dotted black; }
+    section.about a:hover {
+      border-bottom: 1px dotted transparent; }
 
 /*# sourceMappingURL=main.css.map */

@@ -14,20 +14,25 @@ section.about {
         padding-bottom: 20px;
     }
 
-    ul,li {
-      padding-left: 0;
+    ul {
+
+      li {
+        line-height: 1.6em;
+      }
+
     }
 
 
+
     a {
-        text-decoration: underline;
+        border-bottom: 1px dotted black;
+        &:hover {
+          border-bottom: 1px dotted transparent;
+        }
+
     }
 
 }
 
 @media(max-width: 750px) {
-    section.about {
-    }
-    section.img-box {
-    }
 };
