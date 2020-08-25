@@ -72,8 +72,16 @@ h2 {
   padding-bottom: 20px; }
 
 a {
-  -webkit-tap-highlight-color: rgba(255, 0, 0, 0.62);
   text-decoration: none;
+  border-bottom: 1px dotted; }
+
+p > a {
+  border-bottom: 1px dotted black; }
+  p > a:hover {
+    border-bottom: 1px dotted; }
+
+a {
+  -webkit-tap-highlight-color: rgba(255, 0, 0, 0.62);
   color: #464646; }
   a:hover {
     color: rgba(255, 0, 0, 0.62); }
@@ -101,12 +109,14 @@ p {
   h1 {
     font-size: 1.5em; }
 
-  footer p {
-    font-size: 0.8em; }
-    footer p a {
-      color: rgba(255, 0, 0, 0.62); }
-      footer p a:hover {
-        text-decoration: underline; } }
+  footer {
+    padding: 0; }
+    footer p {
+      font-size: 0.8em; }
+      footer p a {
+        color: rgba(255, 0, 0, 0.62); }
+        footer p a:hover {
+          border-bottom: 1px dotted; } }
 .project-name,
 ul.project-links,
 ul.project-links > li {
@@ -142,7 +152,7 @@ section.projects {
     .project .project__links-container li {
       line-height: 1.5em; }
     .project .project__links-container a {
-      border-bottom: dotted 2px black;
+      border-bottom: dotted 1px;
       border-radius: 2px; }
       .project .project__links-container a .source-link {
         padding: 3px 4px;
@@ -175,6 +185,8 @@ section.projects {
     height: 100px;
     background-position: center center;
     background-size: cover; }
+  .project-images a {
+    border-bottom: none; }
 
 .project-image {
   padding: 0% 0% 2% 0%;
@@ -218,7 +230,8 @@ header {
       margin-right: 0.5em; }
       header nav ul a,
       header nav ul > li a {
-        padding-bottom: 5px; }
+        padding-bottom: 5px;
+        border-bottom: none; }
         header nav ul a.active,
         header nav ul > li a.active {
           border-bottom: 1px solid red; }
@@ -391,6 +404,14 @@ header {
   display: flex;
   flex-direction: column;
   padding-bottom: 2%; }
+  .music * {
+    width: fit-content; }
+  .music a.album-title {
+    border-bottom: 1px dotted transparent; }
+  .music .release-images a {
+    border-bottom: 1px dotted transparent; }
+    .music .release-images a:hover {
+      border-bottom: 1px dotted transparent; }
   .music img {
     margin-top: 10px;
     margin-bottom: 10px;
@@ -467,15 +488,14 @@ footer {
   align-items: center;
   justify-content: center; }
   footer a {
-    color: rgba(255, 0, 0, 0.62); }
+    color: rgba(255, 0, 0, 0.62);
+    border-bottom: none; }
 
 @media (max-width: 750px) {
   footer p {
     font-size: 0.8em; }
     footer p a {
-      color: rgba(255, 0, 0, 0.62); }
-      footer p a:hover {
-        text-decoration: underline; } }
+      color: rgba(255, 0, 0, 0.62); } }
 .blog__recent-posts {
   text-align: left; }
   .blog__recent-posts .post-summary {
@@ -507,9 +527,5 @@ section.about {
     padding-bottom: 20px; }
   section.about ul li {
     line-height: 1.6em; }
-  section.about a {
-    border-bottom: 1px dotted black; }
-    section.about a:hover {
-      border-bottom: 1px dotted transparent; }
 
 /*# sourceMappingURL=main.css.map */

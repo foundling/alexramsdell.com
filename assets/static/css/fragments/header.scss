@@ -19,6 +19,7 @@ header {
 
       a {
         padding-bottom: 5px;
+        border-bottom: none;
         &.active {
           border-bottom: 1px solid red;
         }

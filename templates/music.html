@@ -5,20 +5,18 @@
   <section class="music">
 
     <h2>Music</h2>
-
-
       
     {% for release in this.children %}
 
-      <h3>
-        <a href="{{ release.stream_link }}">{{ release.title }} ({{ release.release_date.strftime("%Y") }})</a>
-      </h3>
+      <a class="album-title" href="{{ release.stream_link }}">{{ release.title }} ({{ release.release_date.strftime("%Y") }})</a>
 
-      {% for img in release.attachments.images %}
-        <a href="{{ release.stream_link }}">
-          <img src="{{img.path}}" />
-        </a>
-      {% endfor %}
+      <div class="release-images">
+        {% for img in release.attachments.images %}
+          <a href="{{ release.stream_link }}">
+            <img src="{{img.path}}" />
+          </a>
+        {% endfor %}
+      </div>
 
       {{ release.body }}
 

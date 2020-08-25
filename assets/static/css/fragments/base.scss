@@ -91,13 +91,27 @@ h2 {
   padding-bottom: 20px;
 }
 
+
+a {
+  text-decoration: none;
+  border-bottom: 1px dotted;
+}
+
+p > a {
+  &:hover {
+    border-bottom: 1px dotted;
+  }
+  border-bottom: 1px dotted black;
+}
+
 a {
   -webkit-tap-highlight-color: rgba(255, 0, 0, 0.62);
-  text-decoration: none;
   color: rgb(70,70,70);
+
   &:hover { 
     color: rgba(255, 0, 0, 0.62); 
   }
+
 }
 
 img { 
@@ -131,12 +145,13 @@ p {
   }
 
   footer {
+    padding: 0;
     p {
       font-size: 0.8em;
       a {
         color: rgba(255, 0, 0, 0.62);
         &:hover {
-          text-decoration: underline;
+          border-bottom: 1px dotted;
         }
       }
     }

@@ -51,7 +51,7 @@ section.projects {
     }
 
     a {  
-      border-bottom: dotted 2px black; 
+      border-bottom: dotted 1px; 
       border-radius: 2px;
       .source-link {
         padding: 3px 4px;
@@ -104,6 +104,9 @@ section.projects {
     background-size: cover;
   }
 
+  a {
+    border-bottom: none;
+  }
 }
 
 .project-image {

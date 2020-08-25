@@ -7,7 +7,9 @@ footer {
     justify-content: center;
     a {
       color: rgba(255, 0, 0, 0.62);
+      border-bottom: none;
     }
+
 
 }
 
@@ -18,7 +20,6 @@ footer {
       a {
         color: rgba(255, 0, 0, 0.62);
         &:hover {
-          text-decoration: underline;
         }
       }
     }

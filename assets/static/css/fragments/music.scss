@@ -1,9 +1,26 @@
 .music {
 
+  * {
+    width: fit-content;
+  }
+  a {
+    &.album-title {
+      border-bottom: 1px dotted transparent;
+    }
+  }
+
   display: flex;
   flex-direction: column;
   padding-bottom: 2%;
 
+  .release-images {
+    a {
+      border-bottom: 1px dotted transparent;
+      &:hover {
+        border-bottom: 1px dotted transparent;
+      }
+    }
+  }
   img {
     margin-top: 10px;
     margin-bottom: 10px;

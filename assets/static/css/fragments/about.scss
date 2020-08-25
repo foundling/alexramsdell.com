@@ -22,16 +22,6 @@ section.about {
 
     }
 
-
-
-    a {
-        border-bottom: 1px dotted black;
-        &:hover {
-          border-bottom: 1px dotted transparent;
-        }
-
-    }
-
 }
 
 @media(max-width: 750px) {
