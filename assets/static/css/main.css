@@ -387,6 +387,19 @@ header {
   .post ul {
     padding-top: 1%;
     padding-bottom: 1%; } }
+.music {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2%; }
+  .music img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 25%;
+    border: 1px solid whitesmoke; }
+
+@media (max-width: 750px) {
+  .music img {
+    width: 100%; } }
 pre {
   background: url(/static/img/binding-light.png);
   margin: 0% 0% 3% 0%;

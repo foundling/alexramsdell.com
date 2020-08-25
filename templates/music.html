@@ -3,10 +3,28 @@
 {% block content %}
 
   <section class="music">
+
     <h2>Music</h2>
-    {% block body %} 
-    {{ this.body }}
-    {% endblock %}
+
+
+      
+    {% for release in this.children %}
+
+      <h3>
+        <a href="{{ release.stream_link }}">{{ release.title }} ({{ release.release_date.strftime("%Y") }})</a>
+      </h3>
+
+      {% for img in release.attachments.images %}
+        <a href="{{ release.stream_link }}">
+          <img src="{{img.path}}" />
+        </a>
+      {% endfor %}
+
+      {{ release.body }}
+
+
+    {% endfor %}
+
   </section>
 
 {% endblock %}

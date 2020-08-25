@@ -1,0 +1,22 @@
+.music {
+
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2%;
+
+  img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 25%;
+    border: 1px solid whitesmoke;
+  }
+
+}
+
+@media(max-width:750px) {
+  .music {
+    img {
+      width: 100%;
+    }
+  }
+}
