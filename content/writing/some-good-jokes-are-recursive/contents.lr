@@ -17,9 +17,9 @@ Mr. Show
 ---
 body:
 
-If you're familiar with Mr. Show, you may know the technique common to many of their most successful sketches: assiduous repetition of a single idea. It's the key to 'The Story of Everest' and 'The Audition', where the same thing happens again and again, and things gets exponentially funnier.
+If you're familiar with Mr. Show, you may know the technique common to many of their most successful sketches: assiduous repetition of a single idea. It's the key to 'The Story of Everest' and 'The Audition', where recurrence *is* the joke.
 
-The sketch <a href="https://www.youtube.com/watch?v=cGuT97v4pv0">'Change for a Dollar'</a> uses this tight repetition to play a good joke on the fate of value in the hands of pure bureaucracy. Oddly, the structure is legimately recursive and I think serves as a good (if not highly alternative) illustration of the winding-and-unwinding process of a recursive program.
+The sketch <a href="https://www.youtube.com/watch?v=cGuT97v4pv0">'Change for a Dollar'</a> employs tight repetition to play a good joke on the fate of value in the hands of pure bureaucracy. Oddly, the structure of the joke is legimately recursive. I think it serves as a good (if not highly alternative) illustration of the winding-and-unwinding process of a recursive program.
 
 ![Mr. Show's Bob and David](https://i.vimeocdn.com/video/199532043_640.jpg)
 
@@ -88,9 +88,7 @@ var customer = {
 };
 customer.say('Can I get change for a dollar?');
 console.log(customer.getChangeForADollar(employee1));
-
-
 ---
 last_edited: 11/06/2017
 ---
-_hidden: yes
+_hidden: true
