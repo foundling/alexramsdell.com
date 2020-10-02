@@ -286,6 +286,9 @@ header {
   flex-direction: column;
   text-align: left;
   font-family: "Lora", serif; }
+  .post .post__body li {
+    list-style-type: initial;
+    margin-left: 25px; }
   .post .post-toc {
     background: whitesmoke;
     padding: 20px;
@@ -313,6 +316,8 @@ header {
       justify-content: space-between;
       align-items: center; }
       .post .post-toc .post-toc-header h4 {
+        white-space: nowrap;
+        margin-right: 20px;
         padding: 0;
         display: inline-block;
         border-bottom: 1px solid rgba(255, 0, 0, 0.62); }
@@ -327,6 +332,9 @@ header {
       overflow-y: scroll; }
       .post .post-toc .toc-list-container ul {
         margin: 0% 4%; }
+        .post .post-toc .toc-list-container ul li {
+          margin-left: 7px;
+          line-height: 1.5em; }
     .post .post-toc.closed {
       width: fit-content;
       padding: 20px;
@@ -477,10 +485,15 @@ ul.byline {
         padding: 2px 5px; }
 
 div.blog-post-references {
-  padding: 5% 5%;
-  margin: 5% 0%;
   background: white;
-  border: 1px dotted gray; }
+  border: 1px dotted gray;
+  padding: 2%;
+  margin-top: 2%; }
+  div.blog-post-references h3 {
+    padding: 1% 0%; }
+  div.blog-post-references li {
+    list-style-type: initial;
+    margin-left: 20px; }
 
 footer {
   display: flex;

@@ -1,6 +1,13 @@
 div.blog-post-references {
-    padding: 5% 5%;
-    margin: 5% 0%;
     background: white;
     border: 1px dotted gray;
+    padding: 2%;
+    margin-top: 2%;
+    h3 {
+      padding: 1% 0%;
+    }
+    li {
+      list-style-type: initial;
+      margin-left: 20px;
+    }
 }
