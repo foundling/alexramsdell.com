@@ -290,6 +290,7 @@ header {
     list-style-type: initial;
     margin-left: 25px; }
   .post .post-toc {
+    z-index: 1;
     background: whitesmoke;
     padding: 20px;
     width: max-content;
