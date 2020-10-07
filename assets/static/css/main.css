@@ -34,6 +34,9 @@ footer {
   footer a {
     color: rgba(255, 0, 0, 0.62); }
 
+strong {
+  font-style: italic; }
+
 li {
   list-style-type: none; }
 
