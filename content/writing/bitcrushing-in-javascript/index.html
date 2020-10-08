@@ -3,6 +3,9 @@
     <head>
         <meta charset="utf8" />
         <style>
+          div.osc-selector > label {
+            display: inline-block;
+          }
           input {
             display: block;
           } 
@@ -18,19 +21,19 @@
     <body>
 
       <h1>bitcrusher</h1>
-      <div class="transport-controls">
-
-        <button name="start">start</button>
-        <button name="stop">stop</button>
-        <button name="info">info</button>
-
-      </div>
 
       <div>
         <input name="file-selector" type="file"></input>
       </div>
 
       <div class="effect-controls">
+
+        <div class="osc-selector">
+          <label>oscillator type: </label>
+          <label>sine<input value="sine" type="radio" name="osc-selector" checked /> </label>
+          <label>square<input value="square" type="radio" name="osc-selector"  /></label>
+          <label>sawtooth<input value="sawtooth" type="radio" name="osc-selector"  /></label>
+        </div>
 
         <label>
           <span>volume</span>
@@ -47,6 +50,20 @@
           <input name="downsampling" type="range" min="1" max="40" step="1" />
         </label>
 
+      </div>
+
+      <div class="transport-controls">
+
+        <button name="start">start</button>
+        <button name="stop">stop</button>
+        <button name="info">info</button>
+
+      </div>
+
+
+
+      <div class="error-box">
+        <p class="error-box-text"></p>
       </div>
 
       <script src="app.js"></script>
