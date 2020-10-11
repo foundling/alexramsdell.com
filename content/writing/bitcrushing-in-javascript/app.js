@@ -1,113 +1,89 @@
-// control elements
 const startButton = document.querySelector('button[name="start"]')
 const stopButton = document.querySelector('button[name="stop"]')
 const infoButton = document.querySelector('button[name="info"]') 
-const errorMessageContainer = document.querySelector('.error-box-text')
 const downsampling = document.querySelector('input[name="downsampling"]')
+const downsamplingValue = document.querySelector('.downsampling-value')
 const bits = document.querySelector('input[name="bits"]')
+const bitsValue = document.querySelector('.bits-value')
 const volume  = document.querySelector('input[name="volume"]')
-const fileSelector = document.querySelector('input[name="file-selector"]')
-const oscSelectors = document.querySelectorAll('input[name="osc-selector"]')
+const volumeValue = document.querySelector('.volume-value')
+const sourceInputs = document.querySelectorAll('input[name="source-selector"]')
+const sourceSelector = document.querySelector('.source-selector')
 
+let playing = false
 const context = new AudioContext();
-const parameterData = { bitDepth: 2, downsampling: 1 }
-
-startButton.addEventListener('click', play)
-
-async function showError(e) {
-  debugger
-  errorMessageContainer.innerHTML = `${e}`
+const parameterData = {
+  bitDepth: 2,
+  downsampling: 1
 }
 
-async function getAudioBuffer(filename) {
+startButton.addEventListener('click', init)
 
-  let response
-  try {
-    response = await fetch(filename)
-  } catch(e) {
-    showError(`${e}`)
-  }
+bitsValue.innerText = bits.value
+volumeValue.innerText = volume.value
+downsamplingValue.innerText = downsampling.value
 
-  const arrayBuffer = await response.arrayBuffer()
-  const buffer = await context.decodeAudioData(arrayBuffer)
+volume.addEventListener('input', ({ target }) => {
+  volumeValue.innerText = target.value
+})
 
-  return buffer
+bits.addEventListener('input', ({ target }) => {
+  bitsValue.innerText = target.value
+})
 
-}
+downsampling.addEventListener('input', ({ target }) => {
+  downsamplingValue.innerText = target.value
+})
 
-async function play() {
-
-  let source
-  try { 
-    source = await init()
-  } catch(e) {
-    showError(e)
-  }
-
-  source.start()
-
-  stopButton.addEventListener('click', function() {
-    source.stop()
-  })
-
-}
 
 async function init() {
 
-  /*
-   * load our bitcrusher processor module, create a control node, add to our audio graph
-   * initialize control change events
-   */
-
-  // register processing module in a separate thread
-  await context.audioWorklet.addModule('bitcrusher.js') 
-
-  // instantiate a custom AudioWorklet control with our initial parameters 
-  // note the parameterData object is a reference, allowing the internal params to change
-  // as we adjust our parameterData according to changing control values.
-  const bitcrusher = new AudioWorkletNode(context, 'bitcrusher', { parameterData })
-  const downsamplingParam = bitcrusher.parameters.get('downsampling') // 
-  const bitDepthParam = bitcrusher.parameters.get('bitDepth')
-  
-  // determine if source is an oscillator or a user-loaded sound sample
   let source
+  const sourceType = [...sourceInputs].filter(input => input.checked)[0].value
 
-  if (fileSelector.files.length > 0) {
+  if (sourceType === 'audio') {
+    const url = '/static/audio/bitcrusher-sample.mp3'
+    const response = await fetch(url)
+    const arrayBuffer = await response.arrayBuffer()
+    const audioBuffer = await context.decodeAudioData(arrayBuffer)
     source = context.createBufferSource()
-    source.buffer = await getAudioBuffer(fileSelector.files[0].name)
+    source.buffer = audioBuffer
   } else {
-    source = new OscillatorNode(context)
-    source.type = [...oscSelectors].filter(o => o.checked)[0].value
-    source.frequency.value = 210;
+    source = context.createOscillator()
+    source.frequency.value = 440
+    source.type = sourceType
   }
 
-  // create an amplifier so we can control the gain via the volume slider.
-  const amp = new GainNode(context)
-  amp.gain.value = 0.2
+  await context.audioWorklet.addModule('bitcrusher.js') 
+  const bitCrusherNode = new AudioWorkletNode(context, 'bitcrusher', { parameterData })
+  const bitDepthParam = bitCrusherNode.parameters.get('bitDepth')
+  const downsamplingParam = bitCrusherNode.parameters.get('downsampling')
 
-  // bind control events to bitcrusher params 
+  const gainNode = context.createGain()
+  gainNode.gain.value = volume.value
+
   volume.addEventListener('input', ({ target }) => {
-    amp.gain.value = target.value
+    gainNode.gain.value = parseFloat(target.value)
   })
 
   downsampling.addEventListener('input', ({ target }) => {
-    downsamplingParam.setValueAtTime(parseInt(target.value), 0) 
+    downsamplingParam.value = parseInt(target.value)
   })
 
   bits.addEventListener('input', ({ target }) => {
-    bitDepthParam.setValueAtTime(parseInt(target.value), 0) 
+    bitDepthParam.value = parseInt(target.value)
   })
 
-  infoButton.addEventListener('click', () => {
-    console.log('downsampling: ', downsamplingParam.value)
-    console.log('bitDepth: ', bitDepthParam.value)
+  stopButton.addEventListener('click', () => {
+    source.stop()
   })
 
-  // set up our audio graph
-  source.connect(bitcrusher)
-     .connect(amp)
-     .connect(context.destination)
+  source.connect(bitCrusherNode)
+  bitCrusherNode.connect(gainNode)
+  gainNode.connect(context.destination)
 
-  return source
+  source.start()
 
 }
+
+startButton.addEventListener('click', init)

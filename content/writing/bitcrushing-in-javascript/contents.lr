@@ -22,21 +22,21 @@ Bitcrushing crept up on me.  For a long time, I thought it wasn't interesting be
 
 Before we dive into bitcrushing -- a strictly digital process -- let's cover the mechanics behind sound and how it is represented digitally. According to Gareth Loy, author of *Musimathics*, when you strike a tuning fork, "what you hear is a result of the periodic changes in air pressure at your eardrum caused by the vibration of the air set in motion" [1].
 
-Sound is converted from the analog domain to the digital domain by a transducer like a microphone or a guitar pickup which that converts the air pressure fluctuations into electrical signal. Once converted to electricity, which is not yet digital, an analog-to-digital converter, or ADC, can then take snapshots at a some consistent rate to represent the momentary amplitude of the analog signal.  The rate at which the samples are taken is called the **sample rate**, and the numeric depth of the amplitude readings is the **bit depth** which expresses the quantity and sign of a reading.
+Sound is converted from the analog domain to the digital domain by a transducer like a microphone or a guitar pickup which that converts the air pressure fluctuations into electrical signal. Once converted to electricity, which is not yet digital, an analog-to-digital converter, or ADC, can then take snapshots at a some consistent rate to represent the momentary amplitude of the analog signal.  The rate at which the samples are taken is called the [sample rate](https://en.wikipedia.org/wiki/Sampling_%28signal_processing%29), and the numeric depth of the amplitude readings is the [bit depth](https://en.wikipedia.org/wiki/Audio_bit_depth) which expresses the quantity and sign of a reading.
 
-### Bitcrushing in Theory
+### Let's Crush Some Bits
 
-I'm going to use a clip of some experimentation I did during my personal bitcrushing rennaissance in order to demonstrate the parameters and the resulting sound you would find from your typical bitcrusher.
-
-Here it is, with no bit-crushing.  
-
-![the test file with no bitcrushing applied](/static/img/bitcrusher-24bit-1x.png)
+I've taken a short audio clip of some piano playing and experimented with Logic Pro's Bitcrusher, adjusting the bit depth and the downsampling factor. Here is the clip with no bit-crushing.  
 
 <audio controls src="/static/audio/bitcrusher-24bits-1x-downsampling.mp3"></audio>
 
-Here's an audio clip and the corresponding Logic Pro Bitcrusher vizualization.  You'll notice that the resolution is set to 24-bits and the downsampling is set to a factor of one.  That more or less leaves the sound alone, as the file is already 24-bit, and doing anything by a factor of one will have no effect.
+And the visualization from the Logic Pro bitrcusher interface.
 
-There are two ways to bitcrush an audio stream and they can be used in conjunction. The first is bit-reduction, which means quantizing the amplitude values in the stream to a bit-depth lower than the source stream. This reduces the potential range of amplitude values but keeps the sample count constant. An amplitude reading in a 24-bit sample can be one of 2^24 values, ranging from  -2^23 to 2^23 - 1.  Likewise, in a 4-bit sample, a given amplitude reading can be any of 2^4 possible values, ranging from -16 to 15. 
+![the test file with no bitcrushing applied](/static/img/bitcrusher-24bit-1x.png)
+
+Notice that the resolution is set to 24-bits and the downsampling is set to a factor of one.  That more or less leaves the sound alone, as the file is already 24-bit, and doing anything by a factor of one will have no effect.
+
+Before we start to manipulate the sample, it's worth noting that there are two ways to bitcrush an audio stream and they can be used in conjunction. The first is bit-reduction, which means quantizing the amplitude values in the stream to a bit-depth lower than the source stream. This reduces the potential range of amplitude values but keeps the sample count constant. An amplitude reading in a 24-bit sample can be one of 2^24 values, ranging from  -2^23 to 2^23 - 1.  Likewise, in a 4-bit sample, a given amplitude reading can be any of 2^4 possible values, ranging from -16 to 15. 
 
 After reducing the test clip from 24 to 4 bits, which is a reduction in possible values from 16777216 to 16, you get an audio file that sounds like this:
  
@@ -61,6 +61,60 @@ The sample rate of the sound file is 44,100 hz, which means each second of sound
 ![the test file reduced to 4-bits, no downsampling](/static/img/bitcrusher-24bit-40x.png)
 
 ## A JavaScript Implementation
+
+<div class="bitcrusher-demo">
+  <style scoped>
+    .bitcrusher-demo {
+      padding: 20px;
+      border-radius: 10px;
+      border: 2px lightgray solid;
+      width: fit-content;
+    }
+    .bitcrusher-demo div {
+      padding: 10px 0px;
+    }
+    div.source-selector > label {
+      display: inline-block;
+    }
+    input {
+      display: block;
+    } 
+    label {
+      display: block;
+    }
+    label > span,
+    label > input {
+      display: inline-block;
+    }
+  </style>
+  <h1>Bitcrusher Demo</h1>
+  <div class="effect-controls">
+    <div class="source-selector">
+      <label>sine <input value="sine" type="radio" name="source-selector" checked /> </label>
+      <label>square <input value="square" type="radio" name="source-selector"  /></label>
+      <label>sawtooth <input value="sawtooth" type="radio" name="source-selector"  /></label>
+      <label>audio clip <input value="audio" type="radio" name="source-selector"  /></label>
+    </div>
+    <label>
+      <span>volume</span>
+      <input name="volume" type="range" min="0.0" max="0.7" step="0.05" />
+    </label>
+    <label>
+      <span>bit depth</span>
+      <input name="bits" type="range" min="1" max="16" step="1" />
+    </label>
+    <label>
+      <span>downsampling</span>
+      <input name="downsampling" type="range" min="1" max="40" step="1" />
+    </label>
+  </div>
+  <div class="transport-controls">
+    <button name="start">start</button>
+    <button name="stop">stop</button>
+    <button name="info">info</button>
+  </div>
+  <script src="app.js"></script>
+</div>
 
 ### The Audio Worklet
 
