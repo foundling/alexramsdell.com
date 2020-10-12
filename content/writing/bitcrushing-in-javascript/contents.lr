@@ -60,7 +60,9 @@ The sample rate of the sound file is 44,100 hz, which means each second of sound
 
 ![the test file reduced to 4-bits, no downsampling](/static/img/bitcrusher-24bit-40x.png)
 
-## A JavaScript Implementation
+## Implementing A Bitcrusher in JavaScript
+
+Here's a fully-functioning example of what we're going to build:
 
 <div class="bitcrusher-demo">
   <style scoped>
@@ -116,26 +118,52 @@ The sample rate of the sound file is 44,100 hz, which means each second of sound
   <script src="app.js"></script>
 </div>
 
-### The Audio Worklet
+Because audio programming involves both real-time performance demands and computationally intensive processing, we want to isolate the performance-sensitive code in a separate CPU thread that doesn't have to share resources with other important, thread-blocking web processes like UI events, network calls and generally synchronous code. The Web Audio API provides the `AudioWorklet` interface to do just this: we can define low-level processing code that reads the input channels' arrays of audio samples, processes them, and writes them out to the output channels' respective output arrays.
 
-To achieve a bitcrushing effect, we need the Web Audio API's custom AudioWorklet Node. custom processes the individual amplitude of audio samples, we will need to go a little deeper than you might normally be used to with Web Audio and build a custom Audio Node.
+Because there are several valid ways to approach building a custom `AudioNode`, let's let's briefly state the process.
 
-The Audio Worklet object is bound to the Web Audio context, and provides you with a way to register and load a custom Audio Node. 
+In our custom processing code we will:
 
-### The Bitcrushing Implimentation Logic 
+- scaffold the low-level processing code class
+- register the custom processing class with its thread environment
+- look at the different types of custom `AudioParam`s
+- implement the actual bitcrushing by writing the `AudioWorkletProcessor.process` and `AudioWorkletProcessor.parameterDescriptor` class methods
 
-In the script file containing your custom audio processing code:
-  - extend the `AudioWorkletProcessor` class in the global scope, implemening the process method and making sure to call super in the constructor(). 
-  - register the module with the `registerProcessor` function.
+And then in our app code, we will:
 
-In the app code:
-- Create an audio context
-- Create an AudioWorkletNode (passing the audio context and the string name of the audio processing module). 
-- Connect your newly instantiated node to the audioContext's `destination` output or some other node that is in the audio graph. 
-- Register your processor code on the audioWorklet object (.addModule)
+- create an `audioContext`
+- register the custom processing module by filename with the `audioContext`
+- create our bitcrusher custom audio node by creating an instance of the `AudioWorkletNode` class with our bitcrushing parameters (bit-depth and downsampling) as options
+- connect our custom bitcrusher to the rest of the audio graph
+- implement a user interface with events that allow a user to manipulate the bitcrusher in real-time 
 
 
-## Bitcrushing Examples
+### Building the Bitcrusher
+
+Let's create a new file called `bitcrusher.js`,  extend the `AudioWorkletProcessor` class and register that custom processor globally with the audio thread.
+
+```javascript
+
+  // bitcrusher.js
+
+  class BitCrusher extends AudioWorkletProcessor {
+    static get parameterDescriptor () {
+      // define parameters to be initialized when our processor
+      // we can then access them from our bitcrusher instance in the app code (the main thread)
+    } 
+
+    process(inputs, outputs, parameters) {
+      // required when extending the AudioWorkletProcessor class
+    }
+
+  }
+
+  // make the audio thread aware of our custom processor
+  // so the main thread can access it
+  registerProcessor('bitcrusher', BitCrusher)
+```
+
+
 
 References: 
 
