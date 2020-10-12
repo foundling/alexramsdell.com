@@ -24,7 +24,7 @@ Before we dive into bitcrushing -- a strictly digital process -- let's cover the
 
 Sound is converted from the analog domain to the digital domain by a transducer like a microphone or a guitar pickup which that converts the air pressure fluctuations into electrical signal. Once converted to electricity, which is not yet digital, an analog-to-digital converter, or ADC, can then take snapshots at a some consistent rate to represent the momentary amplitude of the analog signal.  The rate at which the samples are taken is called the [sample rate](https://en.wikipedia.org/wiki/Sampling_%28signal_processing%29), and the numeric depth of the amplitude readings is the [bit depth](https://en.wikipedia.org/wiki/Audio_bit_depth) which expresses the quantity and sign of a reading.
 
-### Let's Crush Some Bits
+### Bit-Reduction and Downsampling 
 
 I've taken a short audio clip of some piano playing and experimented with Logic Pro's Bitcrusher, adjusting the bit depth and the downsampling factor. Here is the clip with no bit-crushing.  
 
@@ -89,8 +89,8 @@ Here's a fully-functioning example of what we're going to build:
       display: inline-block;
     }
   </style>
-  <h1>Bitcrusher Demo</h1>
   <div class="effect-controls">
+    <h1>Bitcrusher Demo</h1>
     <div class="source-selector">
       <label>sine <input value="sine" type="radio" name="source-selector" checked /> </label>
       <label>square <input value="square" type="radio" name="source-selector"  /></label>
@@ -126,8 +126,8 @@ In our custom processing code we will:
 
 - scaffold the low-level processing code class
 - register the custom processing class with its thread environment
-- look at the different types of custom `AudioParam`s
 - implement the actual bitcrushing by writing the `AudioWorkletProcessor.process` and `AudioWorkletProcessor.parameterDescriptor` class methods
+- understand the different types of custom `AudioParam`s
 
 And then in our app code, we will:
 
@@ -138,9 +138,9 @@ And then in our app code, we will:
 - implement a user interface with events that allow a user to manipulate the bitcrusher in real-time 
 
 
-### Building the Bitcrusher
+## Building the Bitcrusher
 
-Let's create a new file called `bitcrusher.js`,  extend the `AudioWorkletProcessor` class and register that custom processor globally with the audio thread.
+Let's create a new file called `bitcrusher.js` and  extend the `AudioWorkletProcessor` class with some empty methods.
 
 ```javascript
 
@@ -160,9 +160,56 @@ Let's create a new file called `bitcrusher.js`,  extend the `AudioWorkletProcess
 
   // make the audio thread aware of our custom processor
   // so the main thread can access it
+
+```
+
+finally, let's register the custom processor with the audio thread.
+
+```javascript
+  // at the bottom of bitcrusher.js
   registerProcessor('bitcrusher', BitCrusher)
 ```
 
+
+Now that we have a complete scaffold of our audio-thread module, let's dive straight into the bitcrushing algorithm in the `process` method. 
+
+
+What are we working with in terms of arguments to `process`?  
+
+- `inputs`: a triply-nested array containing the sample data for all input nodes and their constitutive channels. (`inputs[node][channel][sampleIndex]`)
+- `outputs`: a triply-nested array mirroring the structure of `inputs` whose sample values are zeroes.  A direct copy of the input signal array would simply pass the signal along to the output.  However, if you were to simply not write data to the output arrays, the output to the next node in the audio graph would be silent, as each value would be the untouched default, 0.
+
+
+```javascript
+  // bitcrusher.js
+
+  process(inputs, outputs, parameters) {
+
+    const input = inputs[0]
+    const output = outputs[0]
+    const bits = parameters.bitDepth[0]
+    const downsampling = parameters.downsampling[0]
+
+    for (let channelIndex = 0; channelIndex < output.length; ++channelIndex) {
+      for (let sampleIndex = 0; sampleIndex < output[channelIndex].length; ++sampleIndex) {
+
+        if (!input[channelIndex]) return false
+
+        // sample and hold: update last sample value every <downsample>th sample 
+        if (sampleIndex % downsampling === 0) {
+          const step = Math.pow(0.5, bits) 
+          this._lastSampleValue = step * Math.floor(input[channelIndex][sampleIndex]/step)
+        }
+
+        output[channelIndex][sampleIndex] = this._lastSampleValue
+
+      }
+    }
+
+    return true
+  }
+
+```
 
 
 References: 
@@ -171,3 +218,4 @@ References:
 2. https://developers.google.com/web/updates/2017/12/audio-worklet
 3. https://www.w3.org/TR/webaudio/#audioworkletnode
 4. https://www.w3.org/TR/webaudio/#AudioWorklet-Examples
+5. https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor/process
