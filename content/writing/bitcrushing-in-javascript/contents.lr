@@ -173,12 +173,11 @@ finally, let's register the custom processor with the audio thread.
 
 Now that we have a complete scaffold of our audio-thread module, let's dive straight into the bitcrushing algorithm in the `process` method. 
 
-
 What are we working with in terms of arguments to `process`?  
 
-- `inputs`: a triply-nested array containing the sample data for all input nodes and their constitutive channels. (`inputs[node][channel][sampleIndex]`)
-- `outputs`: a triply-nested array mirroring the structure of `inputs` whose sample values are zeroes.  A direct copy of the input signal array would simply pass the signal along to the output.  However, if you were to simply not write data to the output arrays, the output to the next node in the audio graph would be silent, as each value would be the untouched default, 0.
-
+- `inputs`: a triply-nested array containing the sample data for all input nodes and their constitutive channels. Accessing a sample at `sampleIndex` would look something like this: `inputs[inputNode][channel][sampleIndex]`
+- `outputs`: a triply-nested array with the same structure as `inputs` but whose sample values are all initialized to 0.  A direct copy of each input's channel sample to the same output's channel sample index would simply pass the signal untouched to next audioNode in the graph.  If you were to simply not write data to the output arrays, the output to the next node in the audio graph would be silent, as each value would be the untouched default of 0.
+- `parameters`: an object with strings naming the parameter name and an array of values indicating the parameter values.  The value array  will have either length 1 or 128, depending on whether it's an `a-rate` or `k-rate` paramter.
 
 ```javascript
   // bitcrusher.js
@@ -210,6 +209,8 @@ What are we working with in terms of arguments to `process`?
   }
 
 ```
+
+
 
 
 References: 
