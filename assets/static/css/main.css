@@ -516,6 +516,8 @@ footer {
   .blog__recent-posts .post-summary {
     width: 100%;
     margin-bottom: 2%; }
+    .blog__recent-posts .post-summary .post-summary__header h2 {
+      padding-bottom: 0px; }
     .blog__recent-posts .post-summary__short-text {
       font-family: 'Lora', serif;
       padding-bottom: 5px; }
