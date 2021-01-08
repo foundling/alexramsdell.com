@@ -1,4 +1,4 @@
-title: Bitcrushing with Web Audio in JavaScript
+title: Bitcrushing Audio with JavaScript
 ---
 author: alex
 ---
@@ -12,7 +12,7 @@ bit-crusher
 ---
 _hidden: false
 ---
-short_text: Making your audio sound like trash. In a good way!
+short_text: Make your audio sound like trash. In a good way!
 ---
 body:
 
