@@ -42,7 +42,7 @@ async function init() {
   const sourceType = [...sourceInputs].filter(input => input.checked)[0].value
 
   if (sourceType === 'audio') {
-    const url = '/static/audio/bitcrusher-sample.mp3'
+    const url = '/static/audio/bitcrusher-24bits-1x-downsampling.mp3'
     const response = await fetch(url)
     const arrayBuffer = await response.arrayBuffer()
     const audioBuffer = await context.decodeAudioData(arrayBuffer)
