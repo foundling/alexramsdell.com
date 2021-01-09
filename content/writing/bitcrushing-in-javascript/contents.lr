@@ -16,54 +16,11 @@ short_text: Make your audio sound like trash. In a good way!
 ---
 body:
 
-Bitcrushing crept up on me.  For a long time, I thought it wasn't interesting because I wasn't making 8-bit video game soundtracks or chiptune music.  But then I bought the dreamy and desolate [Fez Soundtrack](https://music.disasterpeace.com/album/fez-ost), which is something of a masterclass in bitcrushing.  I also heard Deerhoof's ["Sexy But Sparkly"](https://famousclass.bandcamp.com/track/deerhoof-sexy-but-sparkly).  At that point I knew I was wrong: bitcrushing could be forward-looking, a tool versatile enough to evoke digital desolation or add a satisfying crunch to a bass guitar line. 
-
-### How is Sound Digitized?
-
-Before we dive into bitcrushing -- a strictly digital process -- let's cover the mechanics behind sound and how it is represented digitally. According to Gareth Loy, author of *Musimathics*, when you strike a tuning fork, "what you hear is a result of the periodic changes in air pressure at your eardrum caused by the vibration of the air set in motion" [1].
-
-Sound is converted from the analog domain to the digital domain by a transducer like a microphone or a guitar pickup which that converts the air pressure fluctuations into electrical signal. Once converted to electricity, which is not yet digital, an analog-to-digital converter, or ADC, can then take snapshots at a some consistent rate to represent the momentary amplitude of the analog signal.  The rate at which the samples are taken is called the [sample rate](https://en.wikipedia.org/wiki/Sampling_%28signal_processing%29), and the numeric depth of the amplitude readings is the [bit depth](https://en.wikipedia.org/wiki/Audio_bit_depth) which expresses the quantity and sign of a reading.
-
-### Bit-Reduction and Downsampling 
-
-I've taken a short audio clip of some piano playing and experimented with Logic Pro's Bitcrusher, adjusting the bit depth and the downsampling factor. Here is the clip with no bit-crushing.  
-
-<audio controls src="/static/audio/bitcrusher-24bits-1x-downsampling.mp3"></audio>
-
-And the visualization from the Logic Pro bitrcusher interface.
-
-![the test file with no bitcrushing applied](/static/img/bitcrusher-24bit-1x.png)
-
-Notice that the resolution is set to 24-bits and the downsampling is set to a factor of one.  That more or less leaves the sound alone, as the file is already 24-bit, and doing anything by a factor of one will have no effect.
-
-Before we start to manipulate the sample, it's worth noting that there are two ways to bitcrush an audio stream and they can be used in conjunction. The first is bit-reduction, which means quantizing the amplitude values in the stream to a bit-depth lower than the source stream. This reduces the potential range of amplitude values but keeps the sample count constant. An amplitude reading in a 24-bit sample can be one of 2^24 values, ranging from  -2^23 to 2^23 - 1.  Likewise, in a 4-bit sample, a given amplitude reading can be any of 2^4 possible values, ranging from -16 to 15. 
-
-After reducing the test clip from 24 to 4 bits, which is a reduction in possible values from 16777216 to 16, you get an audio file that sounds like this:
- 
-<audio controls src="/static/audio/bitcrusher-4bits-1x-downsampling.mp3"></audio>
-
-Notice how the curve changed from smooth to stepped:
-
-![the test file reduced to 4-bits, no downsampling](/static/img/bitcrusher-4bit-1x.png)
-
-If you squint and count carefully, you'll see that the wave on each side of the x-axis has 16 steps, which is 2 to the power of our current bit-depth, 4.
-
-So that was just the first method, bit-reduction, which works on the *value at each sample*.
-
-The second method of bitcrushing is downsampling, or reducing the signal stream to every nth sample, giving an approximation of the stream at a less frequent rate. 
-
-Here is the original test file at its original 24-bit bitrate, but excessively downsampled by a factor of 40: 
-
-<audio controls src="/static/audio/bitcrusher-24bits-40x-downsampling.mp3"></audio>
-
-The sample rate of the sound file is 44,100 hz, which means each second of sound is comprised of 44,100 audio samples. The effect of downsample bitcrushing the file by 40x, in the case above, is to retain every 40th sample and discard the rest, which would result in roughly 1100 samples.
-
-![the test file reduced to 4-bits, no downsampling](/static/img/bitcrusher-24bit-40x.png)
-
-## Implementing A Bitcrusher in JavaScript
+Bitcrushing crept up on me.  For a long time, I thought it wasn't interesting because I wasn't making 8-bit video game soundtracks or chiptune music.  But then I bought the dreamy and desolate [Fez Soundtrack](https://music.disasterpeace.com/album/fez-ost), which is something of a masterclass in bitcrushing.  I also heard Deerhoof's ["Sexy But Sparkly"](https://famousclass.bandcamp.com/track/deerhoof-sexy-but-sparkly).  At that point I knew that whatever I thought before was wrong. Bitcrushing could be forward-looking, a tool versatile enough to evoke digital desolation or add a satisfying crunch to the bass guitar. Let's dive into how it all works and then build a bare-bones bitcrusher in Javascript.  
 
 Here's a fully-functioning example of what we're going to build:
 
+<br>
 <div class="bitcrusher-demo">
   <style scoped>
     .bitcrusher-demo {
@@ -92,10 +49,10 @@ Here's a fully-functioning example of what we're going to build:
   <div class="effect-controls">
     <h1>Bitcrusher Demo</h1>
     <div class="source-selector">
-      <label>sine <input value="sine" type="radio" name="source-selector" checked /> </label>
+      <label>audio clip <input value="audio" type="radio" name="source-selector" checked /></label>
+      <label>sine <input value="sine" type="radio" name="source-selector" /> </label>
       <label>square <input value="square" type="radio" name="source-selector"  /></label>
       <label>sawtooth <input value="sawtooth" type="radio" name="source-selector"  /></label>
-      <label>audio clip <input value="audio" type="radio" name="source-selector"  /></label>
     </div>
     <label>
       <span>volume</span>
@@ -118,6 +75,48 @@ Here's a fully-functioning example of what we're going to build:
   <script src="app.js"></script>
 </div>
 
+
+
+### From Air to Bytes
+
+Before we dive into bitcrushing, a strictly digital process, let's talk about how sound in a room makes its way to a track in your computer's software. According to Gareth Loy, author of the great book *Musimathics*, when you strike a tuning fork, "what you hear is a result of the periodic changes in air pressure at your eardrum caused by the vibration of the air set in motion" [1]. When the propagation of excited air molecules reaches a microphone, the microphone converts the back-and-forth air pressure fluctuations into electrical signal. Once converted to electricity, an analog-to-digital converter, or ADC, can then take snapshots at a some consistent rate to represent the momentary amplitude of the analog signal.  The rate at which the samples are taken is called the <u>sample rate</u>, and the numeric depth of the amplitude readings is the <u>bit depth</u>.
+
+### Bit-Reduction and Downsampling 
+
+I took a short audio clip of some experimention recorded into Logic Pro's Bitcrusher, adjusting the bit depth and the downsampling factor. Here is the clip with no bit-crushing.  
+
+<audio controls src="/static/audio/bitcrusher-24bits-1x-downsampling.mp3"></audio>
+
+And the visualization from the Logic Pro bitrcusher interface.
+
+![the test file with no bitcrushing applied](/static/img/bitcrusher-24bit-1x.png)
+
+Notice that the resolution is set to 24-bit. Since the resolution and downsampling configuration matches that of the original file, the sound will remain unmodified.
+
+Before we start to manipulate the sample, it's worth noting that there are two ways to bitcrush an audio stream, and they can be used in conjunction. The first is <u>bit-reduction</u>, which reduces the potential range of amplitude values but keeps the sample count constant.  In bit reduction, each amplitude value is snapped to its nearest value among a reduced set of discrete values.  An amplitude reading in a 24-bit sample can be one of 2^24 values, ranging from  -2^23 to 2^23 - 1 or −8,388,608 to 8,388,607.  Likewise, in a 4-bit sample, a given amplitude reading can be any of 2^4 possible values, including negative numbers, ranging from -8 to 7. 
+
+After reducing the audio clip from 24 to 4 bits, which is quite a reduction (from 16777216 to 16 potential amplitude values), you get an audio file that sounds like this:
+ 
+<audio controls src="/static/audio/bitcrusher-4bits-1x-downsampling.mp3"></audio>
+
+Notice how the Logic Pro visualization curve changed from smooth to stepped, which is consistent with our reduction in possible amplitude values that represent the incoming sound.
+
+![the test file reduced to 4-bits, no downsampling](/static/img/bitcrusher-4bit-1x.png)
+
+To reiterate, <u>bit-reduction</u> works on the *value at each sample*.
+
+The second method of bitcrushing is <u>downsampling</u>, or reducing the signal stream to every nth sample, giving an approximation of the stream at a less frequent rate. In Logic Pro, the reduction is expressed as a factor of n, so the stream is sampled every nth sample.  
+
+Here is the original test file at its original 24-bit bitrate, but excessively downsampled by a factor of 40: 
+
+<audio controls src="/static/audio/bitcrusher-24bits-40x-downsampling.mp3"></audio>
+
+The sample rate of the sound file is 44,100 hz, which means each second of sound is comprised of 44,100 audio samples. The effect of downsample bitcrushing the file by 40x, in the case above, is to retain every 40th sample and discard the rest, which would result in roughly 1100 samples.
+
+![the test file reduced to 4-bits, no downsampling](/static/img/bitcrusher-24bit-40x.png)
+
+## Implementing A Bitcrusher in JavaScript
+
 Because audio programming involves both real-time performance demands and computationally intensive processing, we want to isolate the performance-sensitive code in a separate CPU thread that doesn't have to share resources with other important, thread-blocking web processes like UI events, network calls and generally synchronous code. The Web Audio API provides the `AudioWorklet` interface to do just this: we can define low-level processing code that reads the input channels' arrays of audio samples, processes them, and writes them out to the output channels' respective output arrays.
 
 Because there are several valid ways to approach building a custom `AudioNode`, let's let's briefly state the process.
@@ -138,40 +137,64 @@ And then in our app code, we will:
 - implement a user interface with events that allow a user to manipulate the bitcrusher in real-time 
 
 
-## Building the Bitcrusher
+## Extending the AudioWorkletProcess class (runs in a separate, audio-specific thread for performance reasons)
 
-Let's create a new file called `bitcrusher.js` and  extend the `AudioWorkletProcessor` class with some empty methods.
+Let's create a new file called `bitcrusher.js` and  extend the `AudioWorkletProcessor` class.
 
 ```javascript
 
-  // bitcrusher.js
-
   class BitCrusher extends AudioWorkletProcessor {
-    static get parameterDescriptor () {
-      // define parameters to be initialized when our processor
-      // we can then access them from our bitcrusher instance in the app code (the main thread)
-    } 
+
+    // implement static getters so we can access and update them from our bitcrusher instance in the app code (the main thread)
+    static get parameterDescriptors () {
+        return [{
+          name: 'bitDepth',
+          defaultValue: 12,
+          minValue: 1,
+          maxValue: 16
+        }, {
+          name: 'downsampling',
+          defaultValue: 1,
+          minValue: 1,
+          maxValue: 40
+        }];
+      }
+
+    constructor(options) {
+      super()
+      this._lastSampleValue = 0
+    }
 
     process(inputs, outputs, parameters) {
-      // required when extending the AudioWorkletProcessor class
+
+      const input = inputs[0]
+      const output = outputs[0]
+      const bits = parameters.bitDepth[0]
+      const downsampling = parameters.downsampling[0]
+
+      for (let channelIndex = 0; channelIndex < output.length; ++channelIndex) {
+        for (let sampleIndex = 0; sampleIndex < output[channelIndex].length; ++sampleIndex) {
+
+          if (!input[channelIndex]) return false
+
+          // sample and hold: update last sample value every <downsample>th sample 
+          if (sampleIndex % downsampling === 0) {
+            const step = Math.pow(0.5, bits)
+            this._lastSampleValue = step * Math.floor(input[channelIndex][sampleIndex]/step)
+          }
+
+          output[channelIndex][sampleIndex] = this._lastSampleValue
+
+        }
+      }
+
+      return true
     }
 
   }
 
-  // make the audio thread aware of our custom processor
-  // so the main thread can access it
-
 ```
 
-finally, let's register the custom processor with the audio thread.
-
-```javascript
-  // at the bottom of bitcrusher.js
-  registerProcessor('bitcrusher', BitCrusher)
-```
-
-
-Now that we have a complete scaffold of our audio-thread module, let's dive straight into the bitcrushing algorithm in the `process` method. 
 
 What are we working with in terms of arguments to `process`?  
 
@@ -179,38 +202,181 @@ What are we working with in terms of arguments to `process`?
 - `outputs`: a triply-nested array with the same structure as `inputs` but whose sample values are all initialized to 0.  A direct copy of each input's channel sample to the same output's channel sample index would simply pass the signal untouched to next audioNode in the graph.  If you were to simply not write data to the output arrays, the output to the next node in the audio graph would be silent, as each value would be the untouched default of 0.
 - `parameters`: an object with strings naming the parameter name and an array of values indicating the parameter values.  The value array  will have either length 1 or 128, depending on whether it's an `a-rate` or `k-rate` paramter.
 
-```javascript
-  // bitcrusher.js
 
-  process(inputs, outputs, parameters) {
+## The HTML component
 
-    const input = inputs[0]
-    const output = outputs[0]
-    const bits = parameters.bitDepth[0]
-    const downsampling = parameters.downsampling[0]
+```html
+  <!-- index.html -->
 
-    for (let channelIndex = 0; channelIndex < output.length; ++channelIndex) {
-      for (let sampleIndex = 0; sampleIndex < output[channelIndex].length; ++sampleIndex) {
-
-        if (!input[channelIndex]) return false
-
-        // sample and hold: update last sample value every <downsample>th sample 
-        if (sampleIndex % downsampling === 0) {
-          const step = Math.pow(0.5, bits) 
-          this._lastSampleValue = step * Math.floor(input[channelIndex][sampleIndex]/step)
-        }
-
-        output[channelIndex][sampleIndex] = this._lastSampleValue
-
+  <div class="bitcrusher-demo">
+    <style scoped>
+      .bitcrusher-demo {
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px lightgray solid;
+        width: fit-content;
       }
-    }
-
-    return true
-  }
+      .bitcrusher-demo div {
+        padding: 10px 0px;
+      }
+      div.source-selector > label {
+        display: inline-block;
+      }
+      input {
+        display: block;
+      }
+      label {
+        display: block;
+      }
+      label > span,
+      label > input {
+        display: inline-block;
+      }
+    </style>
+    <div class="effect-controls">
+      <h1>Bitcrusher Demo</h1>
+      <div class="source-selector">
+        <label>audio clip <input value="audio" type="radio" name="source-selector" checked /></label>
+        <label>sine <input value="sine" type="radio" name="source-selector" /> </label>
+        <label>square <input value="square" type="radio" name="source-selector"  /></label>
+        <label>sawtooth <input value="sawtooth" type="radio" name="source-selector"  /></label>
+      </div>
+      <label>
+        <span>volume</span>
+        <input name="volume" type="range" min="0.0" max="0.7" step="0.05" />
+      </label>
+      <label>
+        <span>bit depth</span>
+        <input name="bits" type="range" min="1" max="16" step="1" />
+      </label>
+      <label>
+        <span>downsampling</span>
+        <input name="downsampling" type="range" min="1" max="40" step="1" />
+      </label>
+    </div>
+    <div class="transport-controls">
+      <button name="start">start</button>
+      <button name="stop">stop</button>
+      <button name="info">info</button>
+    </div>
+    <script src="app.js"></script>
+  </div>
 
 ```
 
 
+## The JavaScript Application Code (runs in the main thread)
+
+```javascript
+
+  // instantiate our Web Audio context
+
+  const context = new AudioContext();
+
+  // bind to our html component selectors and sliders to handle manipulation events
+  const startButton = document.querySelector('button[name="start"]')
+  const stopButton = document.querySelector('button[name="stop"]')
+  const infoButton = document.querySelector('button[name="info"]') 
+  const downsampling = document.querySelector('input[name="downsampling"]')
+  const downsamplingValue = document.querySelector('.downsampling-value')
+  const bits = document.querySelector('input[name="bits"]')
+  const bitsValue = document.querySelector('.bits-value')
+  const volume  = document.querySelector('input[name="volume"]')
+  const volumeValue = document.querySelector('.volume-value')
+  const sourceInputs = document.querySelectorAll('input[name="source-selector"]')
+  const sourceSelector = document.querySelector('.source-selector')
+
+  const parameterData = {
+    bitDepth: 2,
+    downsampling: 1
+  }
+
+  startButton.addEventListener('click', init)
+
+  bitsValue.innerText = bits.value
+  volumeValue.innerText = volume.value
+  downsamplingValue.innerText = downsampling.value
+
+  // when the various sliders are adjusted, update their corresponding internal data 
+  volume.addEventListener('input', ({ target }) => {
+    volumeValue.innerText = target.value
+  })
+
+  bits.addEventListener('input', ({ target }) => {
+    bitsValue.innerText = target.value
+  })
+
+  downsampling.addEventListener('input', ({ target }) => {
+    downsamplingValue.innerText = target.value
+  })
+
+
+
+  async function init() {
+
+    // when the 'start' button is clicked, reset source corresponding to the selected radio button. 
+    let source
+    const sourceType = [...sourceInputs].filter(input => input.checked)[0].value
+
+    if (sourceType === 'audio') {
+      const url = '/static/audio/bitcrusher-24bits-1x-downsampling.mp3'
+      const response = await fetch(url)
+      const arrayBuffer = await response.arrayBuffer()
+      const audioBuffer = await context.decodeAudioData(arrayBuffer)
+      source = context.createBufferSource()
+      source.buffer = audioBuffer
+    } else {
+      source = context.createOscillator()
+      source.frequency.value = 440
+      source.type = sourceType
+    }
+
+    // register our bitcrusher audio worklet code globally so it's accessible within the WorkletNode thread 
+    await context.audioWorklet.addModule('bitcrusher.js')
+
+    // initialize our bitcrusher node to use our 'bitcrusher.js' code
+    const bitCrusherNode = new AudioWorkletNode(context, 'bitcrusher', { parameterData })
+
+    // use the node's getter to get a reference to the parameters we need
+    const bitDepthParam = bitCrusherNode.parameters.get('bitDepth')
+    const downsamplingParam = bitCrusherNode.parameters.get('downsampling')
+
+    const gainNode = context.createGain()
+    gainNode.gain.value = volume.value
+
+    volume.addEventListener('input', ({ target }) => {
+      gainNode.gain.value = parseFloat(target.value)
+    })
+
+    downsampling.addEventListener('input', ({ target }) => {
+      downsamplingParam.value = parseInt(target.value)
+    })
+
+    bits.addEventListener('input', ({ target }) => {
+      bitDepthParam.value = parseInt(target.value)
+    })
+
+    stopButton.addEventListener('click', () => {
+      source.stop()
+    })
+
+    // Connect the source audio node to the input of the bitcrusher
+    source.connect(bitCrusherNode)
+
+    // connect the bitcrusher's output to the gain node (so we can control the output volume)
+    bitCrusherNode.connect(gainNode)
+
+    // connect the gain node's output to the master output
+    gainNode.connect(context.destination)
+
+    // since this code is triggered every time the play button is pressed, we want to play the source
+    source.start()
+
+  }
+
+  startButton.addEventListener('click', init)
+
+```
 
 
 References: 
