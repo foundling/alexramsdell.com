@@ -9,5 +9,8 @@ div.blog-post-references {
     li {
       list-style-type: initial;
       margin-left: 20px;
+      a {
+        max-width: 100%;
+      }
     }
 }

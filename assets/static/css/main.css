@@ -36,6 +36,8 @@ footer {
 
 li {
   list-style-type: none; }
+  li a {
+    word-break: break-all; }
 
 li.logo {
   font-size: 2em; }
@@ -495,22 +497,32 @@ div.blog-post-references {
   div.blog-post-references li {
     list-style-type: initial;
     margin-left: 20px; }
+    div.blog-post-references li a {
+      max-width: 100%; }
 
 footer {
-  display: flex;
-  flex-direction: column;
-  flex-shrink: 0;
-  align-items: center;
-  justify-content: center; }
+  display: inline-flex;
+  /*
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    */ }
   footer a {
     color: rgba(255, 0, 0, 0.62);
     border-bottom: none; }
 
 @media (max-width: 750px) {
-  footer p {
-    font-size: 0.8em; }
-    footer p a {
-      color: rgba(255, 0, 0, 0.62); } }
+  footer {
+    display: flex;
+    flex-direction: column; }
+    footer .separator {
+      display: none; }
+    footer p {
+      font-size: 0.8em; }
+      footer p a {
+        color: rgba(255, 0, 0, 0.62); } }
 .blog__recent-posts {
   text-align: left; }
   .blog__recent-posts .post-summary {

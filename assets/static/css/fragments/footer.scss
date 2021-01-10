@@ -1,10 +1,15 @@
 footer {
+  display: inline-flex;
 
+  p {
+  }
+  /*
     display: flex;
     flex-direction: column;
     flex-shrink: 0;
     align-items: center;
     justify-content: center;
+    */
     a {
       color: rgba(255, 0, 0, 0.62);
       border-bottom: none;
@@ -15,6 +20,11 @@ footer {
 
 @media (max-width: 750px) {
   footer {
+    display: flex;
+    flex-direction: column;
+    .separator {
+      display: none;
+    }
     p {
       font-size: 0.8em;
       a {
