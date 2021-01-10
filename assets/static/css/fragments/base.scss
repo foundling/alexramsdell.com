@@ -44,11 +44,14 @@ footer {
 
 }
 
-strong {
-}
+
 
 li {
   list-style-type: none;
+
+  a {
+    word-break: break-all;
+  }
 }
 
 li.logo {
