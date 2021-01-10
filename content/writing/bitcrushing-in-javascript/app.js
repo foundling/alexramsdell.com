@@ -10,8 +10,6 @@ const volumeValue = document.querySelector('.volume-value')
 const sourceInputs = document.querySelectorAll('input[name="source-selector"]')
 const sourceSelector = document.querySelector('.source-selector')
 
-let playing = false
-const context = new AudioContext();
 const parameterData = {
   bitDepth: 2,
   downsampling: 1
@@ -37,6 +35,9 @@ downsampling.addEventListener('input', ({ target }) => {
 
 
 async function init() {
+
+  const AudioContext = window.webkitAudioContext || window.AudioContext
+  const context = new AudioContext()
 
   let source
   const sourceType = [...sourceInputs].filter(input => input.checked)[0].value

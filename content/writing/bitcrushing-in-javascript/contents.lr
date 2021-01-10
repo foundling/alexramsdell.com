@@ -57,14 +57,17 @@ Here's a fully-functioning example of what we're going to build:
     <label>
       <span>volume</span>
       <input name="volume" type="range" min="0.0" max="0.7" step="0.05" />
+      <span class="volume-value"></span>
     </label>
     <label>
       <span>bit depth</span>
-      <input name="bits" type="range" min="1" max="16" step="1" />
+      <input name="bits" type="range" min="1" max="24" step="1" />
+      <span class="bits-value"></span>
     </label>
     <label>
-      <span>downsampling</span>
+      <span>downsampling factor</span>
       <input name="downsampling" type="range" min="1" max="40" step="1" />
+      <span class="downsampling-value"></span>
     </label>
   </div>
   <div class="transport-controls">
@@ -137,11 +140,15 @@ And then in our app code, we will:
 - implement a user interface with events that allow a user to manipulate the bitcrusher in real-time 
 
 
-## Extending the AudioWorkletProcess class (runs in a separate, audio-specific thread for performance reasons)
+## Extending the AudioWorkletProcess class
+
+The following code contains a class definition that extends an existing Web Audio class.  It is designed to run in a separate, audio-specific thread due to the performance requirements of audio capture and real-time manipulation.
 
 Let's create a new file called `bitcrusher.js` and  extend the `AudioWorkletProcessor` class.
 
 ```javascript
+
+  // bitcrusher.js 
 
   class BitCrusher extends AudioWorkletProcessor {
 
@@ -205,6 +212,8 @@ What are we working with in terms of arguments to `process`?
 
 ## The HTML component
 
+This is a very 'quick-and-dirty' html file that serves the purpose of showing how a bitcrusher could work.  It cuts corners and also lacks a real-world context. There's neither a main.js nor a build phase.
+
 ```html
   <!-- index.html -->
 
@@ -244,14 +253,18 @@ What are we working with in terms of arguments to `process`?
       <label>
         <span>volume</span>
         <input name="volume" type="range" min="0.0" max="0.7" step="0.05" />
+        <span class="volume-value"></span>
       </label>
       <label>
         <span>bit depth</span>
         <input name="bits" type="range" min="1" max="16" step="1" />
+        <span></span>
+        <span class="bits-value"></span>
       </label>
       <label>
         <span>downsampling</span>
         <input name="downsampling" type="range" min="1" max="40" step="1" />
+        <span class="downsampling-value"></span>
       </label>
     </div>
     <div class="transport-controls">
@@ -381,8 +394,8 @@ What are we working with in terms of arguments to `process`?
 
 References: 
 
-1. Musimathics, Vol. 1, Gareth Loy, page 1.
-2. https://developers.google.com/web/updates/2017/12/audio-worklet
-3. https://www.w3.org/TR/webaudio/#audioworkletnode
-4. https://www.w3.org/TR/webaudio/#AudioWorklet-Examples
-5. https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor/process
+- Musimathics, Vol. 1, Gareth Loy, page 1.
+- https://developers.google.com/web/updates/2017/12/audio-worklet
+- https://www.w3.org/TR/webaudio/#audioworkletnode
+- https://www.w3.org/TR/webaudio/#AudioWorklet-Examples
+- https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor/process
