@@ -443,7 +443,8 @@ p > code,
 li > code {
   padding: 2px 5px;
   background: whitesmoke;
-  color: rgba(255, 0, 0, 0.8); }
+  color: rgba(255, 0, 0, 0.8);
+  word-break: break-word; }
 
 code {
   text-shadow: 0px 1px 0px white; }
@@ -494,7 +495,7 @@ div.blog-post-references {
   div.blog-post-references h3 {
     padding: 1% 0%; }
   div.blog-post-references li {
-    list-style-type: initial;
+    list-style-type: decimal;
     margin-left: 20px; }
     div.blog-post-references li a {
       max-width: 100%; }
@@ -517,8 +518,10 @@ footer {
   .blog__recent-posts .post-summary {
     width: 100%;
     margin-bottom: 2%; }
-    .blog__recent-posts .post-summary .post-summary__header h2 {
-      padding-bottom: 0px; }
+    .blog__recent-posts .post-summary .post-summary__header {
+      margin-bottom: 0.5%; }
+      .blog__recent-posts .post-summary .post-summary__header h2 {
+        padding-bottom: 0px; }
     .blog__recent-posts .post-summary__short-text {
       font-family: 'Lora', serif;
       padding-bottom: 5px; }
@@ -533,7 +536,9 @@ footer {
     font-family: 'Lora', serif; }
   .blog__recent-posts .post-summary {
     margin-bottom: 7%;
-    background: white; } }
+    background: white; }
+    .blog__recent-posts .post-summary .post-summary__header {
+      margin-bottom: 1%; } }
 section.about {
   text-align: initial;
   padding-bottom: 60px; }
