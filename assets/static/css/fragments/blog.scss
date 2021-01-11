@@ -10,6 +10,7 @@
           //margin-left: 0;
         }
         .post-summary__header {
+          margin-bottom: 0.5%;
           h2 {
             padding-bottom: 0px;
           }
@@ -45,6 +46,11 @@
           font-family: 'Lora', serif;
       }
       .post-summary {
+
+          .post-summary__header {
+            margin-bottom: 1%;
+          }
+
           margin-bottom: 7%;
           background: white;
       }
