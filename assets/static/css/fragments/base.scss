@@ -32,7 +32,6 @@ main {
 
 footer {
 
-  margin-top: 10px;
   padding: 10px;
   flex-shrink: 0;
   align-items: center;
@@ -152,7 +151,7 @@ p {
   }
 
   footer {
-    padding: 0;
+    padding: 10px;
     p {
       font-size: 0.8em;
       a {

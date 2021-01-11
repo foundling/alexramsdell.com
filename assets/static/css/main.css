@@ -26,7 +26,6 @@ main {
   margin-top: 8vh; }
 
 footer {
-  margin-top: 10px;
   padding: 10px;
   flex-shrink: 0;
   align-items: center;
@@ -37,7 +36,7 @@ footer {
 li {
   list-style-type: none; }
   li a {
-    word-break: break-all; }
+    word-break: break-word; }
 
 li.logo {
   font-size: 2em; }
@@ -113,7 +112,7 @@ p {
     font-size: 1.5em; }
 
   footer {
-    padding: 0; }
+    padding: 10px; }
     footer p {
       font-size: 0.8em; }
       footer p a {
@@ -360,7 +359,7 @@ header {
   .post h4 {
     font-family: Helvetica;
     padding-top: 2%;
-    padding-bottom: 2%; }
+    padding-bottom: 1%; }
   .post > p {
     font-family: 'Lora'; }
   .post > p {
@@ -501,17 +500,7 @@ div.blog-post-references {
       max-width: 100%; }
 
 footer {
-  display: inline-flex;
-  /*
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    */ }
-  footer a {
-    color: rgba(255, 0, 0, 0.62);
-    border-bottom: none; }
+  display: inline-flex; }
 
 @media (max-width: 750px) {
   footer {

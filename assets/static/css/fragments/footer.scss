@@ -1,21 +1,6 @@
 footer {
   display: inline-flex;
 
-  p {
-  }
-  /*
-    display: flex;
-    flex-direction: column;
-    flex-shrink: 0;
-    align-items: center;
-    justify-content: center;
-    */
-    a {
-      color: rgba(255, 0, 0, 0.62);
-      border-bottom: none;
-    }
-
-
 }
 
 @media (max-width: 750px) {
