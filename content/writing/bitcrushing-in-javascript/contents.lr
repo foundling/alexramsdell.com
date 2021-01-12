@@ -10,13 +10,17 @@ tags:
 web audio
 bit-crusher
 ---
-_hidden: false
+references:
+1. Musimathics](Vol. 1, Gareth Loy, page 1.
+2. [w3c audioworkletnode](https://www.w3.org/TR/webaudio/#audioworkletnode)
+3. [W3c AudioWorkletExamples](TR/webaudio/#AudioWorklet-Examples)
+4. [mozilla AudioWorkletProcess documentation](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor/process)
 ---
 short_text: Make your audio sound like trash. In a good way!
 ---
 body:
 
-Bitcrushing crept up on me.  For a long time, I thought it wasn't interesting because I wasn't making 8-bit video game soundtracks or chiptune music.  But then I bought the dreamy and desolate [Fez Soundtrack](https://music.disasterpeace.com/album/fez-ost), which is something of a masterclass in bitcrushing.  I also heard Deerhoof's ["Sexy But Sparkly"](https://famousclass.bandcamp.com/track/deerhoof-sexy-but-sparkly).  At that point I knew that whatever I thought before was wrong. Bitcrushing could be forward-looking, a tool versatile enough to evoke digital desolation or add a satisfying crunch to the bass guitar. Let's dive into how it all works and then build a bare-bones bitcrusher in Javascript.  
+One day, I realized the truth: bitcrushing is cool.  For a long time, I thought it wasn't useful unless you weren't making 8-bit video game soundtracks or chiptune music.  But then I bought the dreamy and desolate [Fez Soundtrack](https://music.disasterpeace.com/album/fez-ost), which is something of a masterclass in bitcrushing.  I also heard Deerhoof's ["Sexy But Sparkly"](https://famousclass.bandcamp.com/track/deerhoof-sexy-but-sparkly).  Bitcrushing can be forward-looking, a tool versatile enough to evoke digital desolation or add a satisfying crunch to the bass guitar. Let's dive into how it works and then build a proof of concept in Javascript.  
 
 Here's a fully-functioning example of what we're going to build:
 
@@ -78,7 +82,9 @@ Here's a fully-functioning example of what we're going to build:
   <script src="app.js"></script>
 </div>
 
+<br>
 
+You can find the self-contained, functioning code [here](https://github.com/foundling/audio-programming/tree/master/js/bit-crusher). 
 
 ### From Air to Bytes
 
@@ -278,7 +284,7 @@ This is a very 'quick-and-dirty' html file that serves the purpose of showing ho
 ```
 
 
-## The JavaScript Application Code (runs in the main thread)
+## The JavaScript Application Code
 
 ```javascript
 
@@ -390,12 +396,3 @@ This is a very 'quick-and-dirty' html file that serves the purpose of showing ho
   startButton.addEventListener('click', init)
 
 ```
-
-
-References: 
-
-- Musimathics, Vol. 1, Gareth Loy, page 1.
-- https://developers.google.com/web/updates/2017/12/audio-worklet
-- https://www.w3.org/TR/webaudio/#audioworkletnode
-- https://www.w3.org/TR/webaudio/#AudioWorklet-Examples
-- https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor/process
