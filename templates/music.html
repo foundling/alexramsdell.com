@@ -8,17 +8,30 @@
       
     {% for release in this.children %}
 
-      <a class="album-title" href="{{ release.stream_link }}">{{ release.title }} ({{ release.release_date.strftime("%Y") }})</a>
+    <div class="release">
+       <a class="release-header" href="{{ release.stream_link }}">
+          <p class="release-artist">{{ release.artist }}</p>
+          <p class="release-title">{{ release.title }}</p>
+          <p class="release-date">({{ release.release_date.strftime("%Y") }})</p>
+       </a>
 
-      <div class="release-images">
-        {% for img in release.attachments.images %}
-          <a href="{{ release.stream_link }}">
-            <img src="{{img.path}}" />
-          </a>
-        {% endfor %}
-      </div>
+         <!--
+         <div class="release-images">
+           {% for img in release.attachments.images %}
+             <a href="{{ release.stream_link }}">
+               <img src="{{img.path}}" />
+             </a>
+           {% endfor %}
+         </div>
+         -->
 
-      {{ release.body }}
+         <div class="release-copy">
+         {{ release.body }}
+            [<a href="{{ release.stream_link }}">link</a>]
+         </div>
+         <div>
+         </div>
+    </div>
 
 
     {% endfor %}
