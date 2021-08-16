@@ -17,7 +17,7 @@
     position: -ms-sticky;
     position: -o-sticky;
     top: 2%;
-    overflow-x: scroll;
+    overflow-x: auto;
     border: 1px solid rgba(255, 0, 0, 0.32);
     margin-bottom: 20px;
 
@@ -61,7 +61,7 @@
 
     .toc-list-container {
       max-height: 400px;
-      overflow-y: scroll;
+      overflow: auto;
       ul {
         margin: 0% 4%;
         li {

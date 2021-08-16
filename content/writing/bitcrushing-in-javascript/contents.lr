@@ -11,7 +11,7 @@ web audio
 bit-crusher
 ---
 references:
-1. Musimathics](Vol. 1, Gareth Loy, page 1.
+1. [Musimathics](Vol. 1, Gareth Loy, page 1.)
 2. [w3c audioworkletnode](https://www.w3.org/TR/webaudio/#audioworkletnode)
 3. [W3c AudioWorkletExamples](TR/webaudio/#AudioWorklet-Examples)
 4. [mozilla AudioWorkletProcess documentation](https://developer.mozilla.org/en-US/docs/Web/API/AudioWorkletProcessor/process)

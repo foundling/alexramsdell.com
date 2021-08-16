@@ -2,40 +2,26 @@
 
 {% block content %}
 
-  <section class="music">
+<section class="music">
 
-    <h2>Music</h2>
-      
-    {% for release in this.children %}
+   <h2>Music</h2>
 
-    <div class="release">
-       <a class="release-header" href="{{ release.stream_link }}">
-          <p class="release-artist">{{ release.artist }}</p>
-          <p class="release-title">{{ release.title }}</p>
-          <p class="release-date">({{ release.release_date.strftime("%Y") }})</p>
-       </a>
+   {% for release in this.children %}
 
-         <!--
-         <div class="release-images">
-           {% for img in release.attachments.images %}
-             <a href="{{ release.stream_link }}">
-               <img src="{{img.path}}" />
-             </a>
-           {% endfor %}
-         </div>
-         -->
+   <div class="release">
+      <a class="release-header" href="{{ release.stream_link }}">
+      <p class="release-artist">{{ release.artist }}</p>
+      <p class="release-title">{{ release.title }}</p>
+      <p class="release-date">({{ release.release_date.strftime("%Y") }})</p>
+   </a>
 
-         <div class="release-copy">
-         {{ release.body }}
-            [<a href="{{ release.stream_link }}">link</a>]
-         </div>
-         <div>
-         </div>
-    </div>
+   <div class="release-copy">
+      {{ release.body }}
+      [<a href="{{ release.stream_link }}">link</a>]
+   </div>
 
+   {% endfor %}
 
-    {% endfor %}
-
-  </section>
+</section>
 
 {% endblock %}

@@ -380,7 +380,7 @@ header .active-link {
   position: -ms-sticky;
   position: -o-sticky;
   top: 2%;
-  overflow-x: scroll;
+  overflow-x: auto;
   border: 1px solid rgba(255, 0, 0, 0.32);
   margin-bottom: 20px;
 }
@@ -419,7 +419,7 @@ header .active-link {
 }
 .post .post-toc .toc-list-container {
   max-height: 400px;
-  overflow-y: scroll;
+  overflow: auto;
 }
 .post .post-toc .toc-list-container ul {
   margin: 0% 4%;
@@ -535,8 +535,8 @@ header .active-link {
   border-bottom: 0;
 }
 .music .release {
-  padding-top: 40px;
-  padding-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .music a.release-header {
   border-bottom: initial;
