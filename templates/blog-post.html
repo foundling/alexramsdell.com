@@ -9,10 +9,11 @@
 
   <section class="post">
 
-    <h1>{{ this.title }}</h1>                                                                                                                 
+   <h1>{{ this.title }}</h1>                                                                                                                 
 
-    {{ byline(this) }}
+   {{ byline(this) }}
 
+   {% if this.toc_enabled %}
     <aside title="expand the table of contents" class="post-toc visible">
 
       <button class="fa fa-list toc-icon"></button>
@@ -22,21 +23,22 @@
         <button class="fa fa-close close-icon"></button>
       </div>
 
-      <nav class="toc-list-container">
-        <ul class="toc-parent">
-          {% for item in this.body.toc recursive %}
-            <li>
-              <a href="#{{ item.anchor }}">{{ item.title }}</a>
-              {% if item.children %}
-                <ul>{{ loop(item.children) }}</ul>
-              {% endif %}
-            </li>
-          {% endfor %}
-        </ul>
-      </nav>
+         <nav class="toc-list-container">
+           <ul class="toc-parent">
+             {% for item in this.body.toc recursive %}
+               <li>
+                 <a href="#{{ item.anchor }}">{{ item.title }}</a>
+                 {% if item.children %}
+                   <ul>{{ loop(item.children) }}</ul>
+                 {% endif %}
+               </li>
+             {% endfor %}
+           </ul>
+         </nav>
 
     </aside>
 
+   {% endif %}
 
     <article class="post__body"> 
         {% block body %}{{ this.body }}{% endblock %}
