@@ -1,5 +1,7 @@
 .music {
 
+  font-family: sans-serif; 
+
   a {
      border-bottom: 0;
   }
@@ -12,7 +14,6 @@
   a.release-header {
      border-bottom: initial;
     .release-title {
-       font-style: italic; 
        font-weight: bold;
     }   
     .release-title,
