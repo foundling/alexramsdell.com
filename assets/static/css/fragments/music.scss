@@ -1,6 +1,5 @@
 .music {
 
-  font-family: sans-serif; 
 
   a {
      border-bottom: 0;
@@ -20,6 +19,9 @@
     .release-date,
     .release-artist {
        display: inline-flex;
+    }
+    .release-title {
+        font-family: sans-serif; 
     }
   }
 

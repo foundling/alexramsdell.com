@@ -531,7 +531,6 @@ header .active-link {
   }
 }
 .music {
-  font-family: sans-serif;
   display: flex;
   flex-direction: column;
   padding-bottom: 2%;
@@ -553,6 +552,9 @@ header .active-link {
 .music a.release-header .release-date,
 .music a.release-header .release-artist {
   display: inline-flex;
+}
+.music a.release-header .release-title {
+  font-family: sans-serif;
 }
 .music img {
   margin-top: 10px;
