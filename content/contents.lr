@@ -8,56 +8,43 @@ _discoverable: yes
 ---
 body:
 
-## About Me
+Musician, producer, programmer & DIYer.
 
-Musician, programmer, pedal-builder. Loves to learn and teach, loves call-in radio.
-
-My [music](https://alexramsdell.com/music), [Github](https://github.com/foundling), [StackOverflow](https://stackoverflow.com/users/2446351/foundling) and [projects](/projects).
-
-<!--You can see/hear/purchase my guitar pedals at [Dangus Electric](https://www.dangus-electric.com). -->
-
-## Some Values
-
-+ Asking questions > looking smart.
-+ No thanks to clever code.
-+ Team code convention > personal style.
-+ 'Minimal Viable Product' is the gilded philosophical core of our exploitation economy.
-+ Mentorship programs are crucial to a thriving, self-aware company culture.
-+ A 'senior' developer is equal parts politician and technician.
-+ Deep-link, early and often.
-+ Modals, please no.
-
-## Books I Read and Liked in 2020
-
-+ The Heart is a Lonely Hunter by Carson McCullers
-+ The Buried Giant by Kazuo Ishiguro
-+ Being and Doing by Marcus Raskin
-+ Journey to the End of the Night by Ferdinand Celine
-+ The Sound and the Fury by William Faulkner
-+ Man in the Holocene by Max Frisch
-+ Time Will Darken It by William Maxwell
-
-## Teachers, World-Builders, Makers and other sorts of Interesting People
-
-+ [Ned Batchelder](https://nedbatchelder.com)
-+ [Marcus Raskin](https://www.americanswhotellthetruth.org/portraits/marcus-raskin)
-+ [Drexciya](https://www.discogs.com/artist/1172-Drexciya)
-+ [Fran Blanche](http://frantone.com/)
-+ [Armin Ronacher](https://lucumr.pocoo.org/)
-+ [Susan Potter](https://susanpotter.net/)
-+ [Joel Spolsky](https://www.joelonsoftware.com/)
-+ [Bartosz Milewski](https://www.youtube.com/watch?v=I8LbkfSSR58&list=PLbgaMIhjbmEnaH_LTkxLI7FMa2HsnawM_)
-
-## Favy Podcasts
-
-+ [Go Time](https://changelog.com/gotime)
-+ [RA Exchange](https://www.residentadvisor.net/podcast.aspx)
-+ [Free Thoughts](https://www.libertarianism.org/podcasts/free-thoughts)
-+ [The Ralph Nader Radio Hour](https://ralphnaderradiohour.com/)
-+ [The Best Show](http://thebestshow.net/)
-
-## Two Steven Wright Jokes
-
-I lost a buttonhole today.
-
-One time the police stopped me for speeding. They said, "Oh, you know the speed limit is 55 miles an hour?" I said, "Yeah, I know. But I wasn't going to be out that long.".
+<ul class="links">
+  <li>
+    <a href="https://www.github.com/foundling" target="_blank" rel="noopener">
+      <img src="/static/img/github.png" />
+      <span>Github</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.discogs.com/artist/9052408-Alex-Ramsdell" target="_blank" rel="noopener">
+      <img src="/static/img/discogs.png" />
+      <span>Discography</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.instagram.com/the_alex_ramsdell_of_music/" target="_blank" rel="noopener">
+      <img src="/static/img/instagram.png" />
+      <span>Instagram</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://ramsdell.bandcamp.com" target="_blank" rel="noopener">
+      <img src="/static/img/bandcamp.png" />
+      <span>Ramsdell (house)</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://allenfingerlake.bandcamp.com/album/how-to-find-your-face" target="_blank" rel="noopener">
+      <img src="/static/img/bandcamp.png" />
+      <span>Allen Fingerlake (minimal techno)</span>
+    </a>
+  </li>
+  <li>
+    <a href="https://alsmagic.bandcamp.com" target="_blank" rel="noopener">
+      <img src="/static/img/bandcamp.png" />
+      <span>Al's Magic (electro)</span>
+    </a>
+  </li>
+</ul>

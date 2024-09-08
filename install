@@ -1,4 +1,4 @@
 #!/bin/bash
 
 echo "[info]: installing lektor for python3"
-curl -sf https://www.getlektor.com/installer.py | python3
+pipx install lektor

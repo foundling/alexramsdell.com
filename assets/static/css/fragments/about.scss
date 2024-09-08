@@ -1,5 +1,9 @@
 section.about {
 
+    img {
+      height: 1em !important;
+    }
+
     text-align: initial;
     padding-bottom: 60px;
 
@@ -19,6 +23,14 @@ section.about {
 
       li {
         line-height: 1.6em;
+        a {
+          display: inline-flex;
+          align-items: center;
+          border-bottom: none;
+        }
+        img {
+          margin-right: 5px;
+        }
       }
 
     }

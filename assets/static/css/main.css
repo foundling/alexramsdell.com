@@ -27,7 +27,7 @@ header {
 main {
   flex: 1 0 auto;
   position: relative;
-  margin-top: 8vh;
+  padding: 20px 0px 40px 0px;
 }
 
 footer {
@@ -158,6 +158,35 @@ p {
     border-bottom: 1px dotted;
   }
 }
+section.about {
+  text-align: initial;
+  padding-bottom: 60px;
+}
+section.about img {
+  height: 1em !important;
+}
+section.about h2 {
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+section.about h2:first-of-type {
+  padding-top: 0px;
+}
+section.about p {
+  padding-bottom: 20px;
+}
+section.about ul li {
+  line-height: 1.6em;
+}
+section.about ul li a {
+  display: inline-flex;
+  align-items: center;
+  border-bottom: none;
+}
+section.about ul li img {
+  margin-right: 5px;
+}
+
 .project-name,
 ul.project-links,
 ul.project-links > li {
@@ -710,23 +739,6 @@ footer {
   .blog__recent-posts .post-summary .post-summary__header {
     margin-bottom: 1%;
   }
-}
-section.about {
-  text-align: initial;
-  padding-bottom: 60px;
-}
-section.about h2 {
-  padding-top: 40px;
-  padding-bottom: 20px;
-}
-section.about h2:first-of-type {
-  padding-top: 0px;
-}
-section.about p {
-  padding-bottom: 20px;
-}
-section.about ul li {
-  line-height: 1.6em;
 }
 
 /*# sourceMappingURL=main.css.map */
