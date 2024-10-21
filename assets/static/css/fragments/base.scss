@@ -1,6 +1,6 @@
 html, 
 body {
-  background: black;
+  background: $background-black;
   width: 100%;
   height: 100%;
   font-family: monospace;
@@ -16,12 +16,8 @@ body * {
 
 }
 
-p, h1, h2, h3, h4, h5, li {
+span, p, h1, h2, h3, h4, h5, li, label {
   color: $font-color-default;
-}
-
-span.header, span.header-close {
-  color: rgb(255 251 112);
 }
 
 body {
@@ -125,11 +121,20 @@ p > a {
 a {
   -webkit-tap-highlight-color: $hover;
   color: whitesmoke;
-
   &:hover { 
     color: $hover;
   }
 
+}
+
+.home-button {
+  font-weight: bold;
+  color: $neon-yellow;
+  border-bottom: 1px dotted transparent;
+  &:hover {
+    color: $neon-yellow !important;
+    border-bottom: 1px dotted $neon-yellow;
+  }
 }
 
 img { 

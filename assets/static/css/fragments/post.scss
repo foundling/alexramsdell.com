@@ -1,5 +1,8 @@
 .post {
   .post__body {
+    a {
+      color: $hover;
+    }
     li {
       list-style-type: initial;
       margin-left: 25px;
@@ -7,6 +10,8 @@
   }
 
   .post-toc {
+    
+    background: $background-black;
 
     z-index: 1;
     padding: 20px;

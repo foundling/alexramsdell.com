@@ -1,6 +1,6 @@
 html,
 body {
-  background: black;
+  background: #222222;
   width: 100%;
   height: 100%;
   font-family: monospace;
@@ -15,12 +15,8 @@ body * {
   font-family: monospace;
 }
 
-p, h1, h2, h3, h4, h5, li {
+span, p, h1, h2, h3, h4, h5, li, label {
   color: whitesmoke;
-}
-
-span.header, span.header-close {
-  color: rgb(255, 251, 112);
 }
 
 body a {
@@ -112,6 +108,16 @@ a {
 }
 a:hover {
   color: rgb(255, 126, 126);
+}
+
+.home-button {
+  font-weight: bold;
+  color: rgb(255, 251, 112);
+  border-bottom: 1px dotted transparent;
+}
+.home-button:hover {
+  color: rgb(255, 251, 112) !important;
+  border-bottom: 1px dotted rgb(255, 251, 112);
 }
 
 img {
@@ -400,11 +406,15 @@ header .active-link {
   text-align: left;
   font-family: monospace;
 }
+.post .post__body a {
+  color: rgb(255, 126, 126);
+}
 .post .post__body li {
   list-style-type: initial;
   margin-left: 25px;
 }
 .post .post-toc {
+  background: #222222;
   z-index: 1;
   padding: 20px;
   width: max-content;
@@ -592,7 +602,7 @@ header .active-link {
   }
 }
 pre {
-  background: url(/static/img/binding-light.png);
+  background: rgb(235, 235, 235);
   margin: 0% 0% 3% 0%;
   padding: 3% 3% 3% 0%;
   max-width: 100%;
