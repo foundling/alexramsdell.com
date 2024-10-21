@@ -1,4 +1,0 @@
-#!/bin/bash
-
-echo "[info]: installing lektor for python3"
-pipx install lektor
