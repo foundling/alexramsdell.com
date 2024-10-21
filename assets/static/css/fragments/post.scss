@@ -9,7 +9,6 @@
   .post-toc {
 
     z-index: 1;
-    background: whitesmoke;
     padding: 20px;
     width: max-content;
     position: -webkit-sticky;
@@ -18,11 +17,12 @@
     position: -o-sticky;
     top: 2%;
     overflow-x: auto;
-    border: 1px solid rgba(255, 0, 0, 0.32);
+    border: 1px solid $hover;
     margin-bottom: 20px;
 
     .toc-icon {
-      color: rgb(80,80,80);
+      cursor: pointer;
+      color: $font-color-default;
       border: none;
       background: none;
       display: none;
@@ -45,12 +45,14 @@
         margin-right: 20px;
         padding: 0;
         display: inline-block;
-        border-bottom: 1px solid rgba(255, 0, 0, 0.62);
+        border-bottom: 1px solid $hover;
       }
 
       .close-icon {
+        cursor: pointer;
+        opacity: 0.9;
         &:hover {
-          color: rgb(71,71,71);
+          opacity: 0.6;
         }
         color: rgb(200,200,200);
         background: none;
@@ -83,7 +85,7 @@
       .toc-icon {
         display: block;
         &:hover {
-          color: black;
+          opacity: 0.6;
         }
       }
       .close-icon {
@@ -98,7 +100,8 @@
   display: flex;
   flex-direction: column;
   text-align: left;
-  font-family: "Lora", serif;
+  // font-family: "Lora", serif;
+  font-family: monospace;
 
   p,
   ul {
@@ -109,24 +112,26 @@
   h2,
   h3,
   h4 {
-    font-family: Helvetica;
+    // font-family: Helvetica;
+    font-family: monospace;
     padding-top: 2%;
     padding-bottom: 1%;
   }
 
   > p {
-    font-family: 'Lora';
+    // font-family: 'Lora';
+    font-family: monospace;
   }
   > p {
     padding: 0% 0% 3% 0%;
   }
   p > a {
-    font-family: "Droid Serif";
+    // font-family: "Droid Serif";
+    font-family: monospace;
   }
   h1 {
     display: inline-block;
     padding: 0px;
-    background: white;
   }
   ul.byline {
     margin-bottom: 1%;
@@ -136,7 +141,7 @@
     margin: 0%;
 
     li {
-      font-family: 'Lora';
+      // font-family: 'Lora';
       list-style-type: none;
     }
 

@@ -8,12 +8,8 @@ pre {
 }
 p > code,
 li > code {
-    padding: 2px 5px;
-    background: whitesmoke;
-    color: rgba(255, 0, 0, 0.8);
+    color: $hover;
     word-break: break-word;
+    background: rgb(72 0 0);
 }
 
-code {
-    text-shadow: 0px 1px 0px white;
-}

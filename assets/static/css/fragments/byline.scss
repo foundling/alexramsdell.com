@@ -1,5 +1,6 @@
 ul.byline {
 
+    font-family: monospace;
     font-size: .9em;
     display: inline-block;
     width: 100%;
@@ -12,19 +13,18 @@ ul.byline {
     li.github-icon,
     li.pencil-icon {
         padding: 4px 0px 4px 4px;
-        background: white;
 
         a {
-          color: rgba(179,179,179,1);
+          color: $font-color-default;
         }
         a:hover {
-          color: rgba(255, 0, 0, 0.62);
+          color: $hover;
         }
     }
 
 
     i.pencil-icon {
-        color: rgba(255, 0, 0, 0.62);
+        color: $hover;
     }
 
     li.publish-date {
@@ -33,15 +33,10 @@ ul.byline {
         color: #d8d8d8;
         display: inline-block;
 
-        span.post-published {
-          font-family: sans-serif;
-        }
-
         span.post-published,
         span.post-updated,
         i.pencil-icon {
             padding: 5px;
-            background: white;
         }
 
 
@@ -55,11 +50,9 @@ ul.byline {
         li.post-keyword {
 
             display: inline-block;
-            background: rgba(144, 238, 144, 0.9);
 
             a { 
                 padding: 2px 5px;
-                //text-shadow: -1px 0px 0px rgba(255,255,255,0.7);
             }
         }
     }

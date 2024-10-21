@@ -22,7 +22,8 @@
 
         &__short-text {
             //margin: 1% 0% 0% 0%;
-            font-family: 'Lora', serif;
+            // font-family: 'Lora', serif;
+            font-family: monospace;
             padding-bottom: 5px;
         }
     }
@@ -43,7 +44,8 @@
     .blog__recent-posts {
       .post-summary__short-text {
           //margin: 2% 0% 0% 0%;
-          font-family: 'Lora', serif;
+          // font-family: 'Lora', serif;
+          font-family: monospace;
       }
       .post-summary {
 
@@ -52,7 +54,6 @@
           }
 
           margin-bottom: 7%;
-          background: white;
       }
     }
 }

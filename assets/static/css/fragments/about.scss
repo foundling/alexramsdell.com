@@ -1,7 +1,10 @@
 section.about {
 
     img {
-      height: 1em !important;
+      height: 1em;
+      width: 1em;
+      background: white;
+      padding: 2px;
     }
 
     text-align: initial;
@@ -19,14 +22,18 @@ section.about {
         padding-bottom: 20px;
     }
 
-    ul {
+    ul.links {
 
       li {
         line-height: 1.6em;
         a {
-          display: inline-flex;
+          border-bottom: 1px dotted transparent;
+          &:hover {
+            border-bottom: 1px dotted $hover !important;
+          }
+          display: flex;
           align-items: center;
-          border-bottom: none;
+          width: fit-content;
         }
         img {
           margin-right: 5px;

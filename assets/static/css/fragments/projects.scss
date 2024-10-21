@@ -18,7 +18,7 @@ section.projects {
   padding: 20px 40px 40px 20px;
 
   &:hover {
-    background: rgba(245,245,245,1);
+    background: $hover;
   }
 
   width: fit-content;
@@ -56,7 +56,6 @@ section.projects {
       .source-link {
         padding: 3px 4px;
         border-radius: 2px;
-        background: whitesmoke;
         margin-left: 15px;
         margin-right: 15px;
       }
@@ -67,12 +66,10 @@ section.projects {
       font-family: Helvetica;
       font-size: 0.8em;
       color: whitesmoke;
-      background: rgba(244, 67, 54, 0.84);
       padding: 2px 6px;
       border-radius: 2px;
 
       &:hover {
-        background: whitesmoke;
         color: rgba(244, 67, 54, 0.84);
       }
 

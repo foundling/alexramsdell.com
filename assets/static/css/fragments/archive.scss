@@ -16,7 +16,7 @@
           color: lightgray;
         }
         .post-title:hover {
-          color: initial;
+          color: $hover;
         }
 
       }
@@ -27,7 +27,7 @@
       }
 
       .post-pub-date {
-        color: rgba(255, 0, 0, 0.62);
+        color: $hover;
       }
     }
   }

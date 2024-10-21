@@ -6,6 +6,61 @@
     {% block body %} 
     {{ this.body }}
     {% endblock %}
+
+    <h2>Code</h2>
+    <ul class="links code">
+      <li>
+        <a href="https://www.github.com/foundling" target="_blank" rel="noopener">
+          <img src="/static/img/github.png" />
+          <span>Github</span>
+        </a>
+      </li>
+    </ul>
+
+    <h2>Music</h2>
+    <ul class="links music">
+      <li>
+        <a href="https://ramsdell.bandcamp.com" target="_blank" rel="noopener">
+          <img src="/static/img/bandcamp.png" />
+          <span>Ramsdell (house)</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://allenfingerlake.bandcamp.com/album/how-to-find-your-face" target="_blank" rel="noopener">
+          <img src="/static/img/bandcamp.png" />
+          <span>Allen Fingerlake (minimal techno)</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://alsmagic.bandcamp.com" target="_blank" rel="noopener">
+          <img src="/static/img/bandcamp.png" />
+          <span>Al's Magic (electro)</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.discogs.com/artist/9052408-Alex-Ramsdell" target="_blank" rel="noopener">
+          <img src="/static/img/discogs.png" />
+          <span>Discography</span>
+        </a>
+      </li>
+      <li>
+        <a href="https://www.instagram.com/the_alex_ramsdell_of_music/" target="_blank" rel="noopener">
+          <img src="/static/img/instagram.png" />
+          <span>Instagram</span>
+        </a>
+      </li>
+    </ul>
+
+    <h2>Writing</h2>
+    <ul class="links writing">
+      <li>
+      {% for page in site.get('/writing').children %}
+      <a href="{{ page | url }}">{{ page.title | striphtmltags }}</a>
+      {% endfor %}
+      </li>
+    </ul>
+
   </section>
+
 
 {% endblock %}
