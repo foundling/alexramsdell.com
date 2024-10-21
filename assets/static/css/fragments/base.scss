@@ -20,6 +20,10 @@ p, h1, h2, h3, h4, h5, li {
   color: $font-color-default;
 }
 
+span.header, span.header-close {
+  color: rgb(255 251 112);
+}
+
 body {
   a {
     color: $font-color-default;
@@ -35,14 +39,11 @@ body {
   flex-direction: column;
 }
 
-header {
-  padding: 20px 0px;
-}
 
 main {
   flex: 1 0 auto;
   position: relative;
-  padding: 20px 0px 40px 0px;
+  padding: 0px;
 }
 
 footer {

@@ -3,11 +3,8 @@
 {% block content %}
 
   <section class="about">
-    {% block body %} 
-    {{ this.body }}
-    {% endblock %}
 
-    <h2>Code</h2>
+    <h2>code</h2>
     <ul class="links code">
       <li>
         <a href="https://www.github.com/foundling" target="_blank" rel="noopener">
@@ -17,7 +14,7 @@
       </li>
     </ul>
 
-    <h2>Music</h2>
+    <h2>music</h2>
     <ul class="links music">
       <li>
         <a href="https://ramsdell.bandcamp.com" target="_blank" rel="noopener">
@@ -51,7 +48,7 @@
       </li>
     </ul>
 
-    <h2>Writing</h2>
+    <h2>thoughts</h2>
     <ul class="links writing">
       <li>
       {% for page in site.get('/writing').children %}
@@ -61,6 +58,5 @@
     </ul>
 
   </section>
-
 
 {% endblock %}
