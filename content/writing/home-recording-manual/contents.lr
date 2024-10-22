@@ -16,20 +16,45 @@ audio engineering
 ---
 body:
 
+Let's set some expectations here. This 'manual' is more like a journal and as such is not complete, until it is.  There are things in here that I don't need to explain to myself, such as explanations of phase coherence, which i enjoy explaining because they may benefit you.  There are also things that I have found personally useful and want to remember for next time, things like EQ cuts for a snare that's been dampened in a specific way. It might be useful to you, but its intended primarily for me.
+
+I think you'll get something out of it if you are looking for explanations and advice.
+
 # Drums
 
-Let's set some parameters here. 
 
-My recording context is an irregularly-shaped and unifinished but spacious basement.  The ceilings are about 8 feet tall and there is almost no acoustical treatment in play. Part of the aim of this guide is to demonstrate what you can do at home in a recording context not even remotely intended for recording.
+I record drums in a non-square-shaped basement that is unfinished and relatively spacious.  The ceilings are about 7.5 feet tall and there is almost no acoustical treatment other than some moving blankets on the ceiling above the drum kit and whatever kind of shitty furniture exists down here. Part of the aim of this guide is to demonstrate what you can do at home in a recording context not even remotely intended for recording.
 
-Due to this basic constraint, I generally find myself going for a fairly dry, punchy sound with minimal room coming through. The drum sound could work in a jazz, funk or even a fairly dry garage/indie rock context.  I've recorded many styles down here with good results.  The main factor is how I play. 
+Due to this basic constraint, I generally find myself going for a fairly dry, punchy sound with minimal room coming through. The drum sound could work in a jazz, funk or even a fairly dry garage/indie rock context.  I've recorded many styles down here with decent results.
+
+
+## Tuning and Dampening
+
+I always take the drum aside from the kit and tune it separately in a well-lit place.
+
+### Kick
+
+When tuning the batter head of the kick, I usually get the head so loose that I can see the wrinkles, which is why I require adequate light when tuning. Then I put one hand in the center of the head, apply some pressure, and tighten the lugs in a star pattern so that the wrinkles just barely disappear.  That usually gives me a low thud, which is the kick sound I usually want.  Then I check the pitch at each lug and adjust if any sound radically out of step with the others.
+
+I take the resonant head off because the kick gets way too boomy with it on. I lay a folded moving blanket and maybe a sweatshirt in a stack on the bottom inside of the kick drum head, lightly touching the front head to dampen reflections inside the drum.
+
+### Snare
+
+If I want a dead sound, I tune the snare fairly low relative to how I'd tune it when playing open.  I then use a drum ring I made myself by cutting out the middle of an older drum head, leaving about 1-2 inches in thickness as a ring. I place that on the snare drum head and it gives it a nice dead sound.
+
+If I want an open sound, which is useful for jazz, then I tune the snare up a bit higher and let it ring out with very little or no dampening at all.  It's important to get the snare in tune so that it sounds good no matter where you hit it.  If it fluctuates in pitch as you play, you need to do some tuning.
+
+### Toms
+
+TDB on tuning intervals.
+
 
 I have a 4-piece drum set (kick, snare, rack tom, floor tom) and three cymbals (hi-hat, ride, crash). I use an 8-channel interface with 7 mics.  The instruments captured directly:
 
 - kick
-- snare
-- floor
-- tom
+- snare top mic
+- snare bottom mic (sometimes)
+- floor tom
 - rack tom
 - crash cymbal
 - ride cymbal
@@ -43,13 +68,15 @@ A really important factor to take into account when recording drums in a basemen
 
 ## Phase Coherence
 
-Phase coherence refers to the way that the individual mic signals interact when summed together into a single image.  Recording a sound-source with multiple mics will inherently present phase issues because the sound waves arrive at each microphone at a different time. And when you have a sound source like a drumset, which is really a set of sound sources as it is spread out physically in different locations, the time coherence among the various mic signals is even more pronounced and difficult to control.
+Phase coherence refers to the way that the individual mic signals interact when summed together into a single image.  Recording a sound source with multiple mics will inherently present phase issues because the emitted sound waves arrive at each microphone at a different time. And when you have a sound source like a drumset, which is really a set of contiguous sound sources occupying different locations, the time coherence among the various mic signals is even more pronounced and difficult to control.
 
-But why is it a problem if the sound source arrives at each mic at a different time? This isn't necessarily a problem. In fact, phase can be leveraged as a tool to modulate the 'depth' of a drum sound. One might use a room mic to give the drum kit some depth.  They even might nudge that room mic track forward or backward in their DAW to exagerate or minimize how much depth that room mic gives the overall image.   But it's important first to ensure that the room mic is at a proper distance from the kit so that it consistently adds to the image of the kit rather than disrupts it.
+It isn't necessarily a problem that the sound waves from the drums arrive at each mic at a different times. In fact, phase can be leveraged as a tool to modulate the 'depth' of a drum sound. You might use a room mic to give an otherwise dry drum kit a feeling of being in space. In doing so, you might nudge the room mic signal forward or backward in your DAW to exagerate or minimize how much depth that room mic gives the overall image.   But it's important first to ensure that the room mic is at a proper distance from the kit so that it consistently adds to the image of the kit rather than disrupts it.
 
-When you sum very similar, overlapping sound signals (i.e., when you have a snare drum that is captured by the snare mic, the cymbal mic, and the room mic), the resulting volume of the summed signal will vary from the individual signals on a very granular and minute level because of how the waves both add together (increasing the amplitude) and cancel out (diminishing the amplitude). This minute level of variation doesn't come across as fluctuating volume of the kit as a whole, it comes across as 'EQ', which is volume broken into discrete frequency bands as opposed to the whole audible frequency band of the drum kit.  Think of it this way: signals with poor phase coherence sum together as if they were processed by the world's most fine-grained and anti-musical EQ plugin.  Together, they sound mysteriously bad, and you can't fix this after the fact other than by reducing the amount of signals you are summing.
+### What is Incoherent Phase?
 
-I do want to note that much of this emphasis on phase is context-specific.  I have recorded with bands in an old mill building where the room was the size of a bowling alley and the ceilings were at least 20 feet tall.  In that scenario, phase is much less of a problem because there is very little secondary reflection coming off of the walls and hitting your mics in addition to the direct singal.  We used two mics on the drums, a kick mic and an overhead, spent about 30 seconds adjusting the overhead, and the sound was gorgeous.  But this manual is not tailored to that context, it's tailored toward getting a good drums sound in an untreated, unfinished basement where the sound is unflattering and very reflective.  We must be much more scientific about phase in order to succeed because the idea of a mic capturing a 'direct' signal is kind of a hilarious joke. There is just so much interference to minimize.
+When you capture a drum set with multiple mics, you get similar, overlapping signals. If you don't attempt to get the drums in phase, the summed signal will vary from the individual signals on a very granular and minute level because of how the waves both add together (increasing the amplitude) and cancel out (diminishing the amplitude). This minute level of variation doesn't come across as fluctuating volume of the kit as a whole, it comes across as 'EQ', which is really just volume of a signal considered in small frequency bands as opposed to the whole audible frequency range at which we percieve the drum kit. An out of phase drum kit usually sounds thin, possibly harsh, and lacks punch. It is very hard to fix this with EQ because of the fine-grained nature of the cancellations on the signal. The only thing you could possibly do after the drums are recorded with poor phase coherence is to mute channels.
+
+I do want to note that much of this emphasis on phase is context-specific.  I have recorded with bands in an old mill building where the room was the size of a bowling alley and the ceilings were at least 20 feet tall.  In that scenario, phase is much less of a problem because you can get a better drum sound with fewer mics. Also, there is very little secondary reflection coming off of the walls and hitting your mics in addition to the direct singal.  Many times we didn't even really tune the drums and used just two mics on the drums--a kick mic and an overhead. With very little fiddling or testing, the resulting sound was gorgeous.  But this manual is not tailored to that context, it's tailored toward getting a good drums sound in an untreated, unfinished basement where the sound is unflattering and very reflective.  We must be much more scientific about phase in order to succeed because the idea of a mic capturing a 'direct' signal is kind of a hilarious joke. There is just so much interference from reflections.
 
 ( image of incoherent summed waves )
 
@@ -59,7 +86,12 @@ I do want to note that much of this emphasis on phase is context-specific.  I ha
 
 ( sound of coherent summed waves )
 
+### Positioning The Mics
 
+I put the kick mic (sennheiser e602) just inside the kick drum a little left of center,  top mic
+
+
+### Flipping Phase
 
 
 ## Basic Room treatment 
