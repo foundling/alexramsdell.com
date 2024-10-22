@@ -571,7 +571,6 @@ header .active-link {
 .music {
   display: flex;
   flex-direction: column;
-  padding-bottom: 2%;
 }
 .music a {
   border-bottom: 0;
