@@ -12,4 +12,4 @@ if [[ $(basename `pwd`) != 'alexramsdell.com' ]]
     exit 1
 fi
 
-rsync -aP build/ $box:~/www/alexramsdell.com/
+rm -rf ./build && lektor build -O build && rsync -aP build/ $box:~/www/alexramsdell.com/
