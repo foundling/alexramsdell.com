@@ -16,15 +16,90 @@ audio engineering
 ---
 body:
 
-# Recording Drums
+# Drums
+
+Let's set some parameters here. 
+
+My recording context is an irregularly-shaped and unifinished but spacious basement.  The ceilings are about 8 feet tall and there is almost no acoustical treatment in play. Part of the aim of this guide is to demonstrate what you can do at home in a recording context not even remotely intended for recording.
+
+Due to this basic constraint, I generally find myself going for a fairly dry, punchy sound with minimal room coming through. The drum sound could work in a jazz, funk or even a fairly dry garage/indie rock context.  I've recorded many styles down here with good results.  The main factor is how I play. 
+
+I have a 4-piece drum set (kick, snare, rack tom, floor tom) and three cymbals (hi-hat, ride, crash). I use an 8-channel interface with 7 mics.  The instruments captured directly:
+
+- kick
+- snare
+- floor
+- tom
+- rack tom
+- crash cymbal
+- ride cymbal
+
+I also mic the room in case it adds some interesting color to the mix.  The tracks I inevitably end up using in the final mixdown are the kick, snare, floor tom and rack tom.  The others are more up in the air as to whether I mute those tracks.
+
+(close-ish image of kit w/ mics)
+(image of kit w/ room mic included)
+
+A really important factor to take into account when recording drums in a basement like mine is that phase coherence is a hurdle and that *more mics mean more phase coherence problems*.  We'll touch on phase a few times in this manual so I'll just say now that phase problems are inescapable, and when they dominate your drum mix, they cause the drums to sound thin or harsh instead of sturdy and compelling. They can't be fixed in post, so it's important to plan your approach with phase in mind.  
+
+## Phase Coherence
+
+Phase coherence refers to the way that the individual mic signals interact when summed together into a single image.  Recording a sound-source with multiple mics will inherently present phase issues because the sound waves arrive at each microphone at a different time. And when you have a sound source like a drumset, which is really a set of sound sources as it is spread out physically in different locations, the time coherence among the various mic signals is even more pronounced and difficult to control.
+
+But why is it a problem if the sound source arrives at each mic at a different time? This isn't necessarily a problem. In fact, phase can be leveraged as a tool to modulate the 'depth' of a drum sound. One might use a room mic to give the drum kit some depth.  They even might nudge that room mic track forward or backward in their DAW to exagerate or minimize how much depth that room mic gives the overall image.   But it's important first to ensure that the room mic is at a proper distance from the kit so that it consistently adds to the image of the kit rather than disrupts it.
+
+When you sum very similar, overlapping sound signals (i.e., when you have a snare drum that is captured by the snare mic, the cymbal mic, and the room mic), the resulting volume of the summed signal will vary from the individual signals on a very granular and minute level because of how the waves both add together (increasing the amplitude) and cancel out (diminishing the amplitude). This minute level of variation doesn't come across as fluctuating volume of the kit as a whole, it comes across as 'EQ', which is volume broken into discrete frequency bands as opposed to the whole audible frequency band of the drum kit.  Think of it this way: signals with poor phase coherence sum together as if they were processed by the world's most fine-grained and anti-musical EQ plugin.  Together, they sound mysteriously bad, and you can't fix this after the fact other than by reducing the amount of signals you are summing.
+
+I do want to note that much of this emphasis on phase is context-specific.  I have recorded with bands in an old mill building where the room was the size of a bowling alley and the ceilings were at least 20 feet tall.  In that scenario, phase is much less of a problem because there is very little secondary reflection coming off of the walls and hitting your mics in addition to the direct singal.  We used two mics on the drums, a kick mic and an overhead, spent about 30 seconds adjusting the overhead, and the sound was gorgeous.  But this manual is not tailored to that context, it's tailored toward getting a good drums sound in an untreated, unfinished basement where the sound is unflattering and very reflective.  We must be much more scientific about phase in order to succeed because the idea of a mic capturing a 'direct' signal is kind of a hilarious joke. There is just so much interference to minimize.
+
+( image of incoherent summed waves )
+
+( image of coherent summed waves )
+
+( sound of incoherent summed waves )
+
+( sound of coherent summed waves )
+
+
+
+
+## Basic Room treatment 
+ 
+Room Treatment
+
+Spot absorption.
+
+Cloud above drums
+
+Rug under drums.
 
 ## Pre-production
+
+
+Learn to play drums well.  There is no substitute for good playing.  Good playing, by which I mean good, recording-aware dynamics and timing, is the foundation of great drum takes.
 
 ### Tuning
 
 ### Dampening
 
+**Snare**: depending on the sound I want, I'll either forgo dampening, or I'll use a DIY dampening ring made from an old snare head.  Cut the middle of the head out in a circle shape so you're left with a 1-2" ring that fits around the inside of the snare drum rim.
+
 ### Mic Configurations and Placement
+
+#### Snare
+
+There are three major concerns when placing the snare mic:
+
+- A good sound, depending on what you want (thick or snappy, etc).
+- Practical placement
+- Minimal Bleed from hi-hat
+
+I'm going for a funk sound, so I want a snare with some thud to it.  For this, I'll use a Sure SM57 and place it a few fingers'-width (3 or 4) above the drum head with the capsule just inside the rim, pointing at the center of the drum at a 45 degree angle. The trick here is to both get it out of my way when I'm playing drums and make sure it's at a downward-enough angle to capture the thud of the snare as opposed to the shell.  In terms of hi-hat bleed, you generally minimize that by pointing the snare's capsule as close to 180 degrees away from the hi-hat so that  want to Practically speaking, it's difficult to   I have to sacrifice the hi-hat bleed factor here, as    A 90 degree angle toward the snare will give you more thud, but it's a bit less practical I want the thud, I need it to be pointed closer to a 90 degree angle (straight down) to the snare.  If you want less low-end, you can adjust the angle to 30-45 degrees, which may yield a better practical position.
+
+#### Room Mic
+
+6 + feet out away from the kick between waist and chest-height.
+
+
 
 ## Post-production
 
@@ -33,4 +108,3 @@ body:
 ### EQ 
 
 ### Compression 
-
