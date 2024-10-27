@@ -1,10 +1,10 @@
-title: Home Recording Manual
+title: The Home Recording Manual
 ---
 author: alex
 ---
 toc_enabled: true
 ---
-_hidden: true
+_hidden: false
 ---
 content_type: article
 ---
@@ -18,25 +18,23 @@ audio engineering
 ---
 body:
 
-Let's set some expectations here. This 'manual' is more like a journal and as such is not complete, until it is.  There are things in here that I don't need to explain to myself, such as explanations of phase coherence, which i enjoy explaining because they may benefit you.  There are also things that I have found personally useful and want to remember for next time, things like EQ cuts for a snare that's been dampened in a specific way. It might be useful to you, but its intended primarily for me.
-
-I think you'll get something out of it if you are looking for explanations and advice.
-
 # Drums
 
+I record drums at home in unfinished basement. This is what it looks like:
 
-I record drums in a non-square-shaped basement that is unfinished and relatively spacious.  The ceilings are about 7.5 feet tall and there is almost no acoustical treatment other than some moving blankets on the ceiling above the drum kit and whatever kind of shitty furniture exists down here. Part of the aim of this guide is to demonstrate what you can do at home in a recording context not even remotely intended for recording.
 
-Due to this basic constraint, I generally find myself going for a fairly dry, punchy sound with minimal room coming through. The drum sound could work in a jazz, funk or even a fairly dry garage/indie rock context.  I've recorded many styles down here with decent results.
+![basement layout](recording-basement-layout.png)
+
+Because of the concrete flooring and general reflectivity, I usually end up going for a fairly dry, punchy sound with minimal room coming through. The drum sound could work in a jazz, funk or even a fairly dry garage/indie rock context.  I've recorded many styles down here with decent results.
 
 
 ## Tuning and Dampening
 
-I always take the drum aside from the kit and tune it separately in a well-lit place.
+I always take the drum I'm tuning aside and tune it in a well-lit place.
 
 ### Kick
 
-When tuning the batter head of the kick, I usually get the head so loose that I can see the wrinkles, which is why I require adequate light when tuning. Then I put one hand in the center of the head, apply some pressure, and tighten the lugs in a star pattern so that the wrinkles just barely disappear.  That usually gives me a low thud, which is the kick sound I usually want.  Then I check the pitch at each lug and adjust if any sound radically out of step with the others.
+When tuning the batter head of the kick, loosen the head so you can see the wrinkles, which is why I require adequate light when tuning. Then I put one hand in the center of the head, apply some pressure, and tighten the lugs in a star pattern so that the wrinkles just barely disappear.  That usually gives me a low thud, which is the kick sound I usually want.  Then I check the pitch at each lug and adjust if any sound radically out of step with the others.
 
 I take the resonant head off because the kick gets way too boomy with it on. I lay a folded moving blanket and maybe a sweatshirt in a stack on the bottom inside of the kick drum head, lightly touching the front head to dampen reflections inside the drum.
 
@@ -51,20 +49,9 @@ If I want an open sound, which is useful for jazz, then I tune the snare up a bi
 TDB on tuning intervals.
 
 
-I have a 4-piece drum set (kick, snare, rack tom, floor tom) and three cymbals (hi-hat, ride, crash). I use an 8-channel interface with 7 mics.  The instruments captured directly:
 
-- kick
-- snare top mic
-- snare bottom mic (sometimes)
-- floor tom
-- rack tom
-- crash cymbal
-- ride cymbal
 
 I also mic the room in case it adds some interesting color to the mix.  The tracks I inevitably end up using in the final mixdown are the kick, snare, floor tom and rack tom.  The others are more up in the air as to whether I mute those tracks.
-
-(close-ish image of kit w/ mics)
-(image of kit w/ room mic included)
 
 A really important factor to take into account when recording drums in a basement like mine is that phase coherence is a hurdle and that *more mics mean more phase coherence problems*.  We'll touch on phase a few times in this manual so I'll just say now that phase problems are inescapable, and when they dominate your drum mix, they cause the drums to sound thin or harsh instead of sturdy and compelling. They can't be fixed in post, so it's important to plan your approach with phase in mind.  
 
@@ -88,28 +75,25 @@ I do want to note that much of this emphasis on phase is context-specific.  I ha
 
 ( sound of coherent summed waves )
 
-### Positioning The Mics
-
-I put the kick mic (sennheiser e602) just inside the kick drum a little left of center,  top mic
-
-
 ### Flipping Phase
+
+TBD
 
 
 ## Basic Room treatment 
+
  
-Room Treatment
+### Spot absorption.
 
-Spot absorption.
+TBD
 
-Cloud above drums
+### Cloud above drums
 
-Rug under drums.
+### Rug under drums.
 
 ## Pre-production
 
-
-Learn to play drums well.  There is no substitute for good playing.  Good playing, by which I mean good, recording-aware dynamics and timing, is the foundation of great drum takes.
+Learn to play drums well.  There is no substitute for good playing, which means dynamic and balanced playing. Often drummers experienced with recording will play the hi-hat softer, as they know there's always too much hi-hat in most drum recordings.  That's a good example of good playing.
 
 ### Tuning
 
@@ -117,9 +101,25 @@ Learn to play drums well.  There is no substitute for good playing.  Good playin
 
 **Snare**: depending on the sound I want, I'll either forgo dampening, or I'll use a DIY dampening ring made from an old snare head.  Cut the middle of the head out in a circle shape so you're left with a 1-2" ring that fits around the inside of the snare drum rim.
 
-### Mic Configurations and Placement
+## Positioning The Mics
 
-#### Snare
+### Kick
+
+I put the kick mic (sennheiser e602) just inside the kick drum a little left of center,  top mic
+
+![kick mic](recording-kick-mic.png)
+
+
+### Overhead Cymbal
+
+
+I put a large diaphragm condenser mic (Roswell K47) with the front facing down just past the space in between my ride and crash cymbals.  It sits about a foot-and-a-half above them.
+
+![overhead cymbal mic](recording-oh-mic1.png)
+![overhead cymbal mic](recording-oh-mic2.png)
+![overhead cymbal mic](recording-oh-mic3.png)
+
+### Snare(s)
 
 There are three major concerns when placing the snare mic:
 
@@ -127,13 +127,11 @@ There are three major concerns when placing the snare mic:
 - Practical placement
 - Minimal Bleed from hi-hat
 
-I'm going for a funk sound, so I want a snare with some thud to it.  For this, I'll use a Sure SM57 and place it a few fingers'-width (3 or 4) above the drum head with the capsule just inside the rim, pointing at the center of the drum at a 45 degree angle. The trick here is to both get it out of my way when I'm playing drums and make sure it's at a downward-enough angle to capture the thud of the snare as opposed to the shell.  In terms of hi-hat bleed, you generally minimize that by pointing the snare's capsule as close to 180 degrees away from the hi-hat so that  want to Practically speaking, it's difficult to   I have to sacrifice the hi-hat bleed factor here, as    A 90 degree angle toward the snare will give you more thud, but it's a bit less practical I want the thud, I need it to be pointed closer to a 90 degree angle (straight down) to the snare.  If you want less low-end, you can adjust the angle to 30-45 degrees, which may yield a better practical position.
+I'm going for a funk sound, so I want a snare with some thud to it.  For this, I'll use a Sure SM57 and place it a few fingers'-width (3 or 4) above the drum head with the capsule just inside the rim, pointing at the center of the drum at a 45 degree angle. The trick here is to both get it out of my way when I'm playing drums and make sure it's at a downward-enough angle to capture the thud of the snare as opposed to more of the shell, which you'll get more of when it's more parallel to the head. In terms of hi-hat bleed, you generally minimize that by pointing the back of the snare toward the hi-hat so that it's in the null zone of the snare's pickup pattern, minimizing the amount of hi-hat it picks up. A 90 degree angle toward the snare will give you more thud, but it's a bit less practical I want the thud, I need it to be pointed closer to a 90 degree angle (straight down) to the snare.  If you want less low-end, you can adjust the angle to 30-45 degrees, which may yield a better practical position.
 
-#### Room Mic
+I have a bottom mic in this configuration as well, which is configured almost as a mirror image of the top mic, meaning the same distance away from the bottom head, pointed at the middle.  When it comes to working with the tracks in the computer, it's important to remember to flip the phase of the bottom snare mic relative to the top so that you don't get phase cancellation.
 
-6 + feet out away from the kick between waist and chest-height.
-
-
+![snare microphone](recording-snare-top-bottom-mic.png)
 
 ## Post-production
 

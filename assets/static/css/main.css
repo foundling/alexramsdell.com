@@ -407,9 +407,19 @@ header .active-link {
 .post .post__body a {
   color: rgb(255, 126, 126);
 }
+.post .post__body img {
+  max-width: 450px;
+}
 .post .post__body li {
   list-style-type: initial;
   margin-left: 25px;
+}
+.post .post__body img {
+  max-width: 450px;
+  height: auto;
+}
+.post img[src$="#png-white-bg"] {
+  background: white;
 }
 .post .post-toc {
   background: #222222;
@@ -545,6 +555,9 @@ header .active-link {
     top: 1%;
     width: 100%;
     max-width: 100%;
+  }
+  .post .post__body img {
+    width: 100%;
   }
   .post:nth-child(1) {
     padding-top: 0%;

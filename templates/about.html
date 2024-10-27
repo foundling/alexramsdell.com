@@ -14,6 +14,15 @@
       </li>
     </ul>
 
+    <h2>words</h2>
+    <ul class="links writing">
+      <li>
+      {% for page in site.get('/writing').children %}
+      <a href="{{ page | url }}">{{ page.title | striphtmltags }}</a>
+      {% endfor %}
+      </li>
+    </ul>
+
     <h2>music</h2>
     <ul class="links music">
       <li>
@@ -35,6 +44,12 @@
         </a>
       </li>
       <li>
+        <a href="https://alexramsdell.bandcamp.com" target="_blank" rel="noopener">
+          <img src="/static/img/bandcamp.png" />
+          <span>Alex Ramsdell (experimental, ambient)</span>
+        </a>
+      </li>
+      <li>
         <a href="https://www.discogs.com/artist/9052408-Alex-Ramsdell" target="_blank" rel="noopener">
           <img src="/static/img/discogs.png" />
           <span>Discography</span>
@@ -48,14 +63,7 @@
       </li>
     </ul>
 
-    <h2>words</h2>
-    <ul class="links writing">
-      <li>
-      {% for page in site.get('/writing').children %}
-      <a href="{{ page | url }}">{{ page.title | striphtmltags }}</a>
-      {% endfor %}
-      </li>
-    </ul>
+
 
   </section>
 

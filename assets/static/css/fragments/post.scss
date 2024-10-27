@@ -3,10 +3,23 @@
     a {
       color: $hover;
     }
+
+    img {
+      max-width: 450px;
+    }
     li {
       list-style-type: initial;
       margin-left: 25px;
     }
+
+    img {
+      max-width: 450px;
+      height: auto;
+    }
+  }
+
+  img[src$='#png-white-bg'] {
+    background: white;
   }
 
   .post-toc {
@@ -180,6 +193,12 @@
       top: 1%;
       width: 100%;
       max-width: 100%;
+    }
+
+    .post__body {
+      img {
+        width: 100%;
+      }
     }
 
 
