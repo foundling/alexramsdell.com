@@ -1,4 +1,4 @@
-title: The Home Recording Manual
+title: Home Recording Manual
 ---
 author: alex
 ---
@@ -18,10 +18,18 @@ audio engineering
 ---
 body:
 
+# The Demo
+
+Here's the demo so you can decide whether you want to invest your time in what I have to say.
+
+<audio controls loop title="test" src="home-recording-manual-demo.mp3"></audio>
+<br>
+
+Because the manual essentially explains how I managed to record this demo, it's pretty application-specific. However, I think you can learn some fundamental approaches here, as the resulting rough mix has a vibe (in my opinion). The vibe is what we want. The vibe means a bunch of things went right.
+
 # Drums
 
-I record drums at home in unfinished basement. This is what it looks like:
-
+I record drums at home in unfinished basement. Here's the layout:
 
 ![basement layout](recording-basement-layout.png)
 
