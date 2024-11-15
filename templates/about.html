@@ -18,7 +18,7 @@
     <ul class="links writing">
       <li>
       {% for page in site.get('/writing').children %}
-      <a href="{{ page | url }}">{{ page.title | striphtmltags }}</a>
+      <a href="{{ page | url }}"> {{ page.pub_date.strftime("%m.%d.%y") }} | {{ page.title | striphtmltags }}</a>
       {% endfor %}
       </li>
     </ul>
