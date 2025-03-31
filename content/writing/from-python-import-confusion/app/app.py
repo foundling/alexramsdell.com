@@ -1,7 +1,7 @@
-from lib import util
+import module_a, module_b
 
 def main():
-    print(util.util())
+    print(module_a.fn_a() + module_b.fn_b())
 
 if __name__ == '__main__':
     main()

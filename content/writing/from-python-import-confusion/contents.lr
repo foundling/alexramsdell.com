@@ -19,139 +19,79 @@ toc_hidden: true
 ---
 body:
 
-At some point in your attempt to master Python, the `import` statement starts to cause trouble.
+At some point in your attempt to master Python, the `import` statement starts to cause trouble. Here, I'm going to try to clarify how packages, modules and imports interact so you'll never have to play whack-a-mole again.
 
 Let's say you have a project that looks like this:
 
 ```
   app/
-    app.py # from lib import util
-    file1.py
-    file2.py
+    app.py              # import module_a, module_b
+    module_a.py         # from lib import util
+    module_b.py         # from lib import util
     lib/
-      util.py # from . import log, format
+      util.py           # from . import log, format
       log.py
       format.py
     test/
-      test_file1.py
-      test_file2.py
+      test_module_a.py  # import ..module_a
+      test_module_b.py  # import ..module_b
+      test_util.py      # import ..lib.util
 ```
 
-Your main `app.py` script imports `file1.py` and `file2.py`, which both import `lib/util.py`, which itself imports `lib/log.py` and `lib/format.py`. You execute this project by running `python app.py` and it works just fine.
-
-But you also want to run `file1.py`, `file2.py` as scripts for development and testing purposes. And you *also* want to set up a pytest suite to unit test functions in those modules.
-
-Let's also stipulate that you prefer the minimalist syntax of the package-relative `import` statements over the absolute `import` syntax, which can get verbose.  So you're using that where you can. `lib/util.py` is one such example:
+The import statements seem reasonable. When you run `python app.py` from the root-level `app` directory, your app works.  The same goes for running `python module_a.py` and `python module_b.py`, no problems.
+But when you try to run `util.py` directly via either `python lib/util.py` or `cd lib && python util.py`, you get the following error:
 
 ```
-  # file lib/util.py
-
-  from . import log
-  from . import format
-
-  ...
+  Traceback (most recent call last):
+    File "/path/to/app/lib/util.py", line 1, in <module>
+      from . import log, format
+      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  ImportError: attempted relative import with no known parent package
 ```
 
-Say you want to run `lib/util.py` file directly to test out some functionality. Cue the following error:
-- `ImportError: attempted relative import with no known parent package`
 
+Ah, you say to yourself: my app needs to be a *package*.  I'll go and add `__init__.py` files to the app directories because I've heard that will make an app into a package. But, hmmm ... this is Python 3.12 and I've heard that those `__init__.py` files aren't necessary any more.
 
-Ah, you say to yourself: it needs to be a package.  I'll go and add `__init__.py` files to the app directories.  Isn't that what makes the app a package? But, hmmm ... this is Python 3.12 and I've heard that those `__init__.py` files aren't strictly required any more.  In any case, you add one to each app directory and now it looks like this:
+But you add an `__init__.py` file to each app directory and now it looks like this:
 
 
 ```
   app/
     __init__.py
-    app.py # from lib import util
-    file1.py
-    file2.py
+    app.py              # import module_a, module_b
+    module_a.py         # from lib import util
+    module_b.py         # from lib import util
     lib/
       __init__.py
-      util.py # from . import log, format
+      util.py           # from . import log, format
       log.py
       format.py
     test/
       __init__.py
-      test_file1.py
-      test_file2.py
+      test_module_a.py  # import ..module_a
+      test_module_b.py  # import ..module_b
+      test_util.py      # import ..lib.util
 ```
 
-Now your app is a proper package, so maybe it will work? You run `python util.py` again and you get the same error:
+But you get the same error.
 
-`ImportError: attempted relative import with no known parent package`
+The error is indirectly telling you that relative imports only work for packages, and this is the unfortunate truth that many, including myself, miss at one point.  They are formally called 'package-relative imports', but almost everybody (even the Python docs in most places) refers to them as 'relative imports'. I think this is a source of confusion for new Python programmers, as unsuspecting people get the impression that they are simply a more convenient alternative to absolute imports.
 
-The error is saying that relative imports only work in the context of a *package*. They are formally called 'package-relative imports', but almost everybody (even many places in the Python docs) refers to them simply 'relative imports'. I think this is a source of confusion for new Python programmers, as unsuspecting people get the impression that they are simply an alternative to absolute imports.
+Let me ask you: when you run `app.py`, the package-relative import `from . import log, format` inside `util.py` works just fine.  What is different when you execute `util.py` directly? I encourage you to take a minute to think about that.
 
-Here's a crucial piece to this puzzle: python treats files differently depending on how they are loaded. Python files that are executed directly have different characteristics from files that are imported.  By running `python util.py` directly, python treats it as a top-level script with no reference to a surrounding module heirarchy.  By running the entire app with `python app.py`, `lib/util.py` gets imported by `app.py` as a module. Because `lib/util.py` is loaded as a module, it gets registered in the module hierarchy as `lib.util`.
+Here's a crucial piece to this puzzle, which you may have just considered: python treats files differently depending on how they are loaded. Python files that are executed directly have different characteristics from files that are imported.  By running `python util.py` directly, python treats it as a top-level script with no reference to a surrounding module heirarchy.  By running the entire app with `python app.py`, `lib/util.py` gets imported by `app.py` as a module. Because `lib/util.py` is loaded as a module, it gets registered in the module hierarchy as `lib.util`.
 
+Another (hopefully) clarifying observation: we haven't yet treated `app/` as a package at all because we've been calling our app via `python app.py` from inside of our app directory, `app/`.  The packages loaded in our app so far are `app/lib` and `app/test`. This is why, when we run `python app.py`, the relative syntax works in `lib/util.py`. It's a package.  From our main script file the `lib` directory and its containing python files are registered as a package called `lib` containing the submodules `util.py`, `log.py` and `format.py`.
 
+A package is a way to namespace modules. In the module name `lib.util`, `lib` is the package and `util` is a submodule.
 
-
-If you run `python app.py`, which looks like this:
-
-```
-  # app.py
-
-  from lib import util
-
-```
-
-This works because `app.py` is the main module, and as such it must use absolute imports(ref #3). 
-
-This means if you go into your `lib` folder and run `python util.py`, you are treating `util.py` as a script, not a package, and it will fail with this message:
-
-```
-    from . import log
-    ^^^^^^^^^^^^^^^^^
-    ImportError: attempted relative import with no known parent package
-```
-
-This fails because `util.py` is the main module, but the use of the relative `import` syntax tells python that there is a parent package where there really is none. In this case, I think the error message could be more informative. 
-
+This means if you go into your `lib` folder and run `python util.py`, you are treating `util.py` as a script, not a package, and it will fail because `util.py` is the main module. The relative `import` syntax assumes there is a parent package where there really is none. In this case, I do think the error message could be more useful for people who don't know the ins and outs of packaging and relative imports. 
 
 ## What's in a `__name__` ?
 
-A module (aka a file) has a `__name__` attribute that unique identifies it's place in the currently running module hierarchy.  This attribute is set to `'__main__'` when it's  invoked directly by Python, which makes it the entrypoint.  If a module's `__name__` property is set to something like `'app.module_a.a'`, this indicates its unique position within the loaded package heirarchy.
+If you want to verify how your a module is being treated based on how it's loaded, you can check out its global `__name__` attribute.  It's set set to `'__main__'` when it's  invoked directly by Python.  When it is imported by another file, it is set to something like `'app.module_a.a'`, indiciating it's unique position within the loaded package heirarchy.
 
-Let's use a concrete example. Imagine your directory looks like this:
-
-```
-  app/
-    __init__.py
-    app.py
-    module
-      __init__.py
-      mod.py
-      submodule
-        __init__.py
-        submod.py
-```
-
-Let's say `app/module/submodule/submod.py` looks like this:
-
-```
-  # file: app/module/submodule/submod.py
-
-  print(__name__)
-```
-
-If you run the module directly, e.g. `python app/module/submodule/submod.py`, it will print a `__name__` of `'__main__'` because its being treated as an entrypoint and not as a module in the context of a package.
-
-However, if we import `module.submodule.submod` into `app.py` and run `python app.py` instead,  the code in `app/module/submodule/submod.py` will print `'module.submodule.submod'` as the value of `__name__`, indicating its location in the `app` package's module heirarchy. 
-
-
-Modules have a `__name__` property that changes depending on how it is loaded. Imagine we have the following directory:
-
-```
-  app/
-    __init__.py
-    app.py
-    lib/
-      __init__.py
-      util.py
-```
-
-And imagine our current working directory is `app/`.  If we execute `lib/util.py` directly by running `python lib/util.py`, `lib/util.py` will have a `__name__` property of `'__main__'`.  However, if we run `python app.py` and `app.py` imports `lib/util.py`, `lib/util.py` will have a `__name__` property of `'lib.util'`, indicating its absolute position within the `app` package's structure.
+If you run `lib/util.py` module directly with `python lib/util.py` or `python util.py` from the `lib` folder`, `__name__` will have the value `'__main__'` because its being treated as an entrypoint and not as a module in the context of a package. If you import `lib/util.py` into `app.py`, the `lib.util` module will have `lib.util` as its `__name__` value.
 
 ## `python -m`
 
@@ -173,7 +113,8 @@ When the submodule file is executed directly by the python interpreter (not as a
 
 ## The import resolution process
 
-### first, the builtins
+### builtins
+
 When python sees an import statement, it tries to resolve the target module name against a list of `builtin` modules first. If it can't resolve it there, it moves on to a list of directories found in `sys.path`. 
 
 If you're curious, `sys.builtin_module_names` contains the list of `builtin` modules that Python will resolve against before anything else.  
@@ -186,6 +127,6 @@ Running ```python -c "import sys; print(sys.builtin_module_names)"``` from the t
 
 If python can't resolve a given module against the `builtins`, it moves on to a list of module search paths assembled on start and bound to [`sys.path`](https://docs.python.org/3/library/sys_path_init.html).
 
-### then, the `sys.path`
+### `sys.path`
 
 At runtime, python populates `sys.path` with a list of directory paths to look inside if it can't resolve a given module in the list of `builtin`s.  The first path in `sys.path` is especially important to the module resolution scheme: if you run the module as a script, e.g. `python script.py`, or as a module, e.g. `python -m script.py`, the first path in `sys.path` is the parent directory of the python file/module; If you run a command directly using the interpreter's `-c` flag, e.g. `python -c "script.py"`, the first path is `''`, indicating the current working directory.
