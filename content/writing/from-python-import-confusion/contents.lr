@@ -155,11 +155,7 @@ But if you run `python -m lib.util`, you will see that python adds the parent di
 
 ## My Recommendation
 
-If your app directory is relatively shallow and your app is not heavily modularized, I recommend the following:
-
-- treating your entire application as a package
-- using absolute imports for the sake of clarity
-- running it with `python -m app.app` from the parent directory of the `app/` root.
+If your app directory is relatively shallow and your app is not heavily modularized, I recommend using absolute imports for the sake of clarity and running your app via `python -m app.app` from the directory above the app root.
 
 Below, I've adjusted the imports from the running example to their absolute format.
 
@@ -181,5 +177,4 @@ Below, I've adjusted the imports from the running example to their absolute form
 
 You might prefer to keep the relative imports. In which case, keep 'em!  At least now you have a mental model of how `import` works off of `sys.path` and how to run your package/module as a script with `python -m`.
 
-If you enjoyed this article, could you do me a favor? Go forth and prosper with this new knowlege and consider referring to relative imports as 'package-relative imports' to dispel the impression that they are simply a shorthand convenience.  New python programmers will thank you.
-
+I hope you enjoyed this article. Consider referring to relative imports as 'package-relative imports' to dispel the impression that they are simply a shorthand convenience.  New python programmers will thank you.
