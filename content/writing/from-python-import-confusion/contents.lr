@@ -77,7 +77,7 @@ But say you want to run the `lib/util.py` file directly because you put an `if _
 
 You might say to yourself: ah, my app needs to be a *package*.  I'll go and add `__init__.py` files to the app directories because I've heard that will make an app into a package.
 
-So yo go and do that and now there is an `__init__.py` file in `app/` and all of its subdirectories. Now it looks like this:
+So you go and do that and now there is an `__init__.py` file in `app/` and all of its subdirectories. Now it looks like this:
 
 
 ```
@@ -131,7 +131,7 @@ So, what exactly do we do about our `python lib/util.py` problem? We wanted to r
 
 ## Use `python -m` to run a module as a script
 
-Assuming we're in the `app/` directory, it turns out we can run `python -m lib.util` to tell python to run the `lib/util.py` module as a script. Note the new notation: `package.submodule`.  We are no longer dealing with files but with packages and modules, which means that we're letting python look through its `sys.path` for a package named `lib` and a submodule named `lib.util`.
+Assuming we're in the `app/` directory, it turns out we can run `python -m lib.util` to tell python to run the `lib/util.py` module as a script. Note the new notation: `package.submodule`.  We are no longer dealing with files but with packages and modules, which means that we're asking python to look through its `sys.path` for a package named `lib` and a submodule named `lib.util`.
 
 Note that the location from which you invoke this command matters. It will look through directories in the `sys.path` to resolve it.
 
