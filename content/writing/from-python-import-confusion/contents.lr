@@ -21,9 +21,7 @@ body:
 
 [ Note: this article is about python3.3+ and does not talk about the differences between 2.7 and 3.3+ ]
  
-At some point in your attempt to master Python, the `import` statement starts to cause trouble. In this article, I'm going to try to clarify how packages, modules and imports interact so you'll never have to play whack-a-mole again.
-
-The plan is to construct a project structure that someone without a solid understanding of packages, modules and imports might come up with. Then I'll talk about why it doesn't work as expected and ways to improve it.
+At some point in your attempt to master Python, the `import` statement starts to cause trouble. In this article, I'm going to try to clarify how packages, modules and imports work together so you'll never have to play whack-a-mole again. I'll scaffold an 'import-naive' project structure and then dig into the problems it causes for imports and finally discuss ways to improve it.
 
 Here's the layout:
 
@@ -31,14 +29,12 @@ Here's the layout:
   app/
     app.py                                         
     module_a.py                               
-    module_b.py                               
     lib/
       util.py                                      
       log.py
       format.py
     test/
       test_module_a.py                     
-      test_module_b.py                     
       test_util.py                         
 ```
 
@@ -47,24 +43,22 @@ And here it is again, annotated with the relevant import statements:
 
 ```
   app/
-    app.py              # import module_a, module_b
+    app.py              # import module_a
     module_a.py         # from lib import util
-    module_b.py         # from lib import util
     lib/
       util.py           # from . import log, format
       log.py
       format.py
     test/
       test_module_a.py  # import ..module_a
-      test_module_b.py  # import ..module_b
       test_util.py      # import ..lib.util
 ```
 
-This works if you are in `app/` and run the project via `python app.py`.
+This works if you are in `app/` and want to run the project via `python app.py`.
 
-You can also run `python module_a.py` and `python module_b.py`, no problems.
+You can also run `python module_a.py` without issue.
 
-But say you want to run the `lib/util.py` file directly because you put an `if __name__ == '__main__': ...` block at the bottom to run some module-specific code only if the file is the main script.  That will unfortunately fail with the current structure:
+However, you have an `if __name__ == '__main__': ...` block at the bottom to `lib/util.py` so you can run some module-specific code as a script.  Unfortunately, running `python lib/util.py` as a script fails:
 
 
 ```
@@ -83,9 +77,8 @@ So you go and do that and now there is an `__init__.py` file in `app/` and all o
 ```
   app/
     __init__.py
-    app.py              # import module_a, module_b
+    app.py              # import module_a
     module_a.py         # from lib import util
-    module_b.py         # from lib import util
     lib/
       __init__.py
       util.py           # from . import log, format
@@ -94,19 +87,18 @@ So you go and do that and now there is an `__init__.py` file in `app/` and all o
     test/
       __init__.py
       test_module_a.py  # import ..module_a
-      test_module_b.py  # import ..module_b
       test_util.py      # import ..lib.util
 ```
 
 When you run `python lib/util.py`, you get the same error. Then you `cd` into `lib/` and run `python util.py`.  But the error remains.
 
-Let's read the error more closely: 'attempted relative import with no known parent package'. What does 'no parent package' mean? Isn't `lib` the parent package? Or is it `app`?
+Let's read the error more closely: 'attempted relative import with no known parent package'. What does 'no parent package' mean? Isn't `app` the parent package of `lib` ?
 
 It turns out that there is a global attribute `__name__` available in every python module that can help us understand what's going on here.
 
 ## What's in a `__name__` ?
 
-Every module has a global `__name__` attribute whose value indicates how that module is being run. Is it being run directly as a script, or is it being imported? That's what `__name__` tells you (and more).
+Every module has a global `__name__` attribute whose value indicates how that module is being run. Is it being run directly as a script, or is it being imported? `__name__` tells you that, and more.
 
 Let's experiment by adding an `lib/exp.py` file and putting `print(__name__)` at the top.
 
@@ -117,13 +109,13 @@ Let's experiment by adding an `lib/exp.py` file and putting `print(__name__)` at
 
 If we run it directly with `python lib/exp.py`, it prints `__main__`.
 
-If we import it into our top-level `app.py` file with `from lib import exp` and then run `python app.py`, we get something interesting: `lib.exp`. The value in this case tells us the location of `exp` in the module heirarchy: `exp` is a submodule of the `lib` package.
+If we import it into our top-level `app.py` file with `from lib import exp` and then run `python app.py`, `lib/exp.py` will still run that print statement, this time printing something interesting: `lib.exp`. The value in this case tells us the location of `exp` in the module heirarchy: `exp` is a submodule of the `lib` package.
 
-If this makes sense to you, then it will probably clarify why the imports fail when running `python lib/util.py`. In this context, it's the `__main__` module and has no package context to use for module resolution.
+This helps clarify why the imports fail when running `python lib/util.py`. In this context, it's the `__main__` module and has no package context to use for module resolution.
 
 And it will also probably clarify why the the `lib/util.py` imports succeed when `lib/util.py` is imported into `app.py`.  As an imported module, `lib` is recognized as a *package* with a submodule called `util`. When `util.py` imports modules from `.`, python can resolve them against the registered package, `lib`.
 
-It's possible to write Python for quite a while without ever needing to know this stuff. I encourage you to experiment on your own with the `__name__` attribute and  various test package structures to test your mental model of packages, modules and imports.
+It's possible to write Python for quite a while without ever needing to know this stuff explicitly. I encourage you to experiment on your own with the `__name__` attribute and  various test package structures to test your mental model of packages, modules and imports.
 
 So, what exactly do we do about our `python lib/util.py` problem? We wanted to run the file directly...
 
