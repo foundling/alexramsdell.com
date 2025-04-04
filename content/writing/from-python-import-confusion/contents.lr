@@ -121,9 +121,14 @@ So, what exactly do we do about our `python lib/util.py` problem? We wanted to r
 
 
 
-## Use `python -m` to run a module as a script
+## Use `python -m`
 
-Assuming we're in the `app/` directory, it turns out we can run `python -m lib.util` to tell python to run the `lib/util.py` module as a script. Note the new notation: `package.submodule`.  We are no longer dealing with files but with packages and modules, which means that we're asking python to look through its `sys.path` for a package named `lib` and a submodule named `lib.util`.
+This is a useful way to run python.
+
+`python -m <path.to.module>` puts the current directory at the head of `sys.path`, looks for the specified module first in the local directory and then in the wider filesystem, loads it as a module, and then runs it as `__main__`. If we want the luxury of running our main `app.py` and `lib/component/module.py` without changing imports or modifying `sys.path`, we can use `python -m`.
+
+
+So if we're in the `app/` directory, we can run `python -m lib.util` to tell python to load `lib/util.py` as `lib.util` if it can, and then execute the module as if we typed `python lib/util.py`. We are no longer dealing with files but with packages and modules, which means that we're asking python to look through its `sys.path` for a package named `lib` and a submodule named `lib.util`.
 
 Note that the location from which you invoke this command matters. It will look through directories in the `sys.path` to resolve it.
 
@@ -147,7 +152,7 @@ But if you run `python -m lib.util`, you will see that python adds the parent di
 
 ## My Recommendation
 
-If your app directory is relatively shallow and your app is not heavily modularized, I recommend using absolute imports for the sake of clarity and running your app via `python -m app.app` from the directory above the app root.
+Without knowing anything about your goals, consider using absolute imports until the namespaces get unweildy, run your main app via `python app.py`, a given module with `python -m <path.to.module>` and tests with `python -m pytest -s test/test_*.py -vv`
 
 Below, I've adjusted the imports from the running example to their absolute format.
 
