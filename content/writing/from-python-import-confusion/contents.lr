@@ -1,4 +1,4 @@
-title: from python `import` confusion
+title: from python import confusion
 ---
 author: alex
 ---
@@ -21,7 +21,7 @@ body:
 
 [ Note: this article is about python3.3+ and does not talk about the differences between 2.7 and 3.3+ ]
  
-At some point in your attempt to master Python, the `import` statement starts to cause trouble. In this article, I'm going to try to clarify how packages, modules and imports work together so you'll never have to play whack-a-mole again. I'll scaffold an 'import-naive' project structure and then dig into the problems it causes for imports and finally discuss ways to improve it.
+At some point in your attempt to master Python, the `import` statement starts to cause trouble. In this article, I'm going to try to clarify how packages, modules and imports work together so you'll never have to play whack-a-mole again. I'll scaffold an 'import-naive' project structure, explain how python import resolution works, and then use our new-found understanding to fix it.
 
 Here's the layout:
 
@@ -30,7 +30,7 @@ Here's the layout:
     app.py                                         
     module_a.py                               
     lib/
-      util.py                                      
+      util.py   # problem: can't run this directly                                      
       log.py
       format.py
     test/
@@ -54,12 +54,9 @@ And here it is again, annotated with the relevant import statements:
       test_util.py      # import ..lib.util
 ```
 
-This works if you are in `app/` and want to run the project via `python app.py`.
+From inside your `app` directory you can run the app as a script with `python app.py`. This also works when you run the top-level submodule with `python module_a.py` as well as an import-free module in a subdirectory, such as `lib/log.py`. No problems so far.
 
-You can also run `python module_a.py` without issue.
-
-However, what if you have an `if __name__ == '__main__': ...` block at the bottom of `lib/util.py` with code that should be run as a script?  Unfortunately, running `python lib/util.py` as a script fails:
-
+But what if you have a file like `lib/util.py` that pulls in sibling files `log.py` and `format.py`. Unfortunately, running `python lib/util.py` as a script fails:
 
 ```
   Traceback (most recent call last):
@@ -69,10 +66,11 @@ However, what if you have an `if __name__ == '__main__': ...` block at the botto
   ImportError: attempted relative import with no known parent package
 ```
 
-You might say to yourself: ah, my app needs to be a *package*.  I'll go and add `__init__.py` files to the app directories because I've heard that will make an app into a package.
+Hoping the solution is something simple, you might say to yourself: ah, my app needs to be a *package*.  I'll go and add `__init__.py` files to the `app/` and `lib/` because I've heard that will make an app into a package.
 
-So you go and do that and now there is an `__init__.py` file in `app/` and all of its subdirectories. Now it looks like this:
+That's a good step to take. It means your app is now a regular package. But the truth is that in Python 3.3+, your app was by default already a package, just a namespace package.  But a package nonetheless!
 
+We have this structure now:
 
 ```
   app/
@@ -90,11 +88,11 @@ So you go and do that and now there is an `__init__.py` file in `app/` and all o
       test_util.py      # import ..lib.util
 ```
 
-When you run `python lib/util.py`, you get the same error. Then you `cd` into `lib/` and run `python util.py`.  But the error remains.
+Better than it was before but it still fails when you run `python lib/util.py`.
 
-Let's read the error more closely: 'attempted relative import with no known parent package'. What does 'no parent package' mean? Isn't `lib` a package? Turns out it was a package to begin with -- a `namespace` package, but a package nonetheless -- so that wasn't the issue.
+Let's read the error more closely: 'attempted relative import with no known parent package'. What does 'no parent package' mean? Isn't `lib` a package?
 
-To sort this out, we'll need dig into two important aspects of the python module system:
+To sort this out, we'll need dig into two features of the python module system:
 
 - the module attribute, `__name__`, which tells us how our module was loaded
 - the `sys.path` attribute, which tells us where python goes looking for modules referenced by the `import` statement
@@ -102,9 +100,9 @@ To sort this out, we'll need dig into two important aspects of the python module
 
 ## What's in a `__name__` ?
 
-Every module has a global `__name__` attribute whose value indicates how that module is being run. Is it being run directly as a script, or is it being imported? `__name__` tells you that, and more.
+Every module has a global `__name__` attribute whose value indicates how that module is being run. 
 
-Let's experiment by adding an `lib/exp.py` file and putting `print(__name__)` at the top.
+Let's demonstrate by adding an `lib/exp.py` file and putting `print(__name__)` at the top.
 
 ```
   # file: lib/exp.py
@@ -113,52 +111,41 @@ Let's experiment by adding an `lib/exp.py` file and putting `print(__name__)` at
 
 If we run it directly with `python lib/exp.py`, it prints `__main__`.
 
-If we import it into our top-level `app.py` file with `from lib import exp` and then run `python app.py`, `lib/exp.py` will still run that print statement, this time printing something interesting: `lib.exp`. The value in this case tells us the location of `exp` in the module heirarchy: `exp` is a submodule of the `lib` package.
+If we import it into our top-level `app.py` file and run `python app.py`, `lib/exp.py` prints something interesting: `lib.exp`. The value in this case tells us the full module path of `exp` relative to the root of the project. `__name__` tells us that `exp` is a submodule of the `lib` package.
 
-This helps clarify why the imports fail when running `python lib/util.py`. In this context, it's the `__main__` module and has no package context to use for module resolution.
+If the direct invocation of `lib/util.py` drops the package heirarchy we need to successfully import `lib.util` from a subdirectory, what can we do about this?  
 
-And it will also probably clarify why the the `lib/util.py` imports succeed when `lib/util.py` is imported into `app.py`.  As an imported module, `lib` is recognized as a *package* with a submodule called `util`. When `util.py` imports modules from `.`, python can resolve them against the registered package, `lib`.
+The answer is to use the python interpreter's `-m` flag, and pass in a module path as opposed to a file path.  But we haven't covered enough for that to make sense yet.  We need to talk about `sys.path` first.
 
-It's possible to write Python for quite a while without ever needing to know this stuff explicitly. I encourage you to experiment on your own with the `__name__` attribute and  various test package structures to test your mental model of packages, modules and imports.
+## Module names resolve against `sys.path`
 
-So, what exactly do we do about our `python lib/util.py` problem? We wanted to run the file directly...
+`sys.path` is a list of file paths that the python intrepreter assembles on startup. Python uses these paths to resolve modules from your `import` statements.  There is a ton of complexity to how `sys.path` is constructed [see beazley in references], but all we need to know to solve our import issue is how it determines the path at the head of `sys.path`.
 
-
-
-## Use `python -m`
-
-This is a useful way to run python.
-
-`python -m <path.to.module>` puts the current directory at the head of `sys.path`, looks for the specified module first in the local directory and then in the wider filesystem, loads it as a module, and then runs it as `__main__`. If we want the luxury of running our main `app.py` and `lib/component/module.py` without changing imports or modifying `sys.path`, we can use `python -m`.
-
-
-So if we're in the `app/` directory, we can run `python -m lib.util` to tell python to load `lib/util.py` as `lib.util` if it can, and then execute the module as if we typed `python lib/util.py`. We are no longer dealing with files but with packages and modules, which means that we're asking python to look through its `sys.path` for a package named `lib` and a submodule named `lib.util`.
-
-Note that the location from which you invoke this command matters. It will look through directories in the `sys.path` to resolve it.
-
-## What is `sys.path` ?
-
-`sys.path` is a list of file paths that are used in python's module resolution algorithm.  The complexity of how this list is constructed at runtime is overwhelming. Fortunately, all you need to know to fix most straightforward user-defined module `import` issues is that python will put the parent directory of the `__main__` script file at the beginning of `sys.path`, effectively trying to resolve imports against those first.
-
-Let's print `sys.path` at the top of our `lib/exp.py`.
+Let's experiment again by printing `sys.path` at the top of our `lib/exp.py`.
 
 ```
-# file lib/exp.py
-
-print(sys.path)
+# file: lib/exp.py
 print(__name__)
+print(sys.path)
+
 ```
 
-If you run `python lib/util.py`, you will see `/path/to/your/app/lib` first in the list.
+If we run `python lib/exp.py` to execute the file as a script, its name is `__main__` and the first path in `sys.path` becomes the directory where the `__main__` file is located, `/full/path/to/app/lib`.
 
-But if you run `python -m lib.util`, you will see that python adds the parent directory of the `lib` package to the `sys.path`, `/path/to/your/app`, which is how `lib` is seen as a package.
+That means when it tries to resolve our imports, python will first look *inside of* `/full/path/to/app/lib`.
 
+Recall our previous error: 'no known path to parent package'. Looking at `sys.path`, we can now see why python fails at `from . import log, format`: there are no packages named 'lib' in `/full/path/to/app/lib` ... because `/full/path/to/app/lib` *itself* is the package we're looking for.
+
+Don't fret!  `python -m` treats the first `sys.path` a little differently. From `/full/path/to/app`, we can run `python -m lib.lib` and it will put the current working directory at the head of `sys.path`, which is `/full/path/to/app`. It will also load the module as `__main__`.
+
+Since the `sys.path` now is one directory level up, the `lib` directory is visible as a package, so the module import resolves correctly.
 
 ## My Recommendation
 
-Without knowing anything about your goals, consider using absolute imports until the namespaces get unweildy, run your main app via `python app.py`, a given module with `python -m <path.to.module>` and tests with `python -m pytest -s test/test_*.py -vv`
+Without knowing anything about your goals, consider doing any of the following:
+- treat your entire app as a package and run it with `python -m` from the parent directory of `app/`.  Instead of running your app and your individual modules in two different ways, you can run them all in the same way.  And if you want to run pytest on your `app/test` directory, you can run that in the same way, e.g. `python -m pytest -s test/test_*.py`.
 
-Below, I've adjusted the imports from the running example to their absolute format.
+To make it clear, I've adjusted the imports from the running example to their absolute format.
 
 ```
   # note: these imports require you to run the app via 'python -m app.app' from 
@@ -176,6 +163,4 @@ Below, I've adjusted the imports from the running example to their absolute form
       test_util.py      # import app.lib.util
 ```
 
-You might prefer to keep the relative imports. In which case, keep 'em!  At least now you have a mental model of how `import` works off of `sys.path` and how to run your package/module as a script with `python -m`.
-
-I hope you enjoyed this article. Consider referring to relative imports as 'package-relative imports' to dispel the impression that they are simply a shorthand convenience.  New python programmers will thank you.
+You might prefer to keep the relative imports, in which case, keep 'em!  At least now you have a mental model of how `import` works in conjunction with `sys.path`, and how to run your package/module as a script with `python -m`.
