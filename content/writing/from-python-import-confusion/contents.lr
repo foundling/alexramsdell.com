@@ -58,7 +58,7 @@ This works if you are in `app/` and want to run the project via `python app.py`.
 
 You can also run `python module_a.py` without issue.
 
-However, you have an `if __name__ == '__main__': ...` block at the bottom to `lib/util.py` so you can run some module-specific code as a script.  Unfortunately, running `python lib/util.py` as a script fails:
+However, what if you have an `if __name__ == '__main__': ...` block at the bottom of `lib/util.py` with code that should be run as a script?  Unfortunately, running `python lib/util.py` as a script fails:
 
 
 ```
@@ -92,9 +92,13 @@ So you go and do that and now there is an `__init__.py` file in `app/` and all o
 
 When you run `python lib/util.py`, you get the same error. Then you `cd` into `lib/` and run `python util.py`.  But the error remains.
 
-Let's read the error more closely: 'attempted relative import with no known parent package'. What does 'no parent package' mean? Isn't `app` the parent package of `lib` ?
+Let's read the error more closely: 'attempted relative import with no known parent package'. What does 'no parent package' mean? Isn't `lib` a package? Turns out it was a package to begin with -- a `namespace` package, but a package nonetheless -- so that wasn't the issue.
 
-It turns out that there is a global attribute `__name__` available in every python module that can help us understand what's going on here.
+To sort this out, we'll need dig into two important aspects of the python module system:
+
+- the module attribute, `__name__`, which tells us how our module was loaded
+- the `sys.path` attribute, which tells us where python goes looking for modules referenced by the `import` statement
+
 
 ## What's in a `__name__` ?
 
